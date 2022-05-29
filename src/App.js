@@ -1,25 +1,138 @@
-import logo from './logo.svg';
+import React, {useContext, useState} from "react";
+import {Routes, Route} from "react-router";
+import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client";
+import {ToastContainer} from "react-toastify";
+import PrivateRoute from "./components/PrivateRoute";
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import logo from './logo.svg';
+
+import NavHeader from "./components/NavHeader";
+import Home from "./pages/Home";
+import Users from "./pages/Users";
+import Register from "./pages/auth/Register";
+import Login from "./pages/auth/Login";
+import CompleteRegistration from "./pages/auth/CompleteRegistration";
+import {AuthContext} from "./context/authContext";
+import PasswordForgot from "./pages/auth/PasswordForgot";
+import PasswordUpdate from "./pages/auth/PasswordUpdate";
+import Profile from "./pages/auth/Profile";
+import Post from "./pages/post/Post";
+import PostUpdate from "./pages/post/PostUpdate";
+import SinglePost from "./pages/post/SinglePost";
+import PublicRoute from "./components/PublicRoute";
+import SingleUser from "./pages/SingleUser";
+import SearchResult from "./components/SearchResult";
+
+// to create subscription client
+import {split, HttpLink} from '@apollo/client';
+import {getMainDefinition} from '@apollo/client/utilities';
+import {GraphQLWsLink} from '@apollo/client/link/subscriptions';
+import {createClient} from 'graphql-ws';
+import {setContext} from "@apollo/client/link/context";
+
+
+const App = () => {
+
+    const {state} = useContext(AuthContext);
+    const {user} = state;
+    // this authtoken bullshit is written between for a normal login with email and password, token in object structure
+    // user.token.token whereas for google login is user.token. So to accommodate both logins...
+    const authtoken = user ? (user.token ? (user.token.token ? user.token.token : user.token) : "") : "";
+
+    // 1. create websocket link
+    const wsLink = new GraphQLWsLink(createClient({
+        url: process.env.REACT_APP_GRAPHQL_WS_ENDPOINT,
+        options: {
+            reconnect: true
+        }
+    }));
+
+    // 2. create http link
+    const httpLink = new HttpLink({
+        uri: process.env.REACT_APP_GRAPHQL_ENDPOINT
+    });
+
+    // 3. setContext for authtoken
+    const authLink = setContext(() => {
+        return {
+            headers: {
+                authtoken: authtoken
+            }
+        }
+    });
+
+    // 4. concat http and authtoken link
+    const httpAuthLink = authLink.concat(httpLink);
+
+    // 5. use split to split between http link and websocket link
+    // The split function takes three parameters:
+    // * A function that's called for each operation to execute
+    // * The Link to use for an operation if the function returns a "truthy" value
+    // * The Link to use for an operation if the function returns a "falsy" value
+    const splitLink = split(
+        ({query}) => {
+            const definition = getMainDefinition(query);
+            return (
+                definition.kind === 'OperationDefinition' &&
+                definition.operation === 'subscription'
+            );
+        },
+        wsLink,
+        httpAuthLink,
+    );
+
+    const client = new ApolloClient({
+        link: splitLink,
+        cache: new InMemoryCache()
+    });
+
+    return (
+        <ApolloProvider client={client}>
+            <NavHeader/>
+            <ToastContainer/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/users" element={<Users/>}/>
+                <Route path="/register" element={
+                    <PublicRoute>
+                        <Register/>
+                    </PublicRoute>
+                }/>
+                <Route path="/login" element={
+                    <PublicRoute>
+                        <Login/>
+                    </PublicRoute>
+                }/>
+                <Route path="/complete-registration" element={<CompleteRegistration/>}/>
+                <Route path="/password/forgot" element={<PasswordForgot/>}/>
+                <Route path="/password/update" element={
+                    <PrivateRoute>
+                        <PasswordUpdate/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/profile" element={
+                    <PrivateRoute>
+                        <Profile/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/post/create" element={
+                    <PrivateRoute>
+                        <Post/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/post/update/:postid" element={
+                    <PrivateRoute>
+                        <PostUpdate/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/post/:postid" element={<SinglePost/>}/>
+                <Route path="/search/:searchterm" element={<SearchResult/>}/>
+                <Route path="/users/:username" element={<SingleUser/>}/>
+            </Routes>
+        </ApolloProvider>
+    );
 }
 
 export default App;
