@@ -6,6 +6,7 @@ import {AuthContext} from "../context/authContext";
 import {signOut} from "firebase/auth";
 import {toast} from "react-toastify";
 import Search from "./Search";
+import "../css/main.css"
 
 
 const NavHeader = () => {
@@ -30,7 +31,7 @@ const NavHeader = () => {
     }
 
     return (
-        <nav className="navbar sticky-top navbar-expand-lg navbar-light" style={{backgroundColor: "#e3f2fd"}}>
+        <nav className="navbar sticky-top navbar-expand-lg bg-light">
             <div className="container">
                 <Link className="navbar-brand" to="/">
                     <img
@@ -39,53 +40,50 @@ const NavHeader = () => {
                         alt="MDB Logo"
                         loading="lazy"
                     />
-                    <small>MDBootstrap</small>
                 </Link>
-                <div className="container">
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-mdb-toggle="collapse"
-                        data-mdb-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <i className="fas fa-bars"/>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <i className="fas fa-bars"/>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/users">Users</Link>
+                        </li>
+                        {user && (
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/users">Users</Link>
+                                <Link className="nav-link active" aria-current="page" to="/profile">
+                                    Profile
+                                </Link>
                             </li>
-                            {user && (
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/profile">
-                                        Profile
-                                    </Link>
-                                </li>
-                            )}
-                            {!user &&
-                            <Fragment>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/login">Login</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/register">Register</Link>
-                                </li>
-                            </Fragment>
-                            }
-                            {user && (
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/login"
-                                          onClick={logout}>Logout</Link>
-                                </li>
-                            )}
-                        </ul>
-                    </div>
+                        )}
+                        {!user &&
+                        <Fragment>
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/login">Login</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/register">Register</Link>
+                            </li>
+                        </Fragment>
+                        }
+                        {user && (
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/login"
+                                      onClick={logout}>Logout</Link>
+                            </li>
+                        )}
+                    </ul>
+                    {/*custom search component*/}
+                    <Search/>
                 </div>
-                {/*custom search component*/}
-                <Search/>
             </div>
         </nav>
     )

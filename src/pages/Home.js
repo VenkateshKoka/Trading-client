@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect} from "react";
-import {gql, useQuery, useLazyQuery, useSubscription} from "@apollo/client";
+import {useQuery, useLazyQuery, useSubscription} from "@apollo/client";
 import {MDBBtn} from 'mdb-react-ui-kit';
 import {AuthContext} from "../context/authContext";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {GET_ALL_POSTS, NUMBER_OF_POSTS} from "../graphql/queries";
 import {POST_ADDED, POST_UPDATED, POST_DELETED} from "../graphql/subscriptions";
 import PostCard from "../components/PostCard";
@@ -83,6 +83,53 @@ const Home = () => {
 
     // access context
     const {state, dispatch} = useContext(AuthContext);
+
+    useEffect(() => {
+        const tradingViewWidget = document.createElement("div");
+        tradingViewWidget.setAttribute("id", "tradingView");
+        const script = document.createElement("script");
+        console.log("DOM Element is", document)
+        script.src =
+            "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+        script.async = true;
+        script.text = `
+                "symbols": [
+            {
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500"
+            },
+            {
+                "proName": "FOREXCOM:NSXUSD",
+                "title": "US 100"
+            },
+            {
+                "proName": "FX_IDC:EURUSD",
+                "title": "EUR/USD"
+            },
+            {
+                "proName": "BITSTAMP:BTCUSD",
+                "title": "Bitcoin"
+            },
+            {
+                "proName": "BITSTAMP:ETHUSD",
+                "title": "Ethereum"
+            }
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "adaptive",
+                "locale": "in"
+            `;
+        tradingViewWidget.appendChild(script);
+        document.getElementById("root").appendChild(tradingViewWidget);
+
+        return () => {
+            // clean up the script when the component in unmounted
+            document.getElementById("tradingView").remove();
+        }
+    }, []);
+
     // react router
     const navigate = useNavigate();
 
@@ -103,9 +150,63 @@ const Home = () => {
     if (loading) return <p className="p-5">Loading.......</p>;
 
     return (
-        <div className="Home">
+        <div className="home" id="home">
+            <div className="home__tradingSteps">
+                <div className="home__tradingSteps__title">
+                    Stock Trading Mastery
+                </div>
+                <div className="home__tradingSteps__content">
+                    <div className="home__tradingSteps__content__step">
+                        <h3 className="title">Step 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">what to buy</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step">
+                        <h3 className="title">Step 2</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <a href="#">Read More</a>
+                        <span className="circle"></span>
+                        <span className="topic">when to buy</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step">
+                        <h3 className="title">Step 3</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <a href="#">Read More</a>
+                        <span className="circle"></span>
+                        <span className="topic">how much to buy</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step">
+                        <h3 className="title">Step 4</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <a href="#">Read More</a>
+                        <span className="circle"></span>
+                        <span className="topic">managing the position(after buying)</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step">
+                        <h3 className="title">Step 4</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <a href="#">Read More</a>
+                        <span className="circle"></span>
+                        <span className="topic">when to sell / close</span>
+                    </div>
+                </div>
+            </div>
             <React.Fragment>
-                <div className="container">
+                <div className="home__liveStream">
                     <div className="container">
                         <div className="row p-5">
                             {data && data.allPosts.map(p => (

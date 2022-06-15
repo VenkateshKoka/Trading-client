@@ -1,0 +1,26 @@
+@import "components/navHeader";
+@import "pages/home";
+@import "base";
+@import "layout";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  //background: linear-gradient(to right top, rgba(101, 223, 201, 0.4), rgba(108, 219, 235, 0.4));
+  background: linear-gradient(to right, rgba(215, 219, 215, 0.4), rgba(215, 200, 215, 0.4));
+}
+
+#root {
+  //position: absolute;
+}
+
+//#root:after {
+//  content: " ";
+//  display: block;
+//  clear: both;
+//}
+

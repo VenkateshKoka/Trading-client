@@ -11,25 +11,20 @@ const Search = () => {
     }
 
     return (
-        <div className="container">
-            <form className="d-flex input-group w-auto" onSubmit={handleSubmit}>
-                <input
-                    type="search"
-                    className="form-control rounded"
-                    placeholder="Search"
-                    aria-label="Search"
-                    aria-describedby="search-addon"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                />
-                <button className="btn btn-outline-success my-2 my-sm-0">
-                    Search / {query}
-                </button>
-                {/*<span className="input-group-text border-0" id="search-addon">*/}
-                {/*    <i className="fas fa-search"></i>*/}
-                {/*</span>*/}
-            </form>
-        </div>
+        <form className="d-flex w-auto" role="search" onSubmit={handleSubmit}>
+            <input
+                type="search"
+                className="form-control me-2 rounded"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+            />
+            <button className="btn btn-outline-success rounded" type="submit">
+                Search
+            </button>
+        </form>
     )
 };
 

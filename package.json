@@ -9,10 +9,10 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "apollo-boost": "^0.4.9",
+    "bootstrap": "^5.2.0-beta1",
     "compression": "^1.7.4",
     "firebase": "^9.6.8",
     "graphql": "^15.8.0",
-    "graphql-ws": "^5.8.2",
     "mdb-react-ui-kit": "^2.4.0",
     "omit-deep": "^0.3.0",
     "react": "^17.0.2",
@@ -25,10 +25,16 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "watch": "node-sass -o src/css src/scss -w",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "author": {
+    "name": "Venkatesh Koka",
+    "email": "venkateshkoka45@gmail.com",
+    "url": "venkateshkoka.com"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "react-helmet": "^6.1.0"
   }
 }
