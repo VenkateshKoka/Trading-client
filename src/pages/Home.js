@@ -1,6 +1,5 @@
 import React, {useState, useContext, useEffect} from "react";
 import {useQuery, useLazyQuery, useSubscription} from "@apollo/client";
-import {MDBBtn} from 'mdb-react-ui-kit';
 import {AuthContext} from "../context/authContext";
 import {useNavigate} from "react-router-dom";
 import {GET_ALL_POSTS, NUMBER_OF_POSTS} from "../graphql/queries";
@@ -88,7 +87,6 @@ const Home = () => {
         const tradingViewWidget = document.createElement("div");
         tradingViewWidget.setAttribute("id", "tradingView");
         const script = document.createElement("script");
-        console.log("DOM Element is", document)
         script.src =
             "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
         script.async = true;
@@ -146,8 +144,38 @@ const Home = () => {
         return pages;
     }
 
-
-    if (loading) return <p className="p-5">Loading.......</p>;
+    const livePosts = loading ? <p className="p-5">Loading.......</p> :
+        <React.Fragment>
+            <div className="home__liveStream">
+                <div className="container">
+                    <div className="row p-5">
+                        {data && data.allPosts.map(p => (
+                            <div className="col-md-4" key={p._id}>
+                                <PostCard post={p}/>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="container">
+                        <div className="row p-5">
+                            {posts && <h4>The lazy query posts are </h4>}
+                            {posts && posts.allPosts.map(p => (
+                                <div key={p._id}>
+                                    {p.content}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <ul className="pagination justify-content-center">{pagination()}</ul>
+                </nav>
+                <hr/>
+                <hr/>
+                <btn rounded className="mx-2" color="info" onClick={() => fetchPosts()}>
+                    Get All Posts
+                </btn>
+            </div>
+        </React.Fragment>;
 
     return (
         <div className="home" id="home">
@@ -205,37 +233,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <React.Fragment>
-                <div className="home__liveStream">
-                    <div className="container">
-                        <div className="row p-5">
-                            {data && data.allPosts.map(p => (
-                                <div className="col-md-4" key={p._id}>
-                                    <PostCard post={p}/>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="container">
-                            <div className="row p-5">
-                                {posts && <h4>The lazy query posts are </h4>}
-                                {posts && posts.allPosts.map(p => (
-                                    <div key={p._id}>
-                                        {p.content}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <nav>
-                        <ul className="pagination justify-content-center">{pagination()}</ul>
-                    </nav>
-                    <hr/>
-                    <hr/>
-                    <MDBBtn rounded className="mx-2" color="info" onClick={() => fetchPosts()}>
-                        Get All Posts
-                    </MDBBtn>
-                </div>
-            </React.Fragment>
+            {livePosts}
         </div>
     );
 }
