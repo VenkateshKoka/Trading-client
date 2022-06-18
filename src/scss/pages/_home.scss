@@ -5,11 +5,17 @@ $font-color-text: #666;
   display: flex;
   flex-direction: column;
   height: auto;
-  margin-top: 46px;
+  margin-top: 110px;
   width: 100%;
   align-items: center;
   box-sizing: border-box;
   position: absolute;
+  background-image: url("https://assets-global.website-files.com/628288c5cd3e8411b90a36a4/629d16c1151de225ed621782_Background-07%20(1).jpg"), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background-blend-mode: lighten;
+
+  .img {
+    opacity: 0.1;
+  }
 
   &__tradingSteps {
     display: flex;
@@ -17,9 +23,9 @@ $font-color-text: #666;
     align-items: center;
     position: relative;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-    //background: red;
     border-radius: 2rem;
     backdrop-filter: blur(2rem);
+    background-size: cover;
 
     &__title {
       display: flex;
@@ -57,7 +63,7 @@ $font-color-text: #666;
       &__step {
         width: 50%;
         padding: 15px 20px;
-        box-shadow: 1px 1px 50px -10px rgba(0, 0, 0, 0.384);
+        box-shadow: 1px 1px 30px -10px rgba(0, 0, 0, 0.384);
         border-radius: 10px;
         margin-bottom: 30px;
         background-color: white;
@@ -66,7 +72,8 @@ $font-color-text: #666;
         transition: all 0.5s;
 
         &:hover {
-          transform: translateY(10px);
+          box-shadow: 1px 1px 50px -10px rgba(0, 0, 0, 0.384);
+          border-radius: 25px;
         }
 
         .title {
@@ -124,7 +131,7 @@ $font-color-text: #666;
           transition: all 0.5s;
 
           &:hover {
-            box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.384);
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.384);
           }
         }
 

@@ -171,7 +171,7 @@ const Home = () => {
                 </nav>
                 <hr/>
                 <hr/>
-                <btn rounded className="mx-2" color="info" onClick={() => fetchPosts()}>
+                <btn className="mx-2" color="info" onClick={() => fetchPosts()}>
                     Get All Posts
                 </btn>
             </div>
@@ -179,7 +179,7 @@ const Home = () => {
 
     return (
         <div className="home" id="home">
-            <div className="home__tradingSteps">
+            <div className="home__tradingSteps container">
                 <div className="home__tradingSteps__title">
                     Stock Trading Mastery
                 </div>
