@@ -20,9 +20,15 @@ $grid-breakpoints: (
         xxl: 1400px
 );
 
+h1 {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
 }

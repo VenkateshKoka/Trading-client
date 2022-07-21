@@ -32,6 +32,8 @@ import {GraphQLWsLink} from '@apollo/client/link/subscriptions';
 import {createClient} from 'graphql-ws';
 import {setContext} from "@apollo/client/link/context";
 import Webhook from "./pages/Webhook";
+import Selection from "./pages/trading/Selection";
+import Timing from "./pages/trading/Timing";
 
 
 const App = () => {
@@ -131,6 +133,8 @@ const App = () => {
                 <Route path="/post/:postid" element={<SinglePost/>}/>
                 <Route path="/search/:searchterm" element={<SearchResult/>}/>
                 <Route path="/users/:username" element={<SingleUser/>}/>
+                <Route path="/trading/selection" element={<Selection/>}/>
+                <Route path="/trading/timing" element={<Timing/>}/>
                 <Route path="/webhook" element={<Webhook/>}/>
             </Routes>
         </ApolloProvider>

@@ -184,7 +184,7 @@ const Home = () => {
                     Stock Trading Mastery
                 </div>
                 <div className="home__tradingSteps__content">
-                    <div className="home__tradingSteps__content__step">
+                    <div className="home__tradingSteps__content__step" onClick={() => navigate(`/trading/selection`)}>
                         <h3 className="title">Step 1</h3>
                         <p>Lorem Ipsum is simply dummy text of the
                             printing and typesetting industry. Lorem Ipsum
@@ -195,7 +195,7 @@ const Home = () => {
                         <span className="circle"></span>
                         <span className="topic">what to buy</span>
                     </div>
-                    <div className="home__tradingSteps__content__step">
+                    <div className="home__tradingSteps__content__step" onClick={() => navigate(`/trading/timing`)}>
                         <h3 className="title">Step 2</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer
@@ -230,6 +230,92 @@ const Home = () => {
                         <a href="#">Read More</a>
                         <span className="circle"></span>
                         <span className="topic">when to sell / close</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
+                    </div>
+
+
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
+                    </div>
+                    <div className="home__tradingSteps__content__step"
+                         onClick={() => navigate(`/trading/markethealth`)}>
+                        <h3 className="title">Step 5</h3>
+                        <p>Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                            software like Aldus PageMaker including versions of Lorem Ipsum
+                        </p>
+                        <a href="#">Read More >></a>
+                        <span className="circle"></span>
+                        <span className="topic">General market Health</span>
                     </div>
                 </div>
             </div>

@@ -20,8 +20,8 @@ const USER_CREATE = gql`
 
 const Login = () => {
     const {dispatch} = useContext(AuthContext);
-    const [email, setEmail] = useState('stockmarketwizard4@gmail.com');
-    const [password, setPassword] = useState('123456');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [userCreate] = useMutation(USER_CREATE);
 

@@ -50,7 +50,7 @@
   justify-content: center;
   width: 100%;
   padding: 0.4em 0.8em;
-  border-radius: 5px;
+  border-radius: 50px;
 }
 
 .navbar-link:is(:focus, :hover) {
@@ -84,6 +84,7 @@
   height: 4px;
   margin: 2px;
   background-color: $navbar-text-color;
+  transition: all 0.5s;
 }
 
 #navbar-toggle:is(:focus, :hover) .icon-bar {
@@ -110,7 +111,6 @@
 
 #navbar-menu {
   position: fixed;
-  top: $navbar-height;
   bottom: 0;
   opacity: 0;
   visibility: hidden;
@@ -135,6 +135,11 @@
   margin: 0.8rem;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+  @media screen and (max-width: 768px) {
+    background-color: rgba($navbar-bg-color, 0.9);
+    backdrop-filter: blur(5px);
+  }
 }
 
 #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
