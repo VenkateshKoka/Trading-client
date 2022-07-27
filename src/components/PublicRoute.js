@@ -13,7 +13,7 @@ const PublicRoute = ({children}) => {
     }, [state.user]);
 
     return (
-        <div className="container-fluid p-5">{children}</div>
+        <div className="container">{children}</div>
     )
 }
 

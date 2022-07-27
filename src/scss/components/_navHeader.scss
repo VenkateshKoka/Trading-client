@@ -1,15 +1,14 @@
 @import "../base";
 
 #navbar {
-  position: fixed;
+  position: sticky;
+  top: 0;
   height: $navbar-height;
   background-color: rgba($navbar-bg-color, 1);
   font-family: "Roboto", serif;
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: capitalize;
-  left: 0;
-  right: 0;
   z-index: 10;
   backdrop-filter: blur(5px);
 
@@ -38,7 +37,7 @@
   display: flex;
   font-weight: 400;
   align-items: center;
-  transition: all 0.5s;
+  transition: all 0.5s ease-in-out;
 }
 
 .home-link:is(:focus, :hover) {

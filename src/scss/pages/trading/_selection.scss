@@ -3,32 +3,12 @@
 .selection {
   display: flex;
   flex-direction: column;
-  margin-top: $navbar-height;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(32px);
 
-  p {
-    margin-top: 20px;
-    margin-bottom: 10px;
+  &__content {
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: justify;
-  }
-
-  &__core {
-    display: inline-flex;
-    align-self: center;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: rgba(41, 41, 41, 0.1);
-    border-radius: 15px;
-
-    @media screen and (max-width: 760px) {
-      //width: 100%;
-      padding: 15px 20px;
-    }
-
-    &__highlight {
-      font-style: italic;
-      font-weight: bold;
-    }
   }
 }

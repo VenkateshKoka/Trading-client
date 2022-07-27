@@ -6,6 +6,7 @@ import {GET_ALL_POSTS, NUMBER_OF_POSTS} from "../graphql/queries";
 import {POST_ADDED, POST_UPDATED, POST_DELETED} from "../graphql/subscriptions";
 import PostCard from "../components/PostCard";
 import {toast} from "react-toastify";
+import {Player} from '@lottiefiles/react-lottie-player';
 
 const Home = () => {
     const [page, setPage] = useState(1);
@@ -179,6 +180,20 @@ const Home = () => {
 
     return (
         <div className="home" id="home">
+            <div className="home__hero container">
+                <div className="home__hero__animation">
+                    <Player src="https://assets8.lottiefiles.com/packages/lf20_xwrbzebb.json"
+                            background="transparent"
+                            speed="0.5"
+                            style={{width: "100%", height: "100%", opacity: "0.9"}}
+                            loop
+                            autoplay>
+                    </Player>
+                </div>
+                <div className="home__hero__content">
+                    <h1>Best way to improve on your trading journey</h1>
+                </div>
+            </div>
             <div className="home__tradingSteps container">
                 <div className="home__tradingSteps__title">
                     Stock Trading Mastery

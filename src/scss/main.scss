@@ -4,6 +4,9 @@
 @import "layout";
 @import "pages/trading/selection";
 @import "pages/trading/timing";
+@import "pages/auth/login";
+@import "pages/auth/profile";
+@import "pages/auth/register";
 
 * {
   margin: 0;
@@ -40,8 +43,9 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
-  background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-  background-blend-mode: lighten;
+  //background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  //background-blend-mode: lighten;
+  
 }
 
 #tradingView {
@@ -53,4 +57,5 @@ h1 {
     height: 46px;
   }
 }
+
 

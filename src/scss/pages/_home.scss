@@ -4,21 +4,31 @@ $font-color-text: #666;
 .home {
   display: flex;
   flex-direction: column;
-  height: auto;
-  margin-top: 110px;
+  margin-top: 64px;
   padding-top: 10px;
   width: 100%;
   align-items: center;
-  box-sizing: border-box;
-  background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-  background-blend-mode: lighten;
 
   @media screen and (max-width: 788px) {
-    margin-top: 138px;
+    margin-top: 92px;
   }
 
   .img {
     opacity: 0.1;
+  }
+
+  &__hero {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__animation {
+      max-width: 50%;
+      height: auto;
+    }
+
+    &__content {
+      width: 50%;
+    }
   }
 
   &__tradingSteps {

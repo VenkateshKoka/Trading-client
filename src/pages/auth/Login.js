@@ -75,7 +75,7 @@ const Login = () => {
     }
 
     return (
-        <div className="container">
+        <div className="login">
             {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4>Login</h4>)}
             <button onClick={googleLogin} className="btn btn-raised btn-danger mt-5">Login with Google</button>
             <AuthForm email={email} password={password} setEmail={setEmail} setPassword={setPassword}

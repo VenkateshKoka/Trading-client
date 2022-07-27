@@ -31,40 +31,85 @@ h1 {
   padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
+
+  @media (max-width: 576px) {
+    width: 95%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 576px) {
+    width: calc(94%);
+    max-width: 1380px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  //@media (min-width: 768px) {
+  //  width: 720px;
+  //}
+  //
+  //@media (min-width: 992px) {
+  //  width: 940px;
+  //}
+  //
+  //@media (min-width: 1200px) {
+  //  width: 1140px;
+  //}
+  //
+  //@media (min-width: 1280px) {
+  //  width: 1220px;
+  //}
+  //
+  //@media (min-width: 1400px) {
+  //  width: 1320px;
+  //}
 }
 
-@media (min-width: 576px) {
-  .container {
-    width: 540px;
+.information {
+  padding: 15px 30px;
+  border-radius: 15px;
+  align-self: center;
+  font-style: italic;
+
+  @media screen and (max-width: 760px) {
+    padding: 15px 20px;
+  }
+
+  &__important {
+    background-color: rgba(lightgray, 0.2);
+  }
+
+  &__highlight {
+    background-color: rgba(41, 41, 41, 0.1);
+    font-weight: bold;
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 720px;
+.externalWebsiteLink {
+  text-decoration: none;
+  color: mediumblue;
+  font-style: italic;
+
+  &:link {
+
+  }
+
+  &:visited {
+    color: purple;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: red;
+  }
+
+  &:focus {
+    outline: 2px dashed gray;
   }
 }
 
-@media (min-width: 992px) {
-  .container {
-    width: 960px;
-  }
-}
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    width: 1220px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    width: 1320px;
-  }
-}
