@@ -112,7 +112,7 @@ const NavHeader = () => {
                 </button>
                 <div id="navbar-menu" aria-labelledby="navbar-toggle">
                     <ul className="navbar-links">
-                        <li className="navbar-item"><Link className="navbar-link" to="/livestream">LiveStream</Link>
+                        <li className="navbar-item"><Link className="navbar-link" to="/livestream">Livestream</Link>
                         </li>
                         <li className="navbar-item"><Link className="navbar-link" to="/profile">Profile</Link></li>
                         <li className="navbar-item"><Link className="navbar-link" to="/register">register</Link></li>

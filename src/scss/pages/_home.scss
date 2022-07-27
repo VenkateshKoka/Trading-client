@@ -40,7 +40,7 @@ $font-color-text: #666;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: rgba(8, 8, 8, 0.75);
+      color: rgba(255, 255, 255, 0.75);
       width: 45%;
     }
   }
@@ -50,7 +50,7 @@ $font-color-text: #666;
     flex-direction: column;
     align-items: center;
     position: relative;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    background: linear-gradient(to bottom right, rgba(155, 155, 155, 0.7), rgba(155, 155, 155, 0.3));
     border-radius: 2rem;
     backdrop-filter: blur(2rem);
     background-size: cover;

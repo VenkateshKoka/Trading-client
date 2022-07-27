@@ -88,11 +88,11 @@ const Home = () => {
         const tradingViewWidget = document.createElement("div");
         tradingViewWidget.setAttribute("id", "tradingView");
         const script = document.createElement("script");
-        script.src =
-            "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+        script.type = "text/javascript";
+        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
         script.async = true;
         script.text = `
-                "symbols": [
+                {"symbols": [
             {
                 "proName": "FOREXCOM:SPXUSD",
                 "title": "S&P 500"
@@ -115,11 +115,11 @@ const Home = () => {
             }
                 ],
                 "showSymbolLogo": true,
-                "colorTheme": "light",
-                "isTransparent": false,
+                "colorTheme": "dark",
+                "isTransparent": true,
                 "displayMode": "adaptive",
                 "locale": "in"
-            `;
+            }`;
         tradingViewWidget.appendChild(script);
         document.getElementById("root").appendChild(tradingViewWidget);
 
