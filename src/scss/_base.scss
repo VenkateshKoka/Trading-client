@@ -23,22 +23,26 @@ $grid-breakpoints: (
 h1 {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
+  @media screen and (max-width: 576px) {
+    font-size: 16px;
+    //font-weight: 500;
+  }
 }
 
 .container {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 24px;
+  padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
 
-  @media (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     width: 95%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
-  @media (min-width: 576px) {
+  @media screen and (min-width: 576px) {
     width: calc(94%);
     max-width: 1380px;
     padding-right: 25px;

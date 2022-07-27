@@ -7,6 +7,7 @@
 @import "pages/auth/login";
 @import "pages/auth/profile";
 @import "pages/auth/register";
+@import "pages/trading/livestream";
 
 * {
   margin: 0;
@@ -20,10 +21,10 @@ html {
 
 body {
   position: relative;
-  background: linear-gradient(to right, rgba(215, 219, 215, 0.4), rgba(215, 200, 215, 0.4));
+  //background: linear-gradient(to right, rgba(215, 219, 215, 0.4), rgba(215, 200, 215, 0.4));
   line-height: 1.6;
   letter-spacing: -0.06px;
-  color: rgba(41, 41, 41, 1);
+  //color: rgba(41, 41, 41, 1);
   font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
   text-rendering: optimizeLegibility;
   font-size: 20px;
@@ -43,9 +44,8 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
-  //background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-  //background-blend-mode: lighten;
-  
+  background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background-blend-mode: lighten;
 }
 
 #tradingView {

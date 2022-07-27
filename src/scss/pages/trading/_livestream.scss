@@ -1,0 +1,12 @@
+@import "../../base";
+
+.livestream {
+  display: flex;
+  width: 100%;
+  margin-top: 64px;
+  padding-top: 10px;
+  
+  @media screen and (max-width: 788px) {
+    margin-top: 92px;
+  }
+}

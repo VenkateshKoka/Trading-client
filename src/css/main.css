@@ -1,19 +1,22 @@
 h1 {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
-  font-weight: 600; }
+  font-weight: 700; }
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 16px; } }
 
 .container {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 24px;
+  padding-left: 24px;
   margin-right: auto;
   margin-left: auto; }
-  @media (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     .container {
       width: 95%;
-      padding-right: 15px;
-      padding-left: 15px; } }
-  @media (min-width: 576px) {
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
     .container {
       width: calc(94%);
       max-width: 1380px;
@@ -193,6 +196,58 @@ h1 {
     width: 100%;
     height: 100%; } }
 
+h1 {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700; }
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 16px; } }
+
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (max-width: 576px) {
+    .container {
+      width: 95%;
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
+    .container {
+      width: calc(94%);
+      max-width: 1380px;
+      padding-right: 25px;
+      padding-left: 25px; } }
+
+.information {
+  padding: 15px 30px;
+  border-radius: 15px;
+  align-self: center;
+  font-style: italic; }
+  @media screen and (max-width: 760px) {
+    .information {
+      padding: 15px 20px; } }
+  .information__important {
+    background-color: rgba(211, 211, 211, 0.2); }
+  .information__highlight {
+    background-color: rgba(41, 41, 41, 0.1);
+    font-weight: bold; }
+
+.externalWebsiteLink {
+  text-decoration: none;
+  color: mediumblue;
+  font-style: italic; }
+  .externalWebsiteLink:visited {
+    color: purple; }
+  .externalWebsiteLink:hover {
+    text-decoration: underline; }
+  .externalWebsiteLink:active {
+    color: red; }
+  .externalWebsiteLink:focus {
+    outline: 2px dashed gray; }
+
 .home {
   display: flex;
   flex-direction: column;
@@ -207,12 +262,22 @@ h1 {
     opacity: 0.1; }
   .home__hero {
     display: flex;
-    flex-wrap: wrap; }
+    justify-content: space-around; }
     .home__hero__animation {
-      max-width: 50%;
-      height: auto; }
+      max-height: 500px;
+      max-width: 500px;
+      margin-top: -50px;
+      aspect-ratio: 1/1; }
+      @media screen and (max-width: 576px) {
+        .home__hero__animation {
+          width: 50%;
+          margin-top: 0px; } }
     .home__hero__content {
-      width: 50%; }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(8, 8, 8, 0.75);
+      width: 45%; }
   .home__tradingSteps {
     display: flex;
     flex-direction: column;
@@ -339,19 +404,22 @@ h1 {
 h1 {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
-  font-weight: 600; }
+  font-weight: 700; }
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 16px; } }
 
 .container {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 24px;
+  padding-left: 24px;
   margin-right: auto;
   margin-left: auto; }
-  @media (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     .container {
       width: 95%;
-      padding-right: 15px;
-      padding-left: 15px; } }
-  @media (min-width: 576px) {
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
     .container {
       width: calc(94%);
       max-width: 1380px;
@@ -388,19 +456,22 @@ h1 {
 h1 {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
-  font-weight: 600; }
+  font-weight: 700; }
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 16px; } }
 
 .container {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 24px;
+  padding-left: 24px;
   margin-right: auto;
   margin-left: auto; }
-  @media (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     .container {
       width: 95%;
-      padding-right: 15px;
-      padding-left: 15px; } }
-  @media (min-width: 576px) {
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
     .container {
       width: calc(94%);
       max-width: 1380px;
@@ -447,19 +518,22 @@ h1 {
 h1 {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
-  font-weight: 600; }
+  font-weight: 700; }
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 16px; } }
 
 .container {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 24px;
+  padding-left: 24px;
   margin-right: auto;
   margin-left: auto; }
-  @media (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     .container {
       width: 95%;
-      padding-right: 15px;
-      padding-left: 15px; } }
-  @media (min-width: 576px) {
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
     .container {
       width: calc(94%);
       max-width: 1380px;
@@ -498,6 +572,67 @@ h1 {
   margin-bottom: 10px;
   text-align: justify; }
 
+h1 {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700; }
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 16px; } }
+
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (max-width: 576px) {
+    .container {
+      width: 95%;
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
+    .container {
+      width: calc(94%);
+      max-width: 1380px;
+      padding-right: 25px;
+      padding-left: 25px; } }
+
+.information {
+  padding: 15px 30px;
+  border-radius: 15px;
+  align-self: center;
+  font-style: italic; }
+  @media screen and (max-width: 760px) {
+    .information {
+      padding: 15px 20px; } }
+  .information__important {
+    background-color: rgba(211, 211, 211, 0.2); }
+  .information__highlight {
+    background-color: rgba(41, 41, 41, 0.1);
+    font-weight: bold; }
+
+.externalWebsiteLink {
+  text-decoration: none;
+  color: mediumblue;
+  font-style: italic; }
+  .externalWebsiteLink:visited {
+    color: purple; }
+  .externalWebsiteLink:hover {
+    text-decoration: underline; }
+  .externalWebsiteLink:active {
+    color: red; }
+  .externalWebsiteLink:focus {
+    outline: 2px dashed gray; }
+
+.livestream {
+  display: flex;
+  width: 100%;
+  margin-top: 64px;
+  padding-top: 10px; }
+  @media screen and (max-width: 788px) {
+    .livestream {
+      margin-top: 92px; } }
+
 * {
   margin: 0;
   padding: 0;
@@ -508,10 +643,8 @@ html {
 
 body {
   position: relative;
-  background: linear-gradient(to right, rgba(215, 219, 215, 0.4), rgba(215, 200, 215, 0.4));
   line-height: 1.6;
   letter-spacing: -0.06px;
-  color: #292929;
   font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
   text-rendering: optimizeLegibility;
   font-size: 20px;
@@ -528,7 +661,9 @@ h1 {
 #root {
   position: absolute;
   left: 0;
-  right: 0; }
+  right: 0;
+  background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background-blend-mode: lighten; }
 
 #tradingView {
   position: absolute;

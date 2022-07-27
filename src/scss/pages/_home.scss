@@ -1,6 +1,7 @@
 $background-image-gradient-dark: linear-gradient(to bottom right, rgba(87, 86, 86, 0.9), rgba(152, 151, 151, 0.7));
 $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6, 236, 0.9), rgba(220, 0, 240, 0.7));
 $font-color-text: #666;
+@import "../../scss/base";
 .home {
   display: flex;
   flex-direction: column;
@@ -19,15 +20,28 @@ $font-color-text: #666;
 
   &__hero {
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
+    justify-content: space-around;
 
     &__animation {
-      max-width: 50%;
-      height: auto;
+      max-height: 500px;
+      max-width: 500px;
+      margin-top: -50px;
+      //min-width: 240px;
+      aspect-ratio: 1/1;
+
+      @media screen and (max-width: 576px) {
+        width: 50%;
+        margin-top: 0px;
+      }
     }
 
     &__content {
-      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(8, 8, 8, 0.75);
+      width: 45%;
     }
   }
 

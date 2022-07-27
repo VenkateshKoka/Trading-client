@@ -180,18 +180,19 @@ const Home = () => {
 
     return (
         <div className="home" id="home">
-            <div className="home__hero container">
+            <div className="home__hero">
                 <div className="home__hero__animation">
                     <Player src="https://assets8.lottiefiles.com/packages/lf20_xwrbzebb.json"
                             background="transparent"
-                            speed="0.5"
+                            speed="1"
                             style={{width: "100%", height: "100%", opacity: "0.9"}}
                             loop
                             autoplay>
                     </Player>
                 </div>
                 <div className="home__hero__content">
-                    <h1>Best way to improve on your trading journey</h1>
+                    <h1>Unlock your trading potential. Make the lottie animation only when it's in page
+                        focus. see if you can stop the animation after few seconds </h1>
                 </div>
             </div>
             <div className="home__tradingSteps container">

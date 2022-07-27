@@ -34,6 +34,7 @@ import {setContext} from "@apollo/client/link/context";
 import Webhook from "./pages/Webhook";
 import Selection from "./pages/trading/Selection";
 import Timing from "./pages/trading/Timing";
+import LiveStream from "./pages/trading/LiveStream";
 
 
 const App = () => {
@@ -135,6 +136,7 @@ const App = () => {
                 <Route path="/users/:username" element={<SingleUser/>}/>
                 <Route path="/trading/selection" element={<Selection/>}/>
                 <Route path="/trading/timing" element={<Timing/>}/>
+                <Route path="/livestream" element={<LiveStream/>}/>
                 <Route path="/webhook" element={<Webhook/>}/>
             </Routes>
         </ApolloProvider>
