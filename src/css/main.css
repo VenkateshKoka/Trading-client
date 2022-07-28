@@ -285,8 +285,8 @@ h1 {
     align-items: center;
     position: relative;
     border-radius: 32px;
-    background-size: cover;
-    background: #2F3047; }
+    background: #2F3047;
+    box-shadow: 0px 24px 40px rgba(28, 28, 40, 0.5); }
     .home__tradingSteps__title {
       display: flex;
       flex-direction: column;
@@ -314,7 +314,6 @@ h1 {
         border-radius: 10px;
         margin-bottom: 30px;
         background-color: white;
-        z-index: 10;
         position: relative;
         transition: all 0.5s;
         cursor: pointer; }
@@ -662,7 +661,7 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
-  background-color: #0e1129; }
+  background-color: #fafafa; }
 
 #tradingView {
   position: absolute;
