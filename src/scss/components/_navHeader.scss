@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   height: $navbar-height;
-  background-color: rgba(#0e1129, 1);
+  background-color: $color-background-dark;
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -33,9 +33,7 @@
 
 .home-link,
 .navbar-link {
-  color: $navbar-text-color;
-  color: rgba(255, 255, 255, 0.8);
-  color: rgb(62, 123, 250);
+  color: $color-button-dark;
   text-decoration: none;
   display: flex;
   font-weight: 400;

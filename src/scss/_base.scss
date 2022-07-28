@@ -1,9 +1,14 @@
 $color-background-light: #fafafa;
-$color-border-light: #eaeaea;
+//$color-background-dark: #272a42;
+//$color-background-dark: #0e1129;
+$color-background-dark: rgba(40, 41, 61, 1);
+//$color-background-dark: rgba(28, 28, 40, 1);
+//$color-border-light: #eaeaea;
 $color-font-mute: rgba(105, 105, 105, 1);
 $color-font-active: #0070f3;
 $color-button-mute: #0070f3;
 $color-button-hover: #fff;
+$color-button-dark: rgb(255, 255, 255);
 
 $navbar-height: 64px;
 $navbar-bg-color: rgba(255, 255, 255, 1);
