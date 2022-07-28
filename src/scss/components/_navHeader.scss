@@ -5,8 +5,8 @@
   top: 0;
   height: $navbar-height;
   background-color: rgba(#0e1129, 1);
-  font-family: "Roboto", serif;
-  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   text-transform: capitalize;
   z-index: 10;
@@ -35,6 +35,7 @@
 .navbar-link {
   color: $navbar-text-color;
   color: rgba(255, 255, 255, 0.8);
+  color: rgb(62, 123, 250);
   text-decoration: none;
   display: flex;
   font-weight: 400;
