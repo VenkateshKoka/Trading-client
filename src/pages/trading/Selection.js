@@ -1,20 +1,22 @@
 import React, {Fragment} from "react";
 import {Link} from "react-router-dom";
+import BulbBlinking from "../../components/animations/BulbBlinking";
 
 const Selection = () => {
     return (
         <div className="selection container">
-            <h3><em>What stocks to buy to achieve big returns</em></h3>
-            <div className="selection__content">
+            <h1><em>What stocks to buy to achieve big returns</em></h1>
+            <p className="selection__content">
                 The goal of trading or investing is to compound your capital without taking unnecessary risks. Although
                 there are many financial markets like stocks, futures, bonds, market indices, precious metals, and
                 currencies. we will be learning about achieving super-performance by trading stocks without substantial
                 risk to your financial and mental capital.
-            </div>
+            </p>
             <div className="information information__highlight">
-                Buy stocks which are already in a uptrend
+                <BulbBlinking/>
+                Buy stocks which are already in an uptrend
             </div>
-            <div className="selection__content">
+            <p className="selection__content">
                 Most retail investors follow the "buy low, sell higher" rule and buy a stock when its price falls. Let
                 us carefully examine the first part - "Buy low" doesn't necessarily mean to buy a stock when its price
                 is at a discount. Although this strategy may work in some situations, many investors incur huge losses
@@ -24,8 +26,8 @@ const Selection = () => {
                 $20? No matter how good a company is, its stock price can still go lower. Stock market history provides
                 many instances where stocks of once great companies went to Zero, and averaging down will wipe out your
                 capital.
-            </div>
-            <div className="selection__content">
+            </p>
+            <p className="selection__content">
                 Imagine you are running a fashion boutique with ten green and ten red dresses in the store. For whatever
                 reason, consumers are eagerly buying red dresses compared to green ones. Now, if you want to re-stock
                 your store, which dresses would you order more - green or red? The red ones, because they are in huge
@@ -36,8 +38,8 @@ const Selection = () => {
                 will never go from $100 to $50. Instead, it will be trending upwards to greater than $100. That's why
                 you don't buy stocks in a price downtrend. A downtrend implies lower demand. Change your mindset to
                 follow the "buy high, sell higher" rule. Buy high means looking for stocks that are in an uptrend.
-            </div>
-            <div className="selection__content"> So what does stock in a downtrend or an uptrend means?
+            </p>
+            <p className="selection__content"> So what does stock in a downtrend or an uptrend means?
                 All stocks have four stages in their lifecycle.
                 <div>
                     <div>
@@ -69,16 +71,16 @@ const Selection = () => {
                     <Fragment>
                         <strong>
                             <em>If you avoid buying/averaging down stocks in stage 4 decline and only purchase stocks
-                                which are in stage 2 uptrend, your results improve drastically.
+                                which are in stage 2 uptrend, your results will improve significantly.
                             </em>
                         </strong>
                     </Fragment>
                 </div>
-            </div>
+            </p>
             <div className="information information__highlight">
                 Accelerated earnings per share
             </div>
-            <div className="selection__content">
+            <p className="selection__content">
                 So what causes an increased demand for a stock. In our fashion boutique situation, maybe the consumers
                 prefer the red dresses because of the color red or the fitting or the fabric is softer. So what
                 attributes of the stock drive the demand? Significant increase in recent one or two quarterly Earnings
@@ -89,22 +91,22 @@ const Selection = () => {
                 stocks from 1952 to 2001 showed earnings increases averaging more than 70% in the recent quarter before
                 they began price advances. The best companies show earnings up 100% to 500% or more! A mediocre 10% or
                 12% increase is not enough. When picking winning stocks, it's the bottom line that counts.
-            </div>
+            </p>
             <div className="information information__highlight">
                 Accelerated Revenue growth
             </div>
-            <div className="selection__content"> Even though the EPS growth of companies is the best metric, not all
+            <p className="selection__content"> Even though the EPS growth of companies is the best metric, not all
                 growth rates are the same. Companies
                 can still inflate earnings for a few quarters by reducing costs or spending less on advertising,
                 research and development, and other constructive activities. Earnings growth accompanied by higher sales
                 validates the quality of earnings. Annual revenue growth with accelerated earnings growth is the best
                 criteria for finding super-performance stocks. Make sure to select stocks with 25% to 50% and higher
                 annual revenue growth rates.
-            </div>
+            </p>
             <div className="information information__highlight">
                 High Relative Strength
             </div>
-            <div className="selection__content">
+            <p className="selection__content">
                 Relative Strength measures the stock performance relative to the stock market as a whole. The average RS
                 Rating of the best performing stocks from the early 1950s through 2008, before their major run-ups was
                 87(means the stocks are in top 87 percentile). In other words, the best stocks were already
@@ -112,8 +114,8 @@ const Selection = () => {
                 yet. So the rule for those who are determined to be big winners in the stock market is: look for the
                 genuine leaders and avoid laggards and sympathy plays. Don’t buy stocks with Relative Strength Ratings
                 in the 40s, 50s, or 60s.
-            </div>
-            <div className="selection__content">
+            </p>
+            <p className="selection__content">
                 <span>
                     <a className="externalWebsiteLink" href="https://www.minervini.com/about.php" target="_blank"
                        rel="noopener noreferrer"><strong><em>Mark Minervini</em></strong></a>, U.S investing champion(1997 & 2021),
@@ -147,16 +149,16 @@ const Selection = () => {
                         with the better selections.
                     </div>
                 </div>
-            </div>
-            <div>Stock Screens used by mark minervini in Maketsmith are :
+            </p>
+            <p>Stock Screens used by mark minervini in Maketsmith are :
                 <div>Minervini trend template 5 month</div>
                 <div>Minervini trend template 1 month</div>
                 <div>RS line Blue dot — stocks making new Relative Strength high and breaking out.</div>
-            </div>
-            <div className="selection__content"> To conclude, You should buy stocks when they’re on the way up in
+            </p>
+            <p className="selection__content"> To conclude, You should buy stocks when they’re on the way up in
                 price, not on the way down. And when you buy more, you do it only after the stock has risen from your
                 purchase price, not after it has fallen below it.
-            </div>
+            </p>
         </div>
     );
 };

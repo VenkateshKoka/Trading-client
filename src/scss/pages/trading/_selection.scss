@@ -3,7 +3,7 @@
 .selection {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.8);
+  //background-color: $color-background-dark-glass;
   backdrop-filter: blur(32px);
 
   &__content {

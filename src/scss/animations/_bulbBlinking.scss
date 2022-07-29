@@ -1,0 +1,10 @@
+#bulb-svg {
+  transform: rotate(30deg);
+  height: 60px;
+  width: 60px;
+}
+
+#bulb {
+  filter: drop-shadow(0px 10px 6px rgba(255, 204, 0, 0.4));
+  border-radius: 2px;
+}

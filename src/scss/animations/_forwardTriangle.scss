@@ -1,0 +1,119 @@
+// css for the rotation hexagon animation
+.spinning-hexagon {
+  height: auto;
+  width: auto;
+}
+
+.animated-svg {
+  height: 50px;
+  width: 50px;
+}
+
+#lines {
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+.animated-svg #symbol {
+  transform-origin: center center;
+  animation-name: spinFull;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  //animation-direction: alternate;
+
+}
+
+.animated-svg #colors {
+  transform-origin: center center;
+  animation-name: spinPiece;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  //animation-direction: alternate;
+}
+
+.animated-svg #lines {
+  transform-origin: center center;
+  animation-name: spinBackHalf;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  //animation-direction: alternate;
+}
+
+
+#box-connectors {
+  stroke: #777777;
+}
+
+@keyframes spinFull {
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(360deg);
+  }
+  50%, 75% {
+    transform: rotate(360deg);
+  }
+  75%, 100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spinPiece {
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(60deg);
+  }
+  50%, 75% {
+    transform: rotate(60deg);
+  }
+  75%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinHalf {
+  0%, 25% {
+    transform: rotate(0deg) scale(1);
+  }
+  25%, 50% {
+    transform: rotate(180deg) scale(1);
+  }
+  50%, 75% {
+    transform: rotate(180deg) scale(1);
+  }
+  75%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes spinBackHalf {
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(-180deg);
+  }
+  50%, 75% {
+    transform: rotate(-180deg);
+  }
+  75%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinBackFull {
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(-360deg);
+  }
+  50%, 75% {
+    transform: rotate(-360deg);
+  }
+  75%, 100% {
+    transform: rotate(0deg);
+  }
+}

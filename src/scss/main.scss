@@ -22,22 +22,41 @@ html {
 body {
   position: relative;
   //background: linear-gradient(to right, rgba(215, 219, 215, 0.4), rgba(215, 200, 215, 0.4));
-  line-height: 1.6;
-  letter-spacing: -0.06px;
-  //color: rgba(41, 41, 41, 1);
+  line-height: 1.2;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 300;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   @media screen and (max-width: 768px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
 h1 {
+  color: $color-text-highlight-dark;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  //font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-weight: 500;
+  }
+}
+
+p {
+  color: $color-text-body-dark;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: 100%;
+  letter-spacing: 0.2px;
+  line-height: 28px;
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 }
 
 #root {
