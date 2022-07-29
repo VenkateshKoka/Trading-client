@@ -78,6 +78,7 @@ const Selection = () => {
                 </div>
             </p>
             <div className="information information__highlight">
+                <BulbBlinking/>
                 Accelerated earnings per share
             </div>
             <p className="selection__content">
@@ -93,6 +94,7 @@ const Selection = () => {
                 12% increase is not enough. When picking winning stocks, it's the bottom line that counts.
             </p>
             <div className="information information__highlight">
+                <BulbBlinking/>
                 Accelerated Revenue growth
             </div>
             <p className="selection__content"> Even though the EPS growth of companies is the best metric, not all
@@ -104,6 +106,7 @@ const Selection = () => {
                 annual revenue growth rates.
             </p>
             <div className="information information__highlight">
+                <BulbBlinking/>
                 High Relative Strength
             </div>
             <p className="selection__content">

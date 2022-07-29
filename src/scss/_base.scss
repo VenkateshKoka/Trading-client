@@ -66,9 +66,6 @@ $grid-breakpoints: (
 }
 
 .information {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 16px 32px;
   border-radius: 16px;
   align-self: center;
@@ -79,7 +76,7 @@ $grid-breakpoints: (
   width: 100%;
   //background-color: #fffbdf;
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     padding: 12px 16px;
   }
 
@@ -88,6 +85,9 @@ $grid-breakpoints: (
   }
 
   &__highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
   }
 }
