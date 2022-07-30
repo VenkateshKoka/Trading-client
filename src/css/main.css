@@ -245,6 +245,42 @@
   .externalWebsiteLink:focus {
     outline: 2px dashed gray; }
 
+.circle-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  position: relative;
+  border-radius: 50%; }
+
+.app-logo {
+  position: absolute;
+  z-index: -1; }
+
+#play-icon {
+  overflow: hidden; }
+
+#tri-first {
+  /*   display: none; */
+  position: absolute;
+  left: -20px; }
+
+#tri-second {
+  fill: #6ed69a; }
+
+#tri-third {
+  margin-left: -3px; }
+
+#bulb-svg {
+  transform: rotate(30deg);
+  height: 60px;
+  width: 60px; }
+
+#bulb {
+  filter: drop-shadow(0px 10px 6px rgba(255, 204, 0, 0.4));
+  border-radius: 2px; }
+
 .spinning-hexagon {
   height: auto;
   width: auto; }
@@ -327,42 +363,6 @@
   75%, 100% {
     transform: rotate(0deg); } }
 
-#bulb-svg {
-  transform: rotate(30deg);
-  height: 60px;
-  width: 60px; }
-
-#bulb {
-  filter: drop-shadow(0px 10px 6px rgba(255, 204, 0, 0.4));
-  border-radius: 2px; }
-
-.circle-bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  position: relative;
-  border-radius: 50%; }
-
-.app-logo {
-  position: absolute;
-  z-index: -1; }
-
-#play-icon {
-  overflow: hidden; }
-
-#tri-first {
-  /*   display: none; */
-  position: absolute;
-  left: -20px; }
-
-#tri-second {
-  fill: #6ed69a; }
-
-#tri-third {
-  margin-left: -3px; }
-
 .home {
   display: flex;
   flex-direction: column;
@@ -377,7 +377,8 @@
     opacity: 0.1; }
   .home__hero {
     display: flex;
-    justify-content: space-around; }
+    gap: 20px;
+    justify-content: space-between; }
     .home__hero__animation {
       max-height: 500px;
       max-width: 500px;
@@ -392,7 +393,10 @@
       justify-content: center;
       align-items: center;
       color: #f3f3f3;
-      width: 45%; }
+      width: 50%; }
+      @media screen and (max-width: 768px) {
+        .home__hero__content h1 {
+          font-size: 18px; } }
   .home__tradingSteps {
     display: flex;
     flex-wrap: wrap;
@@ -408,9 +412,22 @@
       max-width: 480px;
       padding: 16px 24px;
       cursor: pointer;
-      border: #2F3047 1px solid;
-      color: #f3f3f3;
-      border-radius: 8px; }
+      background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.32);
+      color: #f3f3f3; }
+    .home__tradingSteps__screening {
+      background-color: darkolivegreen; }
+    .home__tradingSteps__timing {
+      background-color: rgba(72, 61, 139, 0.7); }
+    .home__tradingSteps__managing {
+      background-color: #5E2F6B; }
+    .home__tradingSteps__selling {
+      background-color: #785807; }
+    .home__tradingSteps__markethealth {
+      background-color: #B85B48; }
+    .home__tradingSteps__mindset {
+      background-color: #004D4D; }
   .home__liveStream {
     position: relative; }
 
@@ -651,6 +668,7 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 18px;
+  color: #fafafc;
   font-weight: 300;
   font-style: normal;
   -webkit-font-smoothing: antialiased; }

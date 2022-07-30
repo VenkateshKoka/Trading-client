@@ -1,119 +1,35 @@
-// css for the rotation hexagon animation
-.spinning-hexagon {
-  height: auto;
-  width: auto;
+// css for forward triangle animation
+.circle-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  position: relative;
+  //background: rgba(#b9f4bc, 1);
+  border-radius: 50%;
 }
 
-.animated-svg {
-  height: 50px;
-  width: 50px;
+.app-logo {
+  position: absolute;
+  z-index: -1;
 }
 
-#lines {
-  stroke: rgba(255, 255, 255, 0.8);
+#play-icon {
+  overflow: hidden;
 }
 
-.animated-svg #symbol {
-  transform-origin: center center;
-  animation-name: spinFull;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  //animation-direction: alternate;
-
+#tri-first {
+  /*   display: none; */
+  position: absolute;
+  left: -20px;
 }
 
-.animated-svg #colors {
-  transform-origin: center center;
-  animation-name: spinPiece;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  //animation-direction: alternate;
+#tri-second {
+  fill: #6ed69a;
 }
 
-.animated-svg #lines {
-  transform-origin: center center;
-  animation-name: spinBackHalf;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  //animation-direction: alternate;
+#tri-third {
+  margin-left: -3px;
 }
 
-
-#box-connectors {
-  stroke: #777777;
-}
-
-@keyframes spinFull {
-  0%, 25% {
-    transform: rotate(0deg);
-  }
-  25%, 50% {
-    transform: rotate(360deg);
-  }
-  50%, 75% {
-    transform: rotate(360deg);
-  }
-  75%, 100% {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes spinPiece {
-  0%, 25% {
-    transform: rotate(0deg);
-  }
-  25%, 50% {
-    transform: rotate(60deg);
-  }
-  50%, 75% {
-    transform: rotate(60deg);
-  }
-  75%, 100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes spinHalf {
-  0%, 25% {
-    transform: rotate(0deg) scale(1);
-  }
-  25%, 50% {
-    transform: rotate(180deg) scale(1);
-  }
-  50%, 75% {
-    transform: rotate(180deg) scale(1);
-  }
-  75%, 100% {
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-@keyframes spinBackHalf {
-  0%, 25% {
-    transform: rotate(0deg);
-  }
-  25%, 50% {
-    transform: rotate(-180deg);
-  }
-  50%, 75% {
-    transform: rotate(-180deg);
-  }
-  75%, 100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes spinBackFull {
-  0%, 25% {
-    transform: rotate(0deg);
-  }
-  25%, 50% {
-    transform: rotate(-360deg);
-  }
-  50%, 75% {
-    transform: rotate(-360deg);
-  }
-  75%, 100% {
-    transform: rotate(0deg);
-  }
-}

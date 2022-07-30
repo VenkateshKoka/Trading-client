@@ -1,44 +1,11 @@
 @import "../../scss/base";
 @import "../../scss/animations/forwardTriangle";
 @import "../../scss/animations/bulbBlinking";
+@import "../../scss/animations/hexagonRotating";
 
 $background-image-gradient-dark: linear-gradient(to bottom right, rgba(87, 86, 86, 0.9), rgba(152, 151, 151, 0.7));
 $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6, 236, 0.9), rgba(220, 0, 240, 0.7));
 
-
-.circle-bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  position: relative;
-  //background: rgba(#b9f4bc, 1);
-  border-radius: 50%;
-}
-
-.app-logo {
-  position: absolute;
-  z-index: -1;
-}
-
-#play-icon {
-  overflow: hidden;
-}
-
-#tri-first {
-  /*   display: none; */
-  position: absolute;
-  left: -20px;
-}
-
-#tri-second {
-  fill: #6ed69a;
-}
-
-#tri-third {
-  margin-left: -3px;
-}
 
 .home {
   display: flex;
@@ -59,7 +26,8 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
   &__hero {
     display: flex;
     //flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 20px;
+    justify-content: space-between;
 
     &__animation {
       max-height: 500px;
@@ -79,7 +47,12 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
       justify-content: center;
       align-items: center;
       color: $color-text-body-dark;
-      width: 45%;
+      width: 50%;
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 18px;
+        }
+      }
     }
   }
 
@@ -100,12 +73,45 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
       max-width: 480px;
       padding: 16px 24px;
       cursor: pointer;
-      //background: #2F3047;
-      //box-shadow: 0px 24px 40px rgba(28, 28, 40, 0.5);
-      border: #2F3047 1px solid;
-      color: $color-text-body-dark;
+      background: linear-gradient(to bottom right, rgba(#fff, 0.1), rgba(#fff, 0.1));
+      //box-shadow: 0px 24px 40px rgba(#0e1129, 1);
       border-radius: 8px;
+      //backdrop-filter: blur(10px);
+      //border-radius: 8px;
+      //box-shadow: inset 0px 0px 2px 0px rgba(102, 152, 250, 1);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.32);
+      color: $color-text-body-dark;
     }
+
+    &__screening {
+      //background-color: rgba(darkgreen, 0.6);
+      background-color: darkolivegreen;
+    }
+
+    &__timing {
+      background-color: rgba(darkslateblue, 0.7);
+    }
+
+    &__managing {
+      //background-color: #3A496B;
+      background-color: #5E2F6B;
+    }
+
+    &__selling {
+      //background-color: rgba(darkgoldenrod, 0.8);
+      background-color: #785807;
+    }
+
+    &__markethealth {
+      background-color: #B85B48;
+    }
+
+    &__mindset {
+      background-color: #004D4D;
+      //background-color: rgba(darkcyan, 0.6);
+    }
+
+
   }
 
   &__liveStream {

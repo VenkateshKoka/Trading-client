@@ -185,7 +185,7 @@ const Home = () => {
 
     return (
         <div className="home" id="home">
-            <div className="home__hero">
+            <div className="home__hero container">
                 <div className="home__hero__animation">
                     <Player src="https://assets8.lottiefiles.com/packages/lf20_xwrbzebb.json"
                             background="transparent"
@@ -203,30 +203,45 @@ const Home = () => {
             <div className="home__tradingSteps container">
                 <div className="home__tradingSteps__step home__tradingSteps__screening"
                      onClick={() => navigate(`/trading/selection`)}>
-                    <ForwardTriangle/>
-                    What to buy
+                    <BulbBlinking/>
+                    <h4>What to buy</h4>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__timing"
                      onClick={() => navigate(`/trading/timing`)}>
                     <SpinningHexagon/>
-                    When to buy
+                    <h4>When to buy</h4>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__managing">
-                    <BulbBlinking/>
-                    How much to buy and Managing the position once bought.
-                    How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%
-                    positions stopping you out at once only results in tiny percentage off on the total portfolio.
-                    How to add to positions(scaling in) if it goes right and what to do when the position goes wrong.
-                    Good place to introduce staggered stops.
+                    <ForwardTriangle/>
+                    <h4>
+                        How much to buy and Managing the position once bought.
+                        {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
+                        {/*positions stopping you out at once only results in tiny percentage off on the total portfolio.*/}
+                        {/*How to add to positions(scaling in) if it goes right and what to do when the position goes*/}
+                        {/*wrong.*/}
+                        {/*Good place to introduce staggered stops.*/}
+                    </h4>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selling">
-                    Selling into strength and selling when stocks starts trending down. It's voluntary selling vs
-                    involuntary selling.
+                    <h4>
+                        Selling into strength and selling when stocks starts trending down. It's voluntary selling vs
+                        involuntary selling.
+                    </h4>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__markethealth"
                      onClick={() => navigate(`/trading/markethealth`)}>
-                    General market health, which depends on your own positions and some indicators like market breadth
-                    of advances and declines and percentage of stocks above their own 200d and 50 moving averages
+                    <h4>General market health, which depends on your own positions and some indicators like market
+                        breadth of advances and declines and percentage of stocks above their own 200d and 50 moving
+                        averages
+                    </h4>
+                </div>
+                <div className="home__tradingSteps__step home__tradingSteps__mindset"
+                     onClick={() => navigate(`/trading/mindset`)}>
+                    <Player src="https://assets10.lottiefiles.com/packages/lf20_yfsmbm0r.json"
+                            background="transparent" speed="1" style={{width: "100px", height: "100px"}} loop
+                            autoplay>
+                    </Player>
+                    <h4>Mindset</h4>
                 </div>
             </div>
             {livePosts}

@@ -15,6 +15,12 @@ $navbar-text-color: rgba(114, 50, 250, 1);
 $navbar-text-color-focus: white;
 $navbar-bg-contrast: rgba(114, 50, 250, 1);
 
+// dark theme colors
+$dark-error: #CF6679;
+$dark-primary: #bb86fc;
+$dark-primary-variant: #3700b3;
+$dark-secondary: #03dac6;
+
 $grid-breakpoints: (
         xs: 0,
         sm: 576px,
@@ -74,7 +80,6 @@ $grid-breakpoints: (
   gap: 20px;
   font-size: 18px;
   width: 100%;
-  //background-color: #fffbdf;
 
   @media screen and (max-width: 768px) {
     padding: 12px 16px;
