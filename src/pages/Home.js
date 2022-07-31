@@ -201,7 +201,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="home__tradingSteps container">
-                <div className="home__tradingSteps__step home__tradingSteps__screening"
+                <div className="home__tradingSteps__step home__tradingSteps__selection"
                      onClick={() => navigate(`/trading/selection`)}>
                     <BulbBlinking/>
                     {/*<Player src="https://assets1.lottiefiles.com/private_files/lf30_gd2unfh8.json"*/}
