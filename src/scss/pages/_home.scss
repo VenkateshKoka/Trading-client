@@ -33,8 +33,9 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
       max-height: 500px;
       max-width: 500px;
       margin-top: -50px;
-      //min-width: 240px;
       aspect-ratio: 1/1;
+      // look into this opacity and do what's best-----------jaffa
+      opacity: 0.8;
 
       @media screen and (max-width: 576px) {
         width: 50%;
@@ -59,18 +60,19 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
   &__tradingSteps {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 20px;
+    margin-top: 48px;
     //position: relative;
     border-radius: 32px;
+    //justify-content: space-around;
 
     &__step {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 240px;
-      min-width: 340px;
-      max-width: 480px;
+      justify-content: space-evenly;
+      height: 200px;
+      width: 200px;
       padding: 16px 24px;
       cursor: pointer;
       background: linear-gradient(to bottom right, rgba(#fff, 0.1), rgba(#fff, 0.1));
@@ -81,34 +83,55 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
       //box-shadow: inset 0px 0px 2px 0px rgba(102, 152, 250, 1);
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.32);
       color: $color-text-body-dark;
+      overflow: hidden;
+      @media screen and (max-width: 768px) {
+        height: 200px;
+        width: 200px;
+      }
     }
 
     &__screening {
       //background-color: rgba(darkgreen, 0.6);
-      background-color: darkolivegreen;
+      //background-color: rgba(#FF8800, 0.6);
+      //background-color: rgba(#AD3e3e, 1);
+      background-color: rgba(#7A2C2C, 1);
     }
 
     &__timing {
+      // 8.7
       background-color: rgba(darkslateblue, 0.7);
+      // 12.99
+      //background-color: rgba(#2E2759, 1);
+    }
+
+    &__position-sizing {
+      //9.18;
+      background-color: #5E2F6B;
+      // 15.18
+      //background-color: #311938;
     }
 
     &__managing {
-      //background-color: #3A496B;
-      background-color: #5E2F6B;
+      background-color: #50516e;
     }
 
     &__selling {
-      //background-color: rgba(darkgoldenrod, 0.8);
-      background-color: #785807;
+      // 6.3
+      background-color: rgba(#785807, 0.8);
+      // 11.66
+      //background-color: #453304;
     }
 
     &__markethealth {
-      background-color: #B85B48;
+      // 11.35
+      background-color: rgba(#4D0099, 0.5);
+      // 15.12
+      //background-color: #330066;
     }
 
     &__mindset {
-      background-color: #004D4D;
       //background-color: rgba(darkcyan, 0.6);
+      background-color: #004D4D;
     }
 
 

@@ -204,41 +204,63 @@ const Home = () => {
                 <div className="home__tradingSteps__step home__tradingSteps__screening"
                      onClick={() => navigate(`/trading/selection`)}>
                     <BulbBlinking/>
+                    {/*<Player src="https://assets1.lottiefiles.com/private_files/lf30_gd2unfh8.json"*/}
+                    {/*        background="transparent" speed="1" style={{width: "80px", height: "80px"}} loop*/}
+                    {/*        autoplay></Player>*/}
                     <h4>What to buy</h4>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__timing"
                      onClick={() => navigate(`/trading/timing`)}>
-                    <SpinningHexagon/>
+                    <Player src="https://assets10.lottiefiles.com/packages/lf20_ccpdxyfc.json"
+                            background="transparent" speed="0.5" style={{width: "60px", height: "60px"}} loop
+                            autoplay>
+                    </Player>
                     <h4>When to buy</h4>
+                </div>
+                <div className="home__tradingSteps__step home__tradingSteps__position-sizing">
+                    <SpinningHexagon/>
+                    {/*<ForwardTriangle/>*/}
+                    {/*<Player src="https://assets9.lottiefiles.com/private_files/lf30_lem2zbj4.json"*/}
+                    {/*        background="transparent"*/}
+                    {/*        speed="0.5" style={{width: "80px", height: "80px"}} loop autoplay>*/}
+                    {/*</Player>*/}
+                    <h4>How much to buy</h4>
+                    {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
+                    {/*positions stopping you out at once only results in tiny percentage off on the total portfolio.*/}
+                    {/*How to add to positions(scaling in) if it goes right.*/}
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__managing">
                     <ForwardTriangle/>
-                    <h4>
-                        How much to buy and Managing the position once bought.
-                        {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
-                        {/*positions stopping you out at once only results in tiny percentage off on the total portfolio.*/}
-                        {/*How to add to positions(scaling in) if it goes right and what to do when the position goes*/}
-                        {/*wrong.*/}
-                        {/*Good place to introduce staggered stops.*/}
-                    </h4>
+                    <h4>Manage position</h4>
+                    {/*<h4>Manage position once bought.</h4>*/}
+                    {/*what to do when the position goes wrong. Good place to introduce staggered stops. How to rotate your*/}
+                    {/*portfolio money from the weaker performing stocks to the best. how to really concentrate your positions*/}
+                    {/*when everything goes well. how to parlay your profits to make bigger bets.*/}
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selling">
+                    <SpinningHexagon/>
                     <h4>
-                        Selling into strength and selling when stocks starts trending down. It's voluntary selling vs
-                        involuntary selling.
+                        When to sell
                     </h4>
+                    {/*Selling into strength and selling when stocks starts trending down. It's voluntary selling vs*/}
+                    {/*involuntary selling.*/}
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__markethealth"
                      onClick={() => navigate(`/trading/markethealth`)}>
-                    <h4>General market health, which depends on your own positions and some indicators like market
-                        breadth of advances and declines and percentage of stocks above their own 200d and 50 moving
-                        averages
-                    </h4>
+                    <Player src="https://assets10.lottiefiles.com/packages/lf20_xgdvjjxc.json" background="transparent"
+                            speed="1" style={{width: "80px", height: "80px"}} loop autoplay>
+                    </Player>
+                    <h4>Market health</h4>
+                    {/*<h4>which depends on your own positions and some indicators like market*/}
+                    {/*    breadth of advances and declines and percentage of stocks above their own 200d and 50 moving*/}
+                    {/*    averages*/}
+                    {/*</h4>*/}
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__mindset"
                      onClick={() => navigate(`/trading/mindset`)}>
                     <Player src="https://assets10.lottiefiles.com/packages/lf20_yfsmbm0r.json"
-                            background="transparent" speed="1" style={{width: "100px", height: "100px"}} loop
+                            background="transparent" speed="1"
+                            style={{marginTop: "-20px", width: "80px", height: "80px"}} loop
                             autoplay>
                     </Player>
                     <h4>Mindset</h4>
