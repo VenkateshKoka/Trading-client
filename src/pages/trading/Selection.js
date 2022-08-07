@@ -43,27 +43,29 @@ const Selection = () => {
                 All stocks have four stages in their lifecycle.
                 <div>
                     <div>
-                        <strong><em>Stage 1</em></strong>: Basing or accumulation period where institutional investors
+                        <strong><em>Stage 1</em></strong> : Basing or accumulation period where institutional investors
                         slowly begin acquiring positions in a stock. The stock price will be range bound for months, or
                         in some cases, years. Moving averages will be almost flat. The stock may be at a bargain, but it
                         is not wise for an individual investor to initiate position as the price may not increase for a
                         long time, tying up your money which can invested in other names.
                     </div>
                     <div>
-                        <strong><em>Stage 2</em></strong>: The advancing or uptrend phase is when the stock price breaks
+                        <strong><em>Stage 2</em></strong> : The advancing or uptrend phase is when the stock price
+                        breaks
                         out of the
                         accumulation phase price range accompanied by huge volume. The moving averages will be turning
                         up, and this is the ideal time to buy a stock. Most of the trading profits are made in this
                         stage 2 uptrend.
                     </div>
                     <div>
-                        <strong><em>Stage 3</em></strong>: The topping or distribution phase is when institutional
+                        <strong><em>Stage 3</em></strong> : The topping or distribution phase is when institutional
                         investors start
                         unwinding their positions. The stage 2 uptrend loses momentum, price action begins to
                         move sideways, and volume picks up as the bulls and bears fight for control.
                     </div>
                     <div>
-                        <strong><em>Stage 4</em></strong>: Declining or downtrend occurs as the remaining investors rush
+                        <strong><em>Stage 4</em></strong> : Declining or downtrend occurs as the remaining investors
+                        rush
                         to
                         liquidate their
                         positions. Volatility often increases even more during this phase.

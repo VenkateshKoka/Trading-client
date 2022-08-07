@@ -1,53 +1,87 @@
 import React from "react";
+import SandTimer from "../../components/animations/SandTimer";
 
 const Timing = () => {
     return (
         <div className="timing container">
 
-            <h1>This is just about the timing part and discussing the chart bases.</h1>
-
+            <h1>How to time your buys(entries) and learn the chart bases.</h1>
+            <div className="information information__highlight">
+                <SandTimer width="40px"/>
+                Every stock you buy has to be in an uptrend, but you do not purchase every stock in an uptrend.
+            </div>
             <p>
+                Buying demand for a stock causes its price to rise, and selling causes its price to fall. The higher
+                this demand, the better chance to continue its upward move. But how to know if there is high demand or
+                not? - trading volume determines that. A big move up in price accompanied by higher than average
+                volume(sometimes multiple times) suggest institutional investors are interested. Similarly, when a stock
+                pullbacks on lower volume than average indicates the selling pressure is low. These two properties -
+                higher volume during price advance and lower volume during decline, is what we are looking for.
+                The goal is to ride this price momentum as these institutions take many days to buy the stock.
+                <h2> Add pics of great volume breakout pics and rebounding and duds ---jaffa </h2>
+            </p>
+            <p>
+                Explain the buying and selling and VCP through a ABCDEFG diagram. like A-b price advance, b-c is the
+                pull back.
                 Explain the volume and price action through buying and selling dynamic and the volatility contraction
                 pattern. When to buy is mainly about pivots and the different structures. detailed explanation on bases
                 and structures are their own page
             </p>
             <p>
-                when the stocks are in stage 2 uptrend, there will be pullbacks and basing periods(caused by profit
-                taking). this is the time to buy the breakouts. These basing periods most commonly last from 5 to 26
-                weeks (but some cases it may take more months and even more than a year). generally a stock tops after
-                3-5 bases in the stage 2 uptrend. The later basing periods coincide with become obvious with more
-                volatility and institutional demand dries up. bases 1 and 2 generally comes off market correction, which
-                is the best time to buy. The goal is not to buy the cheapest price but to sell your stock higher than
-                you paid for, in the shortest period.
+                You have to execute a trade when there is a high probability of the stock price moving up, and in
+                addition to moving up, doing it rapidly. Often referred to as a pivot point. Sometimes the stock may go
+                lower rapidly, called a pivot failure, but you get to know the result quickly instead of tying up your
+                capital for a long time without much progress.
+            </p>
+            <p>
+                When a stock is in a stage 2 uptrend, there will be pullbacks and basing periods. When the stocks are in
+                a stage 2 uptrend, there will be pullbacks and basing periods(caused by profit taking or market
+                corrections). When stocks break out from these bases, this is the time to buy the breakouts. These
+                basing periods usually last from 5 to 26 weeks (in some cases, it may take more months and even more
+                than a year). Generally, a stock tops(stage 3/ distribution phase) after 3-5 bases in the stage 2
+                uptrend. The later basing periods coincide with becoming obvious with more volatility, and institutional
+                demand dries up. Bases 1 and 2 generally come off a market correction, which is the best time to buy.
+                <br/>
+                <b>Pullback</b> - Once a stock price moves up, inevitably, there would be some sellers to take profits
+                causing the price to pull back. Pullbacks are part and parcel of the game, but the extent of the
+                pullback is significant. Imagine a stock moved from 100 to 150. Now, if the stock pulls back to 110,
+                most of the buying is negated by selling. In another scenario, the same stock only comes back to 140,
+                meaning the stock is acting well and there are fewer sellers and when the stock completes the base and
+                breaks out on higher volume, this is the time to buy.
+                <br/>
+                <b>Base / basing period</b> - bases are formed when the sellers in the stock dry up over a period of
+                time. These basing periods most commonly last from 5 to 26 weeks (but some cases it may take more months
+                and even more than a year). Generally a stock tops after 3-5 bases in the stage 2 uptrend. The later
+                basing periods become obvious with more volatility and eventually institutional demand dries up.
+                Bases 1 and 2 generally comes off market correction, which is the best time to buy.
             </p>
 
-            <p>different types of chart formations: cup with handle, saucer with handle, double bottom, flat base,
-                square
-                box, high tight flags.
+            <div className="information information__highlight">
+                <SandTimer width="40px"/>
+                The goal is to sell your stock higher than you paid for, in the shortest period.
+            </div>
+
+            <p>There are different types of bases: cup with a handle, Saucer with a handle, double bottom, flat-base,
+                square box, high tight flags.
             </p>
 
-            <h1>powerplays/high tight flags:</h1>
+            <h3>Powerplays / High tight flags</h3>
             <p>Characteristics of a high tight flag:
                 <br/>
-                1. A rare pattern usually seen only once or twice during a bull market year.
+                1. A rare pattern usually seen during a bull market year.
                 <br/>
                 2. Usually a little known company, not widely known and certainly not the largest company in its
                 industry.
                 <br/>
                 3. Company has a new product that turns the not so well known stock into one that runs up rapidly, 100
-                to
-                120% or more in only 4 to 8 weeks and holds most of the huge gain while it moves sideways 3 to 5 weeks
-                and
-                corrects between just 10 to 25%
+                to 120% or more in only 4 to 8 weeks and holds most of the huge gain while it moves sideways 3 to 5
+                weeks and corrects between just 10 to 25%
             </p>
 
             <p>A “high, tight flag” price pattern is rare, occurring in no more than a few stocks during a bull market.
-                It
-                begins with the stock moving generally 100% to 120% in a very short period of time (four to eight
-                weeks). It
-                then corrects sideways no more than 10% to 25%, usually in three, four, or five weeks. This is the
-                strongest
-                of patterns, but it’s also very risky and difficult to interpret correctly.
+                It begins with the stock moving generally 100% to 120% in a very short period of time (four to eight
+                weeks). It then corrects sideways no more than 10% to 25%, usually in three, four, or five weeks. This
+                is the strongest of patterns, but it’s also very risky and difficult to interpret correctly.
             </p>
             <p>
                 cup with handles:
@@ -90,10 +124,6 @@ const Timing = () => {
 
             </p>
             <p>
-                The goal is not to buy at the lowest but at a point with higher probability of success and the stock
-                rapidly
-                trending upwards. we don’t want dead money.
-
                 Pivot buy points in correct chart base patterns are not typically based on a stock’s old high price.
                 Most of
                 them occur at 5% to 10% below the prior peak. The peak price in the handle area is what determines most

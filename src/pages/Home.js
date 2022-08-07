@@ -7,10 +7,16 @@ import {POST_ADDED, POST_UPDATED, POST_DELETED} from "../graphql/subscriptions";
 import PostCard from "../components/PostCard";
 import {toast} from "react-toastify";
 import {Player} from '@lottiefiles/react-lottie-player';
+import Lottie from "lottie-react";
 
 import ForwardTriangle from "../components/animations/ForwardTriangle";
 import SpinningHexagon from "../components/animations/SpinningHexagon";
 import BulbBlinking from "../components/animations/BulbBlinking";
+import SandTimer from "../components/animations/SandTimer";
+
+import mainAnimation from '../assets/homepage_main_lf20_xwrbzebb.json';
+import marketHealthAnimation from '../assets/91145-health-insurance.json';
+import mindsetAnimation from '../assets/98369-thinking-colors-adapted.json';
 
 const Home = () => {
     const [page, setPage] = useState(1);
@@ -187,13 +193,13 @@ const Home = () => {
         <div className="home" id="home">
             <div className="home__hero container">
                 <div className="home__hero__animation">
-                    <Player src="https://assets8.lottiefiles.com/packages/lf20_xwrbzebb.json"
-                            background="transparent"
-                            speed="1"
+                    <Lottie animationData={mainAnimation}
                             style={{width: "100%", height: "100%", opacity: "0.9"}}
-                            loop
-                            autoplay>
-                    </Player>
+                            background="transparent"
+                            speed={1}
+                            loop={true}
+                            autoplay={true}
+                    />
                 </div>
                 <div className="home__hero__content">
                     <h1>Unlock your trading potential. Make the lottie animation only when it's in page
@@ -204,26 +210,17 @@ const Home = () => {
                 <div className="home__tradingSteps__step home__tradingSteps__selection"
                      onClick={() => navigate(`/trading/selection`)}>
                     <BulbBlinking/>
-                    {/*<Player src="https://assets1.lottiefiles.com/private_files/lf30_gd2unfh8.json"*/}
-                    {/*        background="transparent" speed="1" style={{width: "80px", height: "80px"}} loop*/}
-                    {/*        autoplay></Player>*/}
                     <h4>What to buy</h4>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__timing"
                      onClick={() => navigate(`/trading/timing`)}>
-                    <Player src="https://assets10.lottiefiles.com/packages/lf20_ccpdxyfc.json"
-                            background="transparent" speed="0.5" style={{width: "60px", height: "60px"}} loop
-                            autoplay>
-                    </Player>
+                    <SandTimer/>
                     <h4>When to buy</h4>
                 </div>
-                <div className="home__tradingSteps__step home__tradingSteps__position-sizing">
+                <div className="home__tradingSteps__step home__tradingSteps__positionManagement"
+                     onClick={() => navigate(`/trading/positionManagement`)}>
                     <SpinningHexagon/>
                     {/*<ForwardTriangle/>*/}
-                    {/*<Player src="https://assets9.lottiefiles.com/private_files/lf30_lem2zbj4.json"*/}
-                    {/*        background="transparent"*/}
-                    {/*        speed="0.5" style={{width: "80px", height: "80px"}} loop autoplay>*/}
-                    {/*</Player>*/}
                     <h4>How much to buy</h4>
                     {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
                     {/*positions stopping you out at once only results in tiny percentage off on the total portfolio.*/}
@@ -247,9 +244,16 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__markethealth"
                      onClick={() => navigate(`/trading/markethealth`)}>
-                    <Player src="https://assets10.lottiefiles.com/packages/lf20_xgdvjjxc.json" background="transparent"
-                            speed="1" style={{width: "80px", height: "80px"}} loop autoplay>
-                    </Player>
+                    {/*<Player src="https://assets10.lottiefiles.com/packages/lf20_xgdvjjxc.json" background="transparent"*/}
+                    {/*        speed="1" style={{width: "80px", height: "80px"}} loop autoplay>*/}
+                    {/*</Player>*/}
+                    <Lottie animationData={marketHealthAnimation}
+                            style={{width: "80px", height: "80px"}}
+                            background="transparent"
+                            speed={1}
+                            loop={true}
+                            autoplay={true}
+                    />
                     <h4>Market health</h4>
                     {/*<h4>which depends on your own positions and some indicators like market*/}
                     {/*    breadth of advances and declines and percentage of stocks above their own 200d and 50 moving*/}
@@ -258,11 +262,18 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__mindset"
                      onClick={() => navigate(`/trading/mindset`)}>
-                    <Player src="https://assets10.lottiefiles.com/packages/lf20_yfsmbm0r.json"
-                            background="transparent" speed="1"
-                            style={{marginTop: "-20px", width: "80px", height: "80px"}} loop
-                            autoplay>
-                    </Player>
+                    {/*<Player src="https://assets10.lottiefiles.com/packages/lf20_yfsmbm0r.json"*/}
+                    {/*        background="transparent" speed="1"*/}
+                    {/*        style={{marginTop: "-20px", width: "80px", height: "80px"}} loop*/}
+                    {/*        autoplay>*/}
+                    {/*</Player>*/}
+                    <Lottie animationData={mindsetAnimation}
+                            style={{marginTop: "-20px", width: "80px", height: "80px"}}
+                            background="transparent"
+                            speed={1}
+                            loop={true}
+                            autoplay={true}
+                    />
                     <h4>Mindset</h4>
                 </div>
             </div>
