@@ -8,16 +8,16 @@ const toggleNavbarVisibility = () => {
     isNavbarExpanded = !isNavbarExpanded;
     navbarToggle.setAttribute("aria-expanded", isNavbarExpanded);
 };
-const toggleNavbarBoxShadow = () => {
-    if (window.pageYOffset > 0) {
-        navbar.classList.add("add-shadow");
-    } else {
-        navbar.classList.remove("add-shadow");
-    }
-};
+// const toggleNavbarBoxShadow = () => {
+//     if (window.pageYOffset > 0) {
+//         navbar.classList.add("add-shadow");
+//     } else {
+//         navbar.classList.remove("add-shadow");
+//     }
+// };
 
 navbarToggle.addEventListener("click", toggleNavbarVisibility);
-navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
+// navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
 navbarMenu.addEventListener("click", toggleNavbarVisibility);
 
-window.addEventListener("scroll", toggleNavbarBoxShadow);
+// window.addEventListener("scroll", toggleNavbarBoxShadow);

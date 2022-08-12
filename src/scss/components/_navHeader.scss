@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   height: $navbar-height;
-  background-color: $color-background-dark;
+  background-color: #1c1c28;
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -33,36 +33,54 @@
 
 .home-link,
 .navbar-link {
-  color: $color-button-dark;
-  text-decoration: none;
+  color: $color-text-highlight-dark;
+  /* unvisited link */
+  text-decoration-line: none;
+
+  &:link {
+    color: $color-text-highlight-dark;
+  }
+
+  /* visited link */
+  &:visited {
+    color: $color-text-highlight-dark;
+  }
+
+  /* mouse over link */
+  &:hover {
+    color: royalblue;
+  }
+
+  /* selected link */
+  &:active {
+    color: $color-text-highlight-dark;
+  }
+
   display: flex;
-  font-weight: 400;
   align-items: center;
   transition: all 0.5s ease-in-out;
 }
 
 .home-link:is(:focus, :hover) {
-  color: $navbar-text-color-focus;
-  background-color: $navbar-bg-contrast;
+  //color: $navbar-text-color-focus;
+  //background-color: $navbar-bg-contrast;
 }
 
 .navbar-link {
   justify-content: center;
-  //background: rgba(255, 255, 255, 0.1);
   width: 100%;
   padding: 8px 16px;
   border-radius: 8px;
-  //border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(25px);
 }
 
 .navbar-link:is(:focus, :hover) {
-  color: $navbar-text-color-focus;
+  //color: var(--font-color);
   //background-color: $navbar-bg-contrast;
 }
 
 .navbar-logo {
-  background-color: $navbar-text-color-focus;
+  background-color: var(--font-color);
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -86,7 +104,7 @@
   width: 25px;
   height: 4px;
   margin: 2px;
-  background-color: $navbar-text-color;
+  background-color: $color-text-highlight-dark;
   transition: all 0.5s;
 }
 

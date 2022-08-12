@@ -35,6 +35,11 @@ import Webhook from "./pages/Webhook";
 import Selection from "./pages/trading/Selection";
 import Timing from "./pages/trading/Timing";
 import LiveStream from "./pages/trading/LiveStream";
+import Selling from "./pages/trading/Selling";
+import MarketHealth from "./pages/trading/MarketHealth";
+import Mindset from "./pages/trading/Mindset";
+import PositionSizing from "./pages/trading/PositionSizing";
+import PositionManagement from "./pages/trading/PositionManagement";
 
 
 const App = () => {
@@ -136,6 +141,11 @@ const App = () => {
                 <Route path="/users/:username" element={<SingleUser/>}/>
                 <Route path="/trading/selection" element={<Selection/>}/>
                 <Route path="/trading/timing" element={<Timing/>}/>
+                <Route path="/trading/position-sizing" element={<PositionSizing/>}/>
+                <Route path="/trading/position-management" element={<PositionManagement/>}/>
+                <Route path="/trading/selling" element={<Selling/>}/>
+                <Route path="/trading/market-health" element={<MarketHealth/>}/>
+                <Route path="/trading/mindset" element={<Mindset/>}/>
                 <Route path="/livestream" element={<LiveStream/>}/>
                 <Route path="/webhook" element={<Webhook/>}/>
             </Routes>
