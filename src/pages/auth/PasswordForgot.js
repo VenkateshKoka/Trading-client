@@ -29,13 +29,17 @@ const PasswordForgot = () => {
 
     return (
         <div className="container p-5">
-            {loading ? <h4 className="text-danger">Loading...</h4> : <h4>Forgot Password</h4>}
-            <AuthForm
-                email={email}
-                setEmail={setEmail}
-                loading={loading}
-                handleSubmit={handleSubmit}
-            />
+            <div className="passwordForgot">
+                {loading ? <h4 className="text-danger">Loading...</h4> : <h4>Forgot Password ?</h4>}
+                {loading ? <p className="text-danger">Loading...</p> :
+                    <p> Submit your registered email and get a password reset link sent to your email ?</p>}
+                <AuthForm
+                    email={email}
+                    setEmail={setEmail}
+                    loading={loading}
+                    handleSubmit={handleSubmit}
+                />
+            </div>
         </div>
     )
 };

@@ -1,0 +1,18 @@
+.authForm {
+  min-width: 50%;
+
+  .input-group-text {
+    background: white;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+
+    &__eye {
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+
+  i {
+    background: transparent;
+    //background: black;
+  }
+}

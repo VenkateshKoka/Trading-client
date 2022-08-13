@@ -123,18 +123,18 @@ const Home = () => {
                 <div className="home__tradingSteps__step home__tradingSteps__selection"
                      onClick={() => navigate(`/trading/selection`)}>
                     <BulbBlinking/>
-                    <h4>What to Buy</h4>
+                    <h6>What to Buy</h6>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__timing"
                      onClick={() => navigate(`/trading/timing`)}>
                     <SandTimer/>
-                    <h4>When to Buy</h4>
+                    <h6>When to Buy</h6>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__positionManagement"
                      onClick={() => navigate(`/trading/position-sizing`)}>
                     <SpinningHexagon/>
                     {/*<ForwardTriangle/>*/}
-                    <h4>How much to Buy</h4>
+                    <h6>How much to Buy</h6>
                     {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
                     {/*positions stopping you out at once only results in tiny percentage off on the total portfolio.*/}
                     {/*How to add to positions(scaling in) if it goes right.*/}
@@ -142,7 +142,7 @@ const Home = () => {
                 <div className="home__tradingSteps__step home__tradingSteps__managing"
                      onClick={() => navigate(`/trading/position-management`)}>
                     <ForwardTriangle/>
-                    <h4>Manage Position</h4>
+                    <h6>Manage Position</h6>
                     {/*<h4>Manage position once bought.</h4>*/}
                     {/*what to do when the position goes wrong. Good place to introduce staggered stops. How to rotate your*/}
                     {/*portfolio money from the weaker performing stocks to the best. how to really concentrate your positions*/}
@@ -151,9 +151,9 @@ const Home = () => {
                 <div className="home__tradingSteps__step home__tradingSteps__selling"
                      onClick={() => navigate(`/trading/selling`)}>
                     <SpinningHexagon/>
-                    <h4>
+                    <h6>
                         When to Sell
-                    </h4>
+                    </h6>
                     {/*Selling into strength and selling when stocks starts trending down. It's voluntary selling vs*/}
                     {/*involuntary selling.*/}
                 </div>
@@ -163,13 +163,13 @@ const Home = () => {
                     {/*        speed="1" style={{width: "80px", height: "80px"}} loop autoplay>*/}
                     {/*</Player>*/}
                     <Lottie animationData={marketHealthAnimation}
-                            style={{width: "80px", height: "80px"}}
+                            style={{width: "70px", height: "70px"}}
                             background="transparent"
                             speed={1}
                             loop={true}
                             autoplay={true}
                     />
-                    <h4>Market Health</h4>
+                    <h6>Market Health</h6>
                     {/*<h4>which depends on your own positions and some indicators like market*/}
                     {/*    breadth of advances and declines and percentage of stocks above their own 200d and 50 moving*/}
                     {/*    averages*/}
@@ -184,7 +184,7 @@ const Home = () => {
                             loop={true}
                             autoplay={true}
                     />
-                    <h4>Mindset</h4>
+                    <h6>Mindset</h6>
                 </div>
             </div>
         </div>

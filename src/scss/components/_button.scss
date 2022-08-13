@@ -1,0 +1,70 @@
+@import "../base";
+
+.buttonJ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  color: $color-text-highlight-dark;
+  //background: linear-gradient(147.14deg, #00CFDE 6.95%, #05A660 93.05%);;
+  background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%);
+  //padding: 8px 16px;
+  cursor: pointer;
+
+  &__primary {
+    background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%);
+  }
+
+  &__secondary {
+    background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%);
+  }
+
+  &__transparent {
+    background: transparent;
+  }
+
+  &__bounce {
+
+    &:hover {
+      text-transform: none;
+      @include z-depth-animation(2);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__children {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+
+  }
+
+  //&--no-shadow {
+  //  box-shadow: none !important;
+  //}
+
+
+  // --- States ---
+  &:active {
+  }
+
+  &:focus {
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &:disabled {
+  }
+}

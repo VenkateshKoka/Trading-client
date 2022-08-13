@@ -63,13 +63,36 @@ const NavHeader = () => {
                         <DarkMode></DarkMode>
                         <li className="navbar-item"><Link className="navbar-link" to="/livestream">Livestream</Link>
                         </li>
-                        <li className="navbar-item"><Link className="navbar-link" to="/profile">Profile
-                            {/*<img src={profileImage} width="50px"/>*/}
-                        </Link></li>
-                        <li className="navbar-item"><Link className="navbar-link" to="/register">Register
-                            {/*<img src={bulbSvg} width="50px"/>*/}
-                        </Link></li>
-                        <li className="navbar-item"><Link className="navbar-link" to="/login">Login</Link></li>
+                        {user && (
+                            <li className="navbar-item">
+                                <Link className="navbar-link" aria-current="page" to="/profile">
+                                    Profile
+                                </Link>
+                            </li>
+                        )}
+                        {!user &&
+                            <Fragment>
+                                <li className="navbar-item">
+                                    <Link className="navbar-link" aria-current="page" to="/register">Register</Link>
+                                </li>
+                                <li className="navbar-item">
+                                    <Link className="navbar-link" aria-current="page" to="/login">Login</Link>
+                                </li>
+                            </Fragment>
+                        }
+                        {user && (
+                            <li className="navbar-item">
+                                <Link className="navbar-link" aria-current="page" to="/login"
+                                      onClick={logout}>Logout</Link>
+                            </li>
+                        )}
+                        {/*<li className="navbar-item"><Link className="navbar-link" to="/profile">Profile*/}
+                        {/*    /!*<img src={profileImage} width="50px"/>*!/*/}
+                        {/*</Link></li>*/}
+                        {/*<li className="navbar-item"><Link className="navbar-link" to="/register">Register*/}
+                        {/*    /!*<img src={bulbSvg} width="50px"/>*!/*/}
+                        {/*</Link></li>*/}
+                        {/*<li className="navbar-item"><Link className="navbar-link" to="/login">Login</Link></li>*/}
                     </ul>
                 </div>
             </nav>

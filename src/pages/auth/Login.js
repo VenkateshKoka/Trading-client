@@ -8,6 +8,7 @@ import {useMutation} from "@apollo/react-hooks";
 import {gql} from "apollo-boost";
 import AuthForm from "../../components/forms/AuthForm";
 import {Link} from "react-router-dom";
+import Button from "../../components/Button";
 
 const USER_CREATE = gql`
     mutation userCreate {
@@ -75,12 +76,37 @@ const Login = () => {
     }
 
     return (
-        <div className="login container">
-            {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4>Login</h4>)}
-            <button onClick={googleLogin} className="btn btn-raised btn-danger mt-5">Login with Google</button>
-            <AuthForm email={email} password={password} setEmail={setEmail} setPassword={setPassword}
-                      loading={loading} handleSubmit={handleSubmit} showPasswordInput={true}/>
-            <Link className="text-danger float-right" to="/password/forgot">Forgot Password</Link>
+        <div className="login">
+            <div className="login__welcome">
+                <h1>Welcome to the Jaffa team</h1>
+                <p>Explain the functionalities unlocked by creating an account or logging in.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequats</p>
+            </div>
+            <div className="login__form">
+                {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4>Come join us</h4>)}
+                <div className="login__form__social">
+                    <span>Sign in using</span>
+                    <Button onClick={googleLogin} className="btn buttonJ buttonJ__primary"
+                            ripple={true}><i
+                        className="fab fa-google fa-lg me-4"></i>
+                        Google</Button>
+                </div>
+                <div className="divider d-flex align-items-center my-4">
+                    <p className="text-center fw-bold mx-3 mb-0">Or</p>
+                </div>
+                <AuthForm email={email} password={password} setEmail={setEmail} setPassword={setPassword}
+                          loading={loading} handleSubmit={handleSubmit} showPasswordInput={true}/>
+                <Link className="small" to="/password/forgot">Forgot Password?</Link>
+                <div className="d-flex align-items-center justify-content-center pb-4 mt-4">
+                    <p className="mb-0 me-2">Don't have an account?</p>
+                    <button type="button" className="btn btn-outline-danger"
+                            data-mdb-ripple-color="#FF8800">Register
+                        here
+                    </button>
+                </div>
+            </div>
         </div>
     )
 };

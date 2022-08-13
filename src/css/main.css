@@ -96,7 +96,7 @@
     color: #fafafc; }
   .home-link:hover,
   .navbar-link:hover {
-    color: royalblue; }
+    background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%); }
   .home-link:active,
   .navbar-link:active {
     color: #fafafc; }
@@ -131,11 +131,11 @@
   width: 25px;
   height: 4px;
   margin: 2px;
-  background-color: #fafafc;
+  background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%);
   transition: all 0.5s; }
 
 #navbar-toggle:is(:focus, :hover) .icon-bar {
-  background-color: #7232fa; }
+  background-color: #FF8800; }
 
 #navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
   position: absolute;
@@ -259,12 +259,108 @@
   .externalWebsiteLink:focus {
     outline: 2px dashed gray; }
 
+.buttonJ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  color: #fafafc;
+  background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%);
+  cursor: pointer; }
+  .buttonJ__primary {
+    background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%); }
+  .buttonJ__secondary {
+    background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%); }
+  .buttonJ__transparent {
+    background: transparent; }
+  .buttonJ__bounce:hover {
+    text-transform: none;
+    transform: translateY(-2px); }
+    .buttonJ__bounce:hover:hover, .buttonJ__bounce:hover:focus {
+      box-shadow: 0 8px 17px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); }
+  .buttonJ__children {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .buttonJ:hover {
+    color: white; }
+
+.authForm {
+  min-width: 50%; }
+  .authForm .input-group-text {
+    background: white;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px; }
+    .authForm .input-group-text__eye {
+      border-radius: 0px 4px 4px 0px; }
+  .authForm i {
+    background: transparent; }
+
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (max-width: 576px) {
+    .container {
+      width: 95%;
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
+    .container {
+      width: calc(94%);
+      max-width: 1380px;
+      padding-right: 24px;
+      padding-left: 24px; } }
+
+.information {
+  padding: 16px 0px;
+  border-radius: 16px;
+  align-self: center;
+  font-style: italic;
+  gap: 12px;
+  font-size: 18px;
+  width: 100%;
+  margin: 20px 0px; }
+  @media screen and (max-width: 768px) {
+    .information {
+      padding: 12px 0px;
+      margin: 10px 0;
+      gap: 12px;
+      font-size: 15px; } }
+  .information__important {
+    background-color: rgba(211, 211, 211, 0.2); }
+  .information__highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; }
+
+.externalWebsiteLink {
+  text-decoration: none;
+  color: #bb86fc;
+  font-style: italic; }
+  .externalWebsiteLink:visited {
+    color: #CF6679; }
+  .externalWebsiteLink:hover {
+    text-decoration: underline; }
+  .externalWebsiteLink:active {
+    color: red; }
+  .externalWebsiteLink:focus {
+    outline: 2px dashed gray; }
+
 .circle-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 66px;
-  height: 66px;
+  width: 60px;
+  height: 60px;
   position: relative;
   border-radius: 50%; }
 
@@ -419,7 +515,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
       height: 150px;
       width: 150px;
       cursor: pointer;
@@ -673,6 +769,100 @@
   .externalWebsiteLink:focus {
     outline: 2px dashed gray; }
 
+.login {
+  display: flex;
+  margin-top: 50px;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap-reverse;
+  height: 100%; }
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    flex: 1; }
+    .login__form__social {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px; }
+    .login__form .divider:after,
+    .login__form .divider:before {
+      content: " ";
+      width: 100px;
+      flex: 1;
+      height: 1px;
+      background: #808080; }
+    .login__form .button {
+      background: transparent linear-gradient(90deg, #AE0A62 0%, #F8AA43 100%) 0% 0% no-repeat padding-box; }
+  .login__welcome {
+    flex: 1;
+    min-width: 300px; }
+
+.passwordForgot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (max-width: 576px) {
+    .container {
+      width: 95%;
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
+    .container {
+      width: calc(94%);
+      max-width: 1380px;
+      padding-right: 24px;
+      padding-left: 24px; } }
+
+.information {
+  padding: 16px 0px;
+  border-radius: 16px;
+  align-self: center;
+  font-style: italic;
+  gap: 12px;
+  font-size: 18px;
+  width: 100%;
+  margin: 20px 0px; }
+  @media screen and (max-width: 768px) {
+    .information {
+      padding: 12px 0px;
+      margin: 10px 0;
+      gap: 12px;
+      font-size: 15px; } }
+  .information__important {
+    background-color: rgba(211, 211, 211, 0.2); }
+  .information__highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; }
+
+.externalWebsiteLink {
+  text-decoration: none;
+  color: #bb86fc;
+  font-style: italic; }
+  .externalWebsiteLink:visited {
+    color: #CF6679; }
+  .externalWebsiteLink:hover {
+    text-decoration: underline; }
+  .externalWebsiteLink:active {
+    color: red; }
+  .externalWebsiteLink:focus {
+    outline: 2px dashed gray; }
+
 .livestream {
   display: flex;
   width: 100%;
@@ -696,7 +886,7 @@ html {
   right: 0;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.2px;
   line-height: 1.6;
   font-weight: 400;
@@ -716,7 +906,7 @@ html {
         font-weight: 500; } }
   #root p {
     font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400; }
     @media screen and (max-width: 768px) {
       #root p {

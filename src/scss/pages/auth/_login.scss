@@ -1,2 +1,49 @@
+@import "../../base";
+
 .login {
+  display: flex;
+  margin-top: 50px;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap-reverse;
+  height: 100%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: center;
+    width: 350px;
+    flex: 1;
+
+    &__social {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .divider:after,
+    .divider:before {
+      content: " ";
+      width: 100px;
+      flex: 1;
+      height: 1px;
+      background: #808080;
+    }
+
+
+    .button {
+      background: transparent linear-gradient(90deg, #AE0A62 0%, #F8AA43 100%) 0% 0% no-repeat padding-box;
+    }
+  }
+
+  &__welcome {
+    flex: 1;
+    min-width: 300px;
+  }
 }

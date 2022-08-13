@@ -48,7 +48,7 @@
 
   /* mouse over link */
   &:hover {
-    color: royalblue;
+    background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%);
   }
 
   /* selected link */
@@ -104,12 +104,12 @@
   width: 25px;
   height: 4px;
   margin: 2px;
-  background-color: $color-text-highlight-dark;
+  background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%);
   transition: all 0.5s;
 }
 
 #navbar-toggle:is(:focus, :hover) .icon-bar {
-  background-color: $navbar-text-color;
+  background-color: #FF8800;
 }
 
 #navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
