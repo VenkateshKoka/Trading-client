@@ -26,11 +26,11 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async user => {
             if (user) {
-                const idTokenReult = await user.getIdTokenResult();
+                const idTokenResult = await user.getIdTokenResult();
 
                 dispatch({
                     type: 'LOGGED_IN_USER',
-                    payload: {email: user.email, token: idTokenReult}
+                    payload: {email: user.email, token: idTokenResult}
                 })
             } else {
                 dispatch({

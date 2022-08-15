@@ -291,6 +291,63 @@
   .buttonJ:hover {
     color: white; }
 
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (max-width: 576px) {
+    .container {
+      width: 95%;
+      padding-right: 16px;
+      padding-left: 16px; } }
+  @media screen and (min-width: 576px) {
+    .container {
+      width: calc(94%);
+      max-width: 1380px;
+      padding-right: 24px;
+      padding-left: 24px; } }
+
+.information {
+  padding: 16px 0px;
+  border-radius: 16px;
+  align-self: center;
+  font-style: italic;
+  gap: 12px;
+  font-size: 18px;
+  width: 100%;
+  margin: 20px 0px; }
+  @media screen and (max-width: 768px) {
+    .information {
+      padding: 12px 0px;
+      margin: 10px 0;
+      gap: 12px;
+      font-size: 15px; } }
+  .information__important {
+    background-color: rgba(211, 211, 211, 0.2); }
+  .information__highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; }
+
+.externalWebsiteLink {
+  text-decoration: none;
+  color: #bb86fc;
+  font-style: italic; }
+  .externalWebsiteLink:visited {
+    color: #CF6679; }
+  .externalWebsiteLink:hover {
+    text-decoration: underline; }
+  .externalWebsiteLink:active {
+    color: red; }
+  .externalWebsiteLink:focus {
+    outline: 2px dashed gray; }
+
+.postCard {
+  display: flex;
+  background-color: skyblue; }
+
 .authForm {
   min-width: 50%; }
   .authForm .input-group-text {
@@ -542,8 +599,6 @@
       background-color: #5a1d98; }
     .home__tradingSteps__mindset {
       background-color: #004D4D; }
-  .home__liveStream {
-    position: relative; }
 
 .container {
   padding-right: 24px;
@@ -865,12 +920,20 @@
 
 .livestream {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   margin-top: 64px;
   padding-top: 10px; }
   @media screen and (max-width: 788px) {
     .livestream {
       margin-top: 92px; } }
+  .livestream__watchList {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .livestream__posts {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; }
 
 * {
   margin: 0;

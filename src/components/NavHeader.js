@@ -6,7 +6,6 @@ import {AuthContext} from "../context/authContext";
 import {signOut} from "firebase/auth";
 import {toast} from "react-toastify";
 import Search from "./Search";
-import "../css/main.css";
 import DarkMode from "./DarkMode";
 import profileImage from '../assets/profile.png';
 import bulbSvg from '../assets/bulb.svg';

@@ -93,7 +93,6 @@ const Home = () => {
 
         const observer = new MutationObserver(mutationCallback);
         observer.observe(document.documentElement, {attributes: true})
-        // console.log("the document element is ---jaffa", document.documentElement)
 
 
         return () => {

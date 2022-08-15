@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext, useEffect, Fragment} from "react";
 import {Player} from '@lottiefiles/react-lottie-player';
 import {useLazyQuery, useQuery, useSubscription} from "@apollo/client";
 import {GET_ALL_POSTS, NUMBER_OF_POSTS} from "../../graphql/queries";
@@ -36,7 +36,7 @@ const LiveStream = () => {
             });
 
             // refetch all posts to update UI
-            fetchPosts({
+            await fetchPosts({
                 variables: {page},
                 refetchQueries: [{query: GET_ALL_POSTS, variables: {page}}]
             });
@@ -84,6 +84,7 @@ const LiveStream = () => {
 
     // access context
     const {state, dispatch} = useContext(AuthContext);
+
     let item;
     const checkDarkThemeData = () => {
         item = localStorage.getItem("theme");
@@ -91,7 +92,8 @@ const LiveStream = () => {
         if (item) {
             console.log(`the theme is ${item}-----jaffa`);
         }
-    }
+    };
+
     const td = (item) => {
         if (document.getElementById("tradingView")) {
             document.getElementById("tradingView").remove();
@@ -135,12 +137,13 @@ const LiveStream = () => {
         tradingViewWidget.appendChild(script);
         document.getElementById("root").appendChild(tradingViewWidget);
     }
+
     useEffect(() => {
         checkDarkThemeData();
         td(item);
 
         const mutationCallback = (mutationsList) => {
-            console.log("tthe mutations are ---jaffa", mutationsList);
+            console.log("the mutations are ---jaffa", mutationsList);
             for (const mutation of mutationsList) {
                 if (
                     mutation.type !== "attributes" ||
@@ -157,7 +160,6 @@ const LiveStream = () => {
 
         const observer = new MutationObserver(mutationCallback);
         observer.observe(document.documentElement, {attributes: true})
-        console.log("the document element is ---jaffa", document.documentElement)
 
 
         return () => {
@@ -171,11 +173,11 @@ const LiveStream = () => {
     const navigate = useNavigate();
 
     const pagination = () => {
-        const totalPages = Math.ceil(postCount && postCount.numberOfPosts / 3);
+        const totalPages = Math.ceil(postCount && postCount.numberOfPosts / 20);
         let pages = [];
         for (let i = 1; i <= totalPages; i++) {
             pages.push(
-                <li>
+                <li key={i}>
                     <h1 className={`page-link active`} onClick={() => setPage(i)}>{i}</h1>
                 </li>
             );
@@ -184,42 +186,35 @@ const LiveStream = () => {
     }
 
     const livePosts = loading ? <p className="p-5">Loading.......</p> :
-        <React.Fragment>
-            <div className="home__liveStream">
-                <div className="container">
-                    <div className="row p-5">
-                        {data && data.allPosts.map(p => (
-                            <div className="col-md-4" key={p._id}>
-                                <PostCard post={p}/>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="container">
-                        <div className="row p-5">
-                            {posts && <h4>The lazy query posts are </h4>}
-                            {posts && posts.allPosts.map(p => (
-                                <div key={p._id}>
-                                    {p.content}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <nav>
-                    <ul className="pagination justify-content-center">{pagination()}</ul>
-                </nav>
-                <hr/>
-                <hr/>
-                <btn className="mx-2" color="info" onClick={() => fetchPosts()}>
-                    Get All Posts
-                </btn>
-            </div>
-        </React.Fragment>;
-
+        <Fragment>
+            {data && data.allPosts.map(p => (
+                <PostCard key={p._id} post={p}/>
+            ))}
+            {/*<div className="container">*/}
+            {/*    <div className="row p-5">*/}
+            {/*        {posts && <h4>The lazy query posts are </h4>}*/}
+            {/*        {posts && posts.allPosts.map(p => (*/}
+            {/*            <div key={p._id}>*/}
+            {/*                {p.content}*/}
+            {/*            </div>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            <nav>
+                <ul className="pagination justify-content-center">{pagination()}</ul>
+            </nav>
+            {/*<btn className="mx-2" color="info" onClick={() => fetchPosts()}>*/}
+            {/*    Get All Posts*/}
+            {/*</btn>*/};
+        </Fragment>
     return (
         <div className="livestream container" id="livestream">
+            <div className="livestream__watchList">
+                <h2>This week's watchlist</h2>
+                <p>SWAV, VRTX, CELH, STKL, VERU</p>
+            </div>
             <div className="livestream__posts">
-                <h2>This week's watchlist is:</h2>
+                <h5>Live updates</h5>
                 {livePosts}
             </div>
         </div>

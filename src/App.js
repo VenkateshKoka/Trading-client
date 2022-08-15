@@ -5,6 +5,7 @@ import {ToastContainer} from "react-toastify";
 import PrivateRoute from "./components/PrivateRoute";
 
 import './App.css';
+import '../src/css/main.css';
 
 import logo from './logo.svg';
 

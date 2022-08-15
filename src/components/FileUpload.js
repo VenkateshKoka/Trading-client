@@ -6,6 +6,8 @@ import Image from "./Image";
 
 const FileUpload = ({loading, setLoading, values, setValues}) => {
     const {state} = useContext(AuthContext);
+    const user = state.user;
+    const authtoken = user ? (user.token ? (user.token.token ? user.token.token : user.token) : "") : "";
     const imageResizeAndUpload = (event) => {
         setLoading(true);
         let fileInput = false;
@@ -16,8 +18,8 @@ const FileUpload = ({loading, setLoading, values, setValues}) => {
             try {
                 Resizer.imageFileResizer(
                     event.target.files[0],
-                    300,
-                    300,
+                    event.target.files[0].width,
+                    event.target.files[0].height,
                     "JPEG",
                     100,
                     0,
@@ -26,7 +28,7 @@ const FileUpload = ({loading, setLoading, values, setValues}) => {
                             {
                                 headers: {
                                     // again the token.token is used as the response object is structured that way.
-                                    authtoken: state.user.token.token
+                                    authtoken: authtoken
                                 }
                             })
                             .then(response => {
@@ -50,6 +52,8 @@ const FileUpload = ({loading, setLoading, values, setValues}) => {
 
     const handleImageRemove = (id) => {
         setLoading(true);
+        const user = state.user;
+        const authtoken = user ? (user.token ? (user.token.token ? user.token.token : user.token) : "") : "";
         axios.post(`${process.env.REACT_APP_REST_ENDPOINT}/removeimage`,
             {
                 public_id: id
@@ -57,7 +61,7 @@ const FileUpload = ({loading, setLoading, values, setValues}) => {
             {
                 headers: {
                     // again the token.token is used as the response object is structured that way.
-                    authtoken: state.user.token.token
+                    authtoken: authtoken
                 }
             }).then(response => {
             setLoading(false);
