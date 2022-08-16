@@ -1,6 +1,6 @@
 const navbar = document.getElementById("navbar");
 const navbarToggle = navbar.querySelector("#navbar-toggle");
-const navbarMenu = document.querySelector("#navbar-menu");
+const navbarMenu = navbar.querySelector("#navbar-menu");
 const navbarLinksContainer = navbarMenu.querySelector(".navbar-links");
 let isNavbarExpanded = navbarToggle.getAttribute("aria-expanded") === "true";
 
@@ -18,6 +18,6 @@ const toggleNavbarVisibility = () => {
 
 navbarToggle.addEventListener("click", toggleNavbarVisibility);
 // navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
-navbarMenu.addEventListener("click", toggleNavbarVisibility);
+// navbarMenu.addEventListener("click", toggleNavbarVisibility);
 
 // window.addEventListener("scroll", toggleNavbarBoxShadow);

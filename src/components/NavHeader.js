@@ -46,8 +46,8 @@ const NavHeader = () => {
                     <div className="navbar-logo"></div>
                     Jaffa
                 </Link>
-                <button
-                    type="button"
+                <div
+                    // type="button"
                     id="navbar-toggle"
                     aria-controls="navbar-menu"
                     aria-label="Toggle menu"
@@ -56,7 +56,7 @@ const NavHeader = () => {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
-                </button>
+                </div>
                 <div id="navbar-menu" aria-labelledby="navbar-toggle">
                     <ul className="navbar-links">
                         <DarkMode></DarkMode>
