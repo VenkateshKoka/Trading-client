@@ -46,6 +46,7 @@ const NavHeader = () => {
                     <div className="navbar-logo"></div>
                     Jaffa
                 </Link>
+
                 <div
                     // type="button"
                     id="navbar-toggle"
@@ -58,32 +59,32 @@ const NavHeader = () => {
                     <span className="icon-bar"></span>
                 </div>
                 <div id="navbar-menu" aria-labelledby="navbar-toggle">
-                    <ul className="navbar-links">
+                    <div className="navbar-links">
                         <DarkMode></DarkMode>
-                        <li className="navbar-item"><Link className="navbar-link" to="/livestream">Livestream</Link>
-                        </li>
+                        <div className="navbar-item"><Link className="navbar-link" to="/livestream">Livestream</Link>
+                        </div>
                         {user && (
-                            <li className="navbar-item">
+                            <div className="navbar-item">
                                 <Link className="navbar-link" aria-current="page" to="/profile">
                                     Profile
                                 </Link>
-                            </li>
+                            </div>
                         )}
                         {!user &&
                             <Fragment>
-                                <li className="navbar-item">
+                                <div className="navbar-item">
                                     <Link className="navbar-link" aria-current="page" to="/register">Register</Link>
-                                </li>
-                                <li className="navbar-item">
+                                </div>
+                                <div className="navbar-item">
                                     <Link className="navbar-link" aria-current="page" to="/login">Login</Link>
-                                </li>
+                                </div>
                             </Fragment>
                         }
                         {user && (
-                            <li className="navbar-item">
+                            <div className="navbar-item">
                                 <Link className="navbar-link" aria-current="page" to="/login"
                                       onClick={logout}>Logout</Link>
-                            </li>
+                            </div>
                         )}
                         {/*<li className="navbar-item"><Link className="navbar-link" to="/profile">Profile*/}
                         {/*    /!*<img src={profileImage} width="50px"/>*!/*/}
@@ -92,7 +93,7 @@ const NavHeader = () => {
                         {/*    /!*<img src={bulbSvg} width="50px"/>*!/*/}
                         {/*</Link></li>*/}
                         {/*<li className="navbar-item"><Link className="navbar-link" to="/login">Login</Link></li>*/}
-                    </ul>
+                    </div>
                 </div>
             </nav>
         </header>
