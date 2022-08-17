@@ -346,8 +346,14 @@
   .postCard__images {
     display: flex;
     width: auto;
-    height: auto;
-    padding: 10px; }
+    height: auto; }
+    .postCard__images figure {
+      background-repeat: no-repeat; }
+    .postCard__images figure:hover img {
+      opacity: 0; }
+    .postCard__images img {
+      width: 100%;
+      pointer-events: none; }
 
 .authForm {
   min-width: 50%; }
