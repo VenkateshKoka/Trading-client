@@ -190,6 +190,16 @@ const LiveStream = () => {
             {data && data.allPosts.map(p => (
                 <PostCard key={p._id} post={p}/>
             ))}
+            {/*<div className="container">*/}
+            {/*    <div className="row p-5">*/}
+            {/*        {posts && <h4>The lazy query posts are </h4>}*/}
+            {/*        {posts && posts.allPosts.map(p => (*/}
+            {/*            <div key={p._id}>*/}
+            {/*                {p.content}*/}
+            {/*            </div>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <nav>
                 <ul className="pagination justify-content-center">{pagination()}</ul>
             </nav>
