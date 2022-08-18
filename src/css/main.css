@@ -346,14 +346,9 @@
   .postCard__images {
     display: flex;
     width: auto;
-    height: auto; }
-    .postCard__images figure {
-      background-repeat: no-repeat; }
-    .postCard__images figure:hover img {
-      opacity: 0; }
-    .postCard__images img {
-      width: 100%;
-      pointer-events: none; }
+    height: auto;
+    max-width: 500px;
+    padding: 10px; }
 
 .authForm {
   min-width: 50%; }
