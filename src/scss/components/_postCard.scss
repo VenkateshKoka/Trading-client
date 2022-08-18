@@ -2,5 +2,19 @@
 
 .postCard {
   display: flex;
-  background-color: skyblue;
+  flex-direction: column;
+
+  &__images {
+    display: flex;
+    width: auto;
+    height: auto;
+    //max-width: 500px;
+    //padding: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &__image {
+
+    }
+  }
 }

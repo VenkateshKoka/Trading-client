@@ -19,7 +19,9 @@ const PostCard = ({
             <div onClick={() => navigate(`/post/${_id}`)}>
                 {content}
             </div>
-            {images.map(i => (<Image key={i._id} image={i}/>))}
+            <div className="postCard__images">
+                {images.map(i => (<Image key={i._id} image={i}/>))}
+            </div>
             {showUpdateButton && (
                 <button className="btn m-2 btn-primary"
                         onClick={() => navigate(`/post/update/${_id}`)}>Update</button>

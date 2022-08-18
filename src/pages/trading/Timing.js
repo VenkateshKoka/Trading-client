@@ -81,7 +81,7 @@ const Timing = () => {
             <p>A “high, tight flag” price pattern is rare, occurring in no more than a few stocks during a bull market.
                 It begins with the stock moving generally 100% to 120% in a very short period of time (four to eight
                 weeks). It then corrects sideways no more than 10% to 25%, usually in three, four, or five weeks. This
-                is the strongest of patterns, but it’s also very risky and difficult to interpret correctly.
+                is the strongest of patterns, but it’s also risky and difficult to interpret correctly.
             </p>
             <p>
                 cup with handles:
@@ -96,7 +96,7 @@ const Timing = () => {
                 type should always have a clear and definite price uptrend prior to the beginning of its base pattern.
                 You
                 should look for at least a 30% increase in price in the prior uptrend, together with improving relative
-                strength and a very substantial increase in trading volume at some points in the prior uptrend.
+                strength and a substantial increase in trading volume at some points in the prior uptrend.
 
                 When handles do occur, they almost always form in the upper half of the overall base structure, as
                 measured
@@ -128,7 +128,7 @@ const Timing = () => {
                 Most of
                 them occur at 5% to 10% below the prior peak. The peak price in the handle area is what determines most
                 buy
-                points, and this is almost always somewhat below the base’s actual high. This is very important to
+                points, and this is almost always somewhat below the base’s actual high. This is crucial to
                 remember.
                 If you wait for an actual new high price, you will often buy too late. Sometimes you can get a slight
                 head
