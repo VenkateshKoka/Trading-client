@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Image from "./Image";
 import {useNavigate} from "react-router";
-
+import Lightbox from 'react-image-lightbox';
 
 const PostCard = ({
                       post,
@@ -10,20 +10,19 @@ const PostCard = ({
                       showUpdateButton = false,
                       showDeleteButton = false
                   }) => {
-    const [model, setModel] = useState(false);
-    const [tempImgSrc, setTempImgSrc] = useState('');
+
+    const [photoIndex, setPhotoIndex] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
+
     const {_id, images, content, postedBy} = post;
     const navigate = useNavigate();
 
-    const getImg = (imgSrc) => {
+    const getImg = (imgSrc, index) => {
         console.log("jaffa image clicked");
-        setTempImgSrc(imgSrc);
-        setModel(true);
+        setPhotoIndex(index);
+        setIsOpen(true);
     }
 
-    const closeModel = () => {
-        setModel(false);
-    }
 
     return (
         <div className="postCard">
@@ -33,19 +32,28 @@ const PostCard = ({
             <div onClick={() => navigate(`/post/${_id}`)}>
                 {content}
             </div>
-            <div className={model ? 'model open' : 'model container'}>
-                <img src={tempImgSrc}></img>
-                {/*<i className="far fa-times-circle"></i>*/}
-                <i className="far fa-times-circle" onClick={() => closeModel()}></i>
-            </div>
             <div className="postCard__images">
-                {images.map(i => (<div className="postCard__images__image">
+                {images.map((i, index) => (<div className="postCard__images__image">
                     <img src={i.url} key={i.public_id} alt={i.public_id}
                          style={{width: '100%'}}
-                         onClick={() => getImg(i.url)}
+                         onClick={() => getImg(i.url, index)}
                     />
                 </div>))}
             </div>
+            {isOpen && (
+                <Lightbox
+                    mainSrc={images[photoIndex].url}
+                    nextSrc={images[(photoIndex + 1) % images.length].url}
+                    prevSrc={images[(photoIndex + images.length - 1) % images.length].url}
+                    onCloseRequest={() => setIsOpen(false)}
+                    onMovePrevRequest={() =>
+                        setPhotoIndex((photoIndex + images.length - 1) % images.length)
+                    }
+                    onMoveNextRequest={() =>
+                        setPhotoIndex((photoIndex + 1) % images.length)
+                    }
+                />
+            )}
             {showUpdateButton && (
                 <button className="btn m-2 btn-primary"
                         onClick={() => navigate(`/post/update/${_id}`)}>Update</button>

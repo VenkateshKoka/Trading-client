@@ -31,48 +31,4 @@
       }
     }
   }
-
-  .model {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0);
-    overflow: hidden;
-    z-index: 999;
-    transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
-
-    &.open {
-      visibility: visible;
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    i {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 50px;
-      cursor: pointer;
-      color: #FF8800;
-    }
-  }
-
-  .model img {
-    width: auto;
-    max-width: 100%;
-    max-height: 100vh;
-    display: block;
-    line-height: 0;
-    box-sizing: border-box;
-    padding: 20px 0 20px;
-    margin: 0 auto;
-  }
 }
