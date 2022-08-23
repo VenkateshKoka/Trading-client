@@ -345,6 +345,8 @@
   display: flex;
   flex-direction: column;
   position: relative; }
+  .postCard__content {
+    text-wrap: normal; }
   .postCard__images {
     display: flex;
     gap: 10px;
@@ -933,20 +935,105 @@
 
 .livestream {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 64px;
   padding-top: 10px; }
   @media screen and (max-width: 788px) {
     .livestream {
       margin-top: 92px; } }
-  .livestream__watchList {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
+  @media screen and (max-width: 920px) {
+    .livestream {
+      flex-wrap: wrap-reverse; } }
+  .livestream #twitter-toggle[aria-expanded="false"] + #twitter-livestream {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; }
+  .livestream #twitter-toggle[aria-expanded="true"] + #twitter-livestream {
+    opacity: 1;
+    visibility: visible; }
+  .livestream #twitter-toggle[aria-expanded="false"] .fa-times {
+    display: none; }
+  .livestream #twitter-toggle[aria-expanded="false"] .fa-twitter {
+    font-size: 28px; }
+  .livestream #twitter-toggle[aria-expanded="true"] .fa-twitter {
+    display: none; }
+  .livestream #twitter-toggle[aria-expanded="true"] .fa-times {
+    font-size: 28px; }
+  .livestream__twitter {
+    display: flex; }
+    @media screen and (max-width: 920px) {
+      .livestream__twitter {
+        width: 100%; } }
+    .livestream__twitter__content {
+      gap: 5px;
+      min-width: 300px;
+      height: 100vh;
+      overflow: scroll;
+      z-index: 1;
+      margin-top: 40px;
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      /* Hide scrollbar for IE, Edge and Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */ }
+      .livestream__twitter__content::-webkit-scrollbar {
+        display: none; }
+      @media screen and (max-width: 920px) {
+        .livestream__twitter__content {
+          width: 100%;
+          margin: 40px 10px 20px 10px;
+          -ms-overflow-style: auto;
+          /* IE and Edge */
+          scrollbar-width: 5px;
+          /* Firefox */ }
+          .livestream__twitter__content::-webkit-scrollbar {
+            visibility: visible; } }
+      .livestream__twitter__content__timeline {
+        width: 100%;
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        transition: all 0.5s;
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */ }
+        .livestream__twitter__content__timeline::-webkit-scrollbar {
+          display: none; }
+    .livestream__twitter__toggle {
+      position: absolute;
+      right: 20px;
+      top: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      width: 150px;
+      margin-top: 64px; }
+      @media screen and (max-width: 788px) {
+        .livestream__twitter__toggle {
+          margin-top: 92px; } }
+      .livestream__twitter__toggle i {
+        font-size: 24px; }
+      @media screen and (max-width: 1380px) {
+        .livestream__twitter__toggle {
+          width: 50px; } }
+      @media screen and (max-width: 1380px) {
+        .livestream__twitter__toggle__text {
+          display: none; } }
   .livestream__posts {
     display: flex;
-    flex-direction: column;
-    padding: 10px; }
+    flex-direction: column; }
+    .livestream__posts__watchList {
+      display: flex;
+      flex-direction: column; }
+    .livestream__posts__commentary {
+      display: flex;
+      flex-direction: column;
+      padding: 10px; }
 
 * {
   margin: 0;

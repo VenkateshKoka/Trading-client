@@ -2,24 +2,148 @@
 
 .livestream {
   display: flex;
-  flex-direction: column;
-  //align-items: center;
+  flex-direction: row;
   margin-top: 64px;
   padding-top: 10px;
+  //flex-wrap: wrap-reverse;
 
   @media screen and (max-width: 788px) {
     margin-top: 92px;
   }
 
-  &__watchList {
+  @media screen and (max-width: 920px) {
+    flex-wrap: wrap-reverse;
+  }
+
+  #twitter-toggle[aria-expanded="false"] + #twitter-livestream {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+
+  #twitter-toggle[aria-expanded="true"] + #twitter-livestream {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #twitter-toggle[aria-expanded="false"] {
+    .fa-times {
+      display: none;
+    }
+
+    .fa-twitter {
+      font-size: 28px;
+    }
+  }
+
+  #twitter-toggle[aria-expanded="true"] {
+    .fa-twitter {
+      display: none;
+    }
+
+    .fa-times {
+      font-size: 28px;
+    }
+  }
+
+  &__twitter {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    @media screen and (max-width: 920px) {
+      width: 100%;
+    }
+
+    &__content {
+      gap: 5px;
+      min-width: 300px;
+      height: 100vh;
+      overflow: scroll;
+      z-index: 1;
+      margin-top: 40px;
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      @media screen and (max-width: 920px) {
+        width: 100%;
+        margin: 40px 10px 20px 10px;
+        &::-webkit-scrollbar {
+          visibility: visible;
+        }
+        -ms-overflow-style: auto; /* IE and Edge */
+        scrollbar-width: 5px; /* Firefox */
+      }
+
+      &__timeline {
+        width: 100%;
+        //overflow: scroll;
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        transition: all 0.5s;
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    }
+
+
+    &__toggle {
+      position: absolute;
+      right: 20px;
+      top: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      width: 150px;
+      margin-top: 64px;
+
+      @media screen and (max-width: 788px) {
+        margin-top: 92px;
+      }
+
+      i {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: 1380px) {
+        width: 50px;
+      }
+
+      &__text {
+        @media screen and (max-width: 1380px) {
+          display: none;
+        }
+      }
+
+    }
   }
 
   &__posts {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+
+    &__watchList {
+      display: flex;
+      flex-direction: column;
+      //align-items: center;
+    }
+
+    &__commentary {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
   }
 }

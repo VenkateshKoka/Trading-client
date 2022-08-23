@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "./Image";
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
@@ -13,6 +13,7 @@ const PostCard = ({
 
     const [photoIndex, setPhotoIndex] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
+    const [isEmptyPushState, setIsEmptyPushState] = useState(false);
 
     const {_id, images, content, postedBy} = post;
     const navigate = useNavigate();
@@ -21,6 +22,32 @@ const PostCard = ({
         console.log("jaffa image clicked");
         setPhotoIndex(index);
         setIsOpen(true);
+        if (!isEmptyPushState) {
+            setIsEmptyPushState(true);
+            window.history.pushState(null, '', window.location.href)
+        }
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+        setIsEmptyPushState(false);
+        // window.history.popstate();
+    }
+
+    useEffect(() => {
+        window.addEventListener('popstate', closeModalOnBack);
+        return () => {
+            window.removeEventListener("popstate", closeModalOnBack);
+        }
+    }, [isOpen]);
+
+    const closeModalOnBack = (e) => {
+        console.log("the back button is clicked --jaffa");
+        if (isOpen) {
+            console.log("the modal is open ---jaffa");
+            setIsOpen(false);
+            e.preventDefault();
+        }
     }
 
 
@@ -29,8 +56,8 @@ const PostCard = ({
             {showPostedBy && (
                 <small>@{postedBy.username}</small>
             )}
-            <div onClick={() => navigate(`/post/${_id}`)}>
-                {content}
+            <div onClick={() => navigate(`/post/${_id}`)} className="postCard__content">
+                <p>{content}</p>
             </div>
             <div className="postCard__images">
                 {images.map((i, index) => (<div className="postCard__images__image">

@@ -11,6 +11,7 @@ import {stringifyForDisplay} from "@apollo/client/utilities";
 
 const LiveStream = () => {
     const [page, setPage] = useState(1);
+    const [showTwitterTimeline, setShowTwitterTimeline] = useState(true);
     const {data, loading, error} = useQuery(GET_ALL_POSTS, {
         variables: {page: page}
     });
@@ -94,6 +95,9 @@ const LiveStream = () => {
         }
     };
 
+    const checkTwitterToggle = () => {
+        setShowTwitterTimeline(localStorage.getItem("showTwitterTimeline") ? "true" : "false");
+    }
     const td = (item) => {
         if (document.getElementById("tradingView")) {
             document.getElementById("tradingView").remove();
@@ -139,7 +143,15 @@ const LiveStream = () => {
     }
 
     useEffect(() => {
+        import('../../componentScripts/twitterTimeline');
+        const twitterScript = document.createElement('script');
+        twitterScript.src = "https://platform.twitter.com/widgets.js";
+        twitterScript.async = true;
+        document.body.appendChild(twitterScript);
+
         checkDarkThemeData();
+        checkTwitterToggle();
+
         td(item);
 
         const mutationCallback = (mutationsList) => {
@@ -164,8 +176,14 @@ const LiveStream = () => {
 
         return () => {
             // clean up the script when the component in unmounted
-            observer.disconnect();
-            document.getElementById("tradingView").remove();
+
+            try {
+                document.body.removeChild(twitterScript);
+                observer.disconnect();
+                document.getElementById("tradingView").remove();
+            } catch (e) {
+                console.log("the clean up error is ---jaffa", e);
+            }
         }
     }, [item]);
 
@@ -208,15 +226,36 @@ const LiveStream = () => {
             {/*</btn>*/};
         </Fragment>
     return (
-        <div className="livestream container" id="livestream">
-            <div className="livestream__watchList">
-                <h2>This week's watchlist</h2>
-                <p>SWAV, VRTX, CELH, STKL, VERU</p>
+        <div className="livestream" id="livestream">
+            <div className="livestream__posts container">
+                <div className="livestream__posts__watchList">
+                    <h2>This week's watchlist</h2>
+                    <p>SWAV, VRTX, CELH, STKL, VERU</p>
+                </div>
+                <div className="livestream__posts__commentary">
+                    <h5>Live updates</h5>
+                    {livePosts}
+                </div>
             </div>
-            <div className="livestream__posts">
-                <h5>Live updates</h5>
-                {livePosts}
+            <div className="livestream__twitter__toggle buttonJ"
+                 id="twitter-toggle"
+                 aria-controls="twitter-livestream"
+                 aria-expanded={showTwitterTimeline}
+                 role="button"
+                 data-mdb-toggle="tooltip"
+                 title="Click to toggle the display of tweets">
+                <i className="fab fa-twitter"></i><span
+                className="livestream__twitter__toggle__text">Tweets</span><i className="fas fa-times"></i>
             </div>
+            <div className="livestream__twitter__content" id="twitter-livestream" aria-labelledby="twitter-toggle">
+                <div className="livestream__twitter__content__timeline">
+                    <a className="twitter-timeline"
+                       href="https://twitter.com/venkatesh_koka/lists/super-important-traders-74657?ref_src=twsrc%5Etfw"
+                       data-aria-polite="assertive">
+                        A Twitter List by venkatesh_koka</a>
+                </div>
+            </div>
+
         </div>
     );
 }
