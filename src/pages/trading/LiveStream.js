@@ -96,7 +96,12 @@ const LiveStream = () => {
     };
 
     const checkTwitterToggle = () => {
-        setShowTwitterTimeline(localStorage.getItem("showTwitterTimeline") ? "true" : "false");
+        let toggle = localStorage.getItem("showTwitterTimeline");
+        if (toggle === 'true') {
+            setShowTwitterTimeline("true");
+        } else {
+            setShowTwitterTimeline("false");
+        }
     }
     const td = (item) => {
         if (document.getElementById("tradingView")) {
@@ -143,8 +148,9 @@ const LiveStream = () => {
     }
 
     useEffect(() => {
-        import('../../componentScripts/twitterTimeline');
+        // import('../../componentScripts/twitterTimeline');
         const twitterScript = document.createElement('script');
+        twitterScript.type = "text/javascript";
         twitterScript.src = "https://platform.twitter.com/widgets.js";
         twitterScript.async = true;
         document.body.appendChild(twitterScript);
@@ -225,6 +231,14 @@ const LiveStream = () => {
             {/*    Get All Posts*/}
             {/*</btn>*/};
         </Fragment>
+
+    const toggleTwitterTimeline = (e) => {
+        e.preventDefault();
+        let isToggle = e.target.getAttribute("aria-expanded") === "false" ? "true" : "false";
+        e.target.setAttribute("aria-expanded", isToggle);
+        localStorage.setItem("showTwitterTimeline", isToggle);
+    }
+
     return (
         <div className="livestream" id="livestream">
             <div className="livestream__posts container">
@@ -243,9 +257,10 @@ const LiveStream = () => {
                  aria-expanded={showTwitterTimeline}
                  role="button"
                  data-mdb-toggle="tooltip"
+                 onClick={(e) => toggleTwitterTimeline(e)}
                  title="Click to toggle the display of tweets">
-                <i className="fab fa-twitter"></i><span
-                className="livestream__twitter__toggle__text">Tweets</span><i className="fas fa-times"></i>
+                <span className="livestream__twitter__toggle__icon"><i className="fab fa-twitter"></i><span
+                    className="livestream__twitter__toggle__text">Tweets</span><i className="fas fa-times"></i></span>
             </div>
             <div className="livestream__twitter__content" id="twitter-livestream" aria-labelledby="twitter-toggle">
                 <div className="livestream__twitter__content__timeline">
