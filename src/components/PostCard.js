@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Image from "./Image";
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
@@ -19,36 +19,32 @@ const PostCard = ({
     const navigate = useNavigate();
 
     const getImg = (imgSrc, index) => {
-        console.log("jaffa image clicked");
         setPhotoIndex(index);
         setIsOpen(true);
+        console.log(`image clicked and the modal is ${isOpen}`);
         if (!isEmptyPushState) {
             setIsEmptyPushState(true);
-            window.history.pushState(null, '', window.location.href)
+            console.log("the history pushstate is being called ----jaffa");
+            window.history.pushState(null, '', window.location.href);
         }
     }
 
     const closeModal = () => {
         setIsOpen(false);
         setIsEmptyPushState(false);
-        // window.history.popstate();
     }
+
+    const closeModalOnBack = useCallback(e => {
+        console.log("the back button is clicked --jaffa");
+        closeModal();
+    }, []);
 
     useEffect(() => {
         window.addEventListener('popstate', closeModalOnBack);
         return () => {
             window.removeEventListener("popstate", closeModalOnBack);
         }
-    }, [isOpen]);
-
-    const closeModalOnBack = (e) => {
-        console.log("the back button is clicked --jaffa");
-        if (isOpen) {
-            console.log("the modal is open ---jaffa");
-            setIsOpen(false);
-            e.preventDefault();
-        }
-    }
+    }, [closeModalOnBack]);
 
 
     return (

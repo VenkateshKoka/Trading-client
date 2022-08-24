@@ -103,8 +103,6 @@
       top: 64px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
       padding: 10px;
       border-radius: 5px;
       width: 150px;
@@ -126,6 +124,7 @@
         pointer-events: none;
         display: flex;
         align-items: center;
+        gap: 20px;
       }
 
       &__text {
