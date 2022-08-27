@@ -229,7 +229,7 @@ const LiveStream = () => {
             </nav>
             {/*<btn className="mx-2" color="info" onClick={() => fetchPosts()}>*/}
             {/*    Get All Posts*/}
-            {/*</btn>*/};
+            {/*</btn>*/}
         </Fragment>
 
     const toggleTwitterTimeline = (e) => {
@@ -239,26 +239,33 @@ const LiveStream = () => {
         localStorage.setItem("showTwitterTimeline", isToggle);
     }
 
+    const watchlist = "The watchlist for this week is $SWAV, $VRTX, $CELH, $VERU";
+
     return (
         <div className="livestream" id="livestream">
             <div className="livestream__posts container">
                 <div className="livestream__posts__watchList">
-                    <h2>This week's watchlist</h2>
+                    <h4>Watchlist for this week</h4>
                     <p>SWAV, VRTX, CELH, STKL, VERU</p>
+                    <a className="twitter-share-button"
+                        // href="https://twitter.com/share?ref_src=twsrc%5Etfw/tweet?text=Hello%20world"
+                       href={`https://twitter.com/intent/tweet?text=${watchlist}`}
+                       data-show-count="true" data-size="large" dnt="true">Tweet</a>
                 </div>
                 <div className="livestream__posts__commentary">
-                    <h5>Live updates</h5>
+                    {/*<h5>Updates</h5>*/}
                     {livePosts}
                 </div>
             </div>
-            <div className="livestream__twitter__toggle buttonJ"
-                 id="twitter-toggle"
-                 aria-controls="twitter-livestream"
-                 aria-expanded={showTwitterTimeline}
-                 role="button"
-                 data-mdb-toggle="tooltip"
-                 onClick={(e) => toggleTwitterTimeline(e)}
-                 title="Click to toggle the display of tweets">
+            <div
+                className="livestream__twitter__toggle buttonJ buttonJ__twitterGradient buttonJ__rounded"
+                id="twitter-toggle"
+                aria-controls="twitter-livestream"
+                aria-expanded={showTwitterTimeline}
+                role="button"
+                data-mdb-toggle="tooltip"
+                onClick={(e) => toggleTwitterTimeline(e)}
+                title="Click to toggle the display of tweets">
                 <span className="livestream__twitter__toggle__icon"><i className="fab fa-twitter"></i><span
                     className="livestream__twitter__toggle__text">Tweets</span><i className="fas fa-times"></i></span>
             </div>

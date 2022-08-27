@@ -49,11 +49,11 @@ const PostCard = ({
 
     return (
         <div className="postCard">
-            {showPostedBy && (
-                <small>@{postedBy.username}</small>
-            )}
             <div onClick={() => navigate(`/post/${_id}`)} className="postCard__content">
-                <p>{content}</p>
+                {content}
+                {/*{showPostedBy && (*/}
+                {/*    <small>@{postedBy.username}</small>*/}
+                {/*)}*/}
             </div>
             <div className="postCard__images">
                 {images.map((i, index) => (<div className="postCard__images__image">
@@ -84,7 +84,7 @@ const PostCard = ({
             {showDeleteButton && (
                 <button className="btn m-2 btn-danger" onClick={() => handleDelete(_id)}>Delete</button>
             )}
-            <hr/>
+            {/*<hr/>*/}
         </div>
     )
 };

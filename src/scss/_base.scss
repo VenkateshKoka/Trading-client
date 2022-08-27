@@ -184,4 +184,56 @@ $grid-breakpoints: (
   }
 }
 
+:root {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-background-color: #f7f7fa;
+  //font-color: $color-font-body;
+  //background-color: $color-background;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  h1 {
+    //color: $color-text-highlight-dark;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    //font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  p {
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  //background-color: rgb(27, 31, 36);
+  //background-image: url(../assets/img.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  //background-blend-mode: lighten;
+  //background-blend-mode: color-burn;
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --jaffa-font-color: #eee;
+  --jaffa-background-color: #1c1c28;
+}
 

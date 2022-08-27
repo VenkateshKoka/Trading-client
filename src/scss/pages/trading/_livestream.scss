@@ -32,9 +32,9 @@
       display: none;
     }
 
-    .fa-twitter {
-      font-size: 28px;
-    }
+    //.fa-twitter {
+    //  font-size: 28px;
+    //}
   }
 
   #twitter-toggle[aria-expanded="true"] {
@@ -42,9 +42,9 @@
       display: none;
     }
 
-    .fa-times {
-      font-size: 28px;
-    }
+    //.fa-times {
+    //  font-size: 28px;
+    //}
   }
 
   &__twitter {
@@ -103,13 +103,13 @@
       top: 64px;
       display: flex;
       align-items: center;
-      padding: 10px;
-      border-radius: 5px;
+      padding: 5px;
       width: 150px;
       margin-top: 64px;
 
       @media screen and (max-width: 788px) {
         margin-top: 92px;
+        border-radius: 50%;
       }
 
       i {
@@ -124,7 +124,7 @@
         pointer-events: none;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
       }
 
       &__text {
@@ -139,6 +139,7 @@
   &__posts {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
     &__watchList {
       display: flex;
@@ -149,7 +150,9 @@
     &__commentary {
       display: flex;
       flex-direction: column;
-      padding: 10px;
+      //padding: 10px;
+      gap: 20px;
+      //padding: 8px;
     }
   }
 }

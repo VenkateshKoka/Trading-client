@@ -43,6 +43,7 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
 
     &__content {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       //color: $color-text-body-dark;
@@ -81,9 +82,12 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
       font-size: 15px;
       color: white;
 
-      h6 {
-        //position: absolute;
-        //margin-bottom: -10px;
+      @media screen and (max-width: 1080px) {
+        height: 120px;
+        width: 120px;
+        h6 {
+          font-size: 13px;
+        }
       }
 
       //

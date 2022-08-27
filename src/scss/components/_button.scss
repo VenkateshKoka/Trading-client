@@ -19,11 +19,27 @@
   cursor: pointer;
 
   &__primary {
-    background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%);
+    background: linear-gradient(147.14deg, #E63535 6.95%, #FF8800 93.05%);
   }
 
   &__secondary {
     background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%);
+  }
+
+  &__tertiary {
+    background: linear-gradient(147.14deg, #FF3B3B 6.95%, #6600CC 93.05%);
+    //background: linear-gradient(145.51deg, #FDDD48 7.21%, #00B7C4 94.47%);
+    //background: linear-gradient(147.14deg, #00CFDE 6.95%, #05A660 93.05%);
+    //background: linear-gradient(145.51deg, #AC5DD9 7.21%, #004FC4 94.47%);
+    //background: linear-gradient(147.14deg, #73DFE7 6.95%, #0063F7 93.05%);
+  }
+
+  &__twitterGradient {
+    background: linear-gradient(147.14deg, #73DFE7 6.95%, #0063F7 93.05%);
+  }
+
+  &__rounded {
+    border-radius: 24px;
   }
 
   &__transparent {

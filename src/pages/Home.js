@@ -115,7 +115,11 @@ const Home = () => {
                     />
                 </div>
                 <div className="home__hero__content">
-                    <h1>Unlock your Trading potential</h1>
+                    <h3>Unlock your Trading potential</h3>
+                    <p>Follow the stock market commentary and updates</p>
+                    <div className="btn buttonJ buttonJ__tertiary buttonJ__rounded"
+                         onClick={() => navigate(`/livestream`)}>Livestream
+                    </div>
                 </div>
             </div>
             <div className="home__tradingSteps container">
