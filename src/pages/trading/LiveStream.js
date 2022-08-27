@@ -10,10 +10,10 @@ import PostCard from "../../components/PostCard";
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 const LiveStream = () => {
-    const [page, setPage] = useState(1);
+    // const [page, setPage] = useState(1);
     const [showTwitterTimeline, setShowTwitterTimeline] = useState(true);
     const {data, loading, error} = useQuery(GET_ALL_POSTS, {
-        variables: {page: page}
+        // variables: {page: page}
     });
     const {data: postCount} = useQuery(NUMBER_OF_POSTS);
     const [fetchPosts, {data: posts}] = useLazyQuery(GET_ALL_POSTS);
@@ -24,13 +24,13 @@ const LiveStream = () => {
             // readQuery from cache
             const {allPosts} = cache.readQuery({
                 query: GET_ALL_POSTS,
-                variables: {page}
+                // variables: {page}
             });
 
             // write back to cache
             cache.writeQuery({
                 query: GET_ALL_POSTS,
-                variables: {page},
+                // variables: {page},
                 data: {
                     allPosts: [data.postAdded, ...allPosts]
                 }
@@ -38,8 +38,11 @@ const LiveStream = () => {
 
             // refetch all posts to update UI
             await fetchPosts({
-                variables: {page},
-                refetchQueries: [{query: GET_ALL_POSTS, variables: {page}}]
+                // variables: {page},
+                refetchQueries: [{
+                    query: GET_ALL_POSTS,
+                    // variables: {page}
+                }]
             });
 
             toast.success('New post!');
@@ -61,13 +64,13 @@ const LiveStream = () => {
             // readQuery from cache
             const {allPosts} = cache.readQuery({
                 query: GET_ALL_POSTS,
-                variables: {page}
+                // variables: {page}
             });
             let filteredPosts = allPosts.filter((p) => p._id !== data.postDeleted._id);
             // write back to cache
             cache.writeQuery({
                 query: GET_ALL_POSTS,
-                variables: {page},
+                // variables: {page},
                 data: {
                     allPosts: filteredPosts
                 }
@@ -75,8 +78,11 @@ const LiveStream = () => {
 
             // refetch all posts to update UI
             fetchPosts({
-                variables: {page},
-                refetchQueries: [{query: GET_ALL_POSTS, variables: {page}}]
+                // variables: {page},
+                refetchQueries: [{
+                    query: GET_ALL_POSTS,
+                    // variables: {page}
+                }]
             });
 
             toast.error('Post deleted!');
@@ -196,40 +202,27 @@ const LiveStream = () => {
     // react router
     const navigate = useNavigate();
 
-    const pagination = () => {
-        const totalPages = Math.ceil(postCount && postCount.numberOfPosts / 20);
-        let pages = [];
-        for (let i = 1; i <= totalPages; i++) {
-            pages.push(
-                <li key={i}>
-                    <h1 className={`page-link active`} onClick={() => setPage(i)}>{i}</h1>
-                </li>
-            );
-        }
-        return pages;
-    }
+    // const pagination = () => {
+    //     const totalPages = Math.ceil(postCount && postCount.numberOfPosts / 20);
+    //     let pages = [];
+    //     for (let i = 1; i <= totalPages; i++) {
+    //         pages.push(
+    //             <li key={i}>
+    //                 <h1 className={`page-link active`} onClick={() => setPage(i)}>{i}</h1>
+    //             </li>
+    //         );
+    //     }
+    //     return pages;
+    // }
 
     const livePosts = loading ? <p className="p-5">Loading.......</p> :
         <Fragment>
             {data && data.allPosts.map(p => (
                 <PostCard key={p._id} post={p}/>
             ))}
-            {/*<div className="container">*/}
-            {/*    <div className="row p-5">*/}
-            {/*        {posts && <h4>The lazy query posts are </h4>}*/}
-            {/*        {posts && posts.allPosts.map(p => (*/}
-            {/*            <div key={p._id}>*/}
-            {/*                {p.content}*/}
-            {/*            </div>*/}
-            {/*        ))}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            <nav>
-                <ul className="pagination justify-content-center">{pagination()}</ul>
-            </nav>
-            {/*<btn className="mx-2" color="info" onClick={() => fetchPosts()}>*/}
-            {/*    Get All Posts*/}
-            {/*</btn>*/}
+            {/*<nav>*/}
+            {/*    <ul className="pagination justify-content-center">{pagination()}</ul>*/}
+            {/*</nav>*/}
         </Fragment>
 
     const toggleTwitterTimeline = (e) => {
