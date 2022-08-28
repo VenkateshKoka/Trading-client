@@ -116,7 +116,7 @@
         font-size: 24px;
       }
 
-      @media screen and (max-width: 1380px) {
+      @media screen and (max-width: 780px) {
         width: 50px;
       }
 
@@ -128,7 +128,7 @@
       }
 
       &__text {
-        @media screen and (max-width: 1380px) {
+        @media screen and (max-width: 780px) {
           display: none;
         }
       }

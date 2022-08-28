@@ -6,12 +6,16 @@
   align-items: center;
   border-radius: 4px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2), 0 2px 10px 0 rgba(0, 0, 0, .1);
+
 
   font-size: 16px;
   font-weight: 600;
   text-align: center;
   text-transform: none;
   text-decoration: none;
+  text-shadow: 1px 1px 10px var(--jaffa-font-color);
+  text-shadow: 1px 1px 5px rgb(40, 41, 61);
   color: $color-text-highlight-dark;
   //background: linear-gradient(147.14deg, #00CFDE 6.95%, #05A660 93.05%);;
   background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%);

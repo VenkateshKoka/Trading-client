@@ -243,7 +243,7 @@ const LiveStream = () => {
                     <a className="twitter-share-button"
                         // href="https://twitter.com/share?ref_src=twsrc%5Etfw/tweet?text=Hello%20world"
                        href={`https://twitter.com/intent/tweet?text=${watchlist}`}
-                       data-show-count="true" data-size="large" dnt="true">Tweet</a>
+                       data-show-count="true" data-size="large" dnt="true" rel="noopener noreferrer">Tweet</a>
                 </div>
                 <div className="livestream__posts__commentary">
                     {/*<h5>Updates</h5>*/}
@@ -251,7 +251,7 @@ const LiveStream = () => {
                 </div>
             </div>
             <div
-                className="livestream__twitter__toggle buttonJ buttonJ__twitterGradient buttonJ__rounded"
+                className="livestream__twitter__toggle buttonJ buttonJ__tertiary buttonJ__rounded"
                 id="twitter-toggle"
                 aria-controls="twitter-livestream"
                 aria-expanded={showTwitterTimeline}
