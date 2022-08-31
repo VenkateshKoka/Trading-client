@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import Image from "./Image";
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
+import RichTextEditorDraft from "./RichTextEditorDraft";
 
 const PostCard = ({
                       post,
@@ -15,7 +16,8 @@ const PostCard = ({
     const [isOpen, setIsOpen] = useState(false);
     const [isEmptyPushState, setIsEmptyPushState] = useState(false);
 
-    const {_id, images, content, postedBy} = post;
+    const {_id, images, content, category} = post;
+    console.log("the content type is ----jaffa", typeof (content));
     const navigate = useNavigate();
 
     const getImg = (imgSrc, index) => {
@@ -49,14 +51,21 @@ const PostCard = ({
 
     return (
         <div className="postCard">
-            <div onClick={() => navigate(`/post/${_id}`)} className="postCard__content">
-                {content}
+            {category && <div className={`postCard__category postCard__category__${category}`}>
+                {category}
+            </div>}
+            <div
+                // onClick={() => navigate(`/post/${_id}`)} --uncomment this ---jaffa
+                className="postCard__content">
+                <RichTextEditorDraft initialText={content} readOnly={true}>
+                </RichTextEditorDraft>
+                {/*{content}*/}
                 {/*{showPostedBy && (*/}
                 {/*    <small>@{postedBy.username}</small>*/}
                 {/*)}*/}
             </div>
             <div className="postCard__images">
-                {images.map((i, index) => (<div className="postCard__images__image">
+                {images.map((i, index) => (<div className="postCard__images__image" key={index}>
                     <img src={i.url} key={i.public_id} alt={i.public_id}
                          style={{width: '100%'}}
                          onClick={() => getImg(i.url, index)}

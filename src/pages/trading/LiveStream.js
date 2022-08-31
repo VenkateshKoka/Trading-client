@@ -167,7 +167,6 @@ const LiveStream = () => {
         td(item);
 
         const mutationCallback = (mutationsList) => {
-            console.log("the mutations are ---jaffa", mutationsList);
             for (const mutation of mutationsList) {
                 if (
                     mutation.type !== "attributes" ||
@@ -217,9 +216,16 @@ const LiveStream = () => {
 
     const livePosts = loading ? <p className="p-5">Loading.......</p> :
         <Fragment>
-            {data && data.allPosts.map(p => (
-                <PostCard key={p._id} post={p}/>
-            ))}
+            <div className="livestream__posts__watchlist">
+                {data && data.allPosts.filter(p => p.category === 'watchlist').map(p => (
+                    <PostCard key={p._id} post={p}/>
+                ))}
+            </div>
+            <div className="livestream__posts__commentary">
+                {data && data.allPosts.filter(p => p.category !== 'watchlist').map(p => (
+                    <PostCard key={p._id} post={p}/>
+                ))}
+            </div>
             {/*<nav>*/}
             {/*    <ul className="pagination justify-content-center">{pagination()}</ul>*/}
             {/*</nav>*/}
@@ -237,18 +243,18 @@ const LiveStream = () => {
     return (
         <div className="livestream" id="livestream">
             <div className="livestream__posts container">
-                <div className="livestream__posts__watchList">
-                    <h4>Watchlist for this week</h4>
-                    <p>SWAV, VRTX, CELH, STKL, VERU</p>
-                    <a className="twitter-share-button"
-                        // href="https://twitter.com/share?ref_src=twsrc%5Etfw/tweet?text=Hello%20world"
-                       href={`https://twitter.com/intent/tweet?text=${watchlist}`}
-                       data-show-count="true" data-size="large" dnt="true" rel="noopener noreferrer">Tweet</a>
-                </div>
-                <div className="livestream__posts__commentary">
-                    {/*<h5>Updates</h5>*/}
-                    {livePosts}
-                </div>
+                {/*<div className="livestream__posts__watchList">*/}
+                {/*    <h4>Watchlist for this week</h4>*/}
+                {/*    <p>SWAV, VRTX, CELH, STKL, VERU</p>*/}
+                {/*    <a className="twitter-share-button"*/}
+                {/*        // href="https://twitter.com/share?ref_src=twsrc%5Etfw/tweet?text=Hello%20world"*/}
+                {/*       href={`https://twitter.com/intent/tweet?text=${watchlist}`}*/}
+                {/*       data-show-count="true" data-size="large" dnt="true" rel="noopener noreferrer">Tweet</a>*/}
+                {/*</div>*/}
+                {/*<div className="livestream__posts__commentary">*/}
+                {/*<h5>Updates</h5>*/}
+                {livePosts}
+                {/*</div>*/}
             </div>
             <div
                 className="livestream__twitter__toggle buttonJ buttonJ__tertiary buttonJ__rounded"

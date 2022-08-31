@@ -20,6 +20,7 @@ export const USER_INFO = gql`
 export const POST_INFO = gql`
     fragment postInfo on Post {
         _id,
+        category,
         content,
         images {
             url,

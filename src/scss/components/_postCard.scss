@@ -13,6 +13,26 @@
     text-wrap: normal;
   }
 
+  &__category {
+    //background: linear-gradient(147.14deg, #73DFE7 6.95%, #0063F7 93.05%);
+    color: #eee;
+    text-shadow: 1px 1px 10px #28293d;
+    width: max-content;
+    padding: 1px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: -20px;
+
+    @each $type, $gradient in $post-types {
+      &__#{$type} {
+        background: $gradient;
+      }
+    }
+  }
+
+
   &__images {
     display: flex;
     //width: auto;
@@ -23,7 +43,6 @@
     //flex-wrap: wrap;
     column-count: 3;
     column-width: 33%;
-    margin: 12px 0px;
 
     @media screen and (max-width: 900px) {
       column-count: 2;

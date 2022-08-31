@@ -141,9 +141,10 @@
     flex-direction: column;
     gap: 20px;
 
-    &__watchList {
+    &__watchlist {
       display: flex;
       flex-direction: column;
+      margin-bottom: 32px;
       //align-items: center;
     }
 

@@ -5,10 +5,13 @@ import {useLazyQuery, useMutation} from "@apollo/client";
 import {useParams} from "react-router";
 import FileUpload from "../../components/FileUpload";
 import {POST_UPDATE} from "../../graphql/mutations";
+import RichTextEditorDraft from "../../components/RichTextEditorDraft";
+import {useQuery} from "@apollo/react-hooks";
 
 const PostUpdate = () => {
     const [values, setValues] = useState({
         _id: '',
+        category: '',
         content: '',
         images: [{
             url: '',
@@ -26,6 +29,7 @@ const PostUpdate = () => {
             setValues({
                 ...values,
                 _id: singlePost.singlePost._id,
+                category: singlePost.singlePost.category,
                 content: singlePost.singlePost.content,
                 images: singlePost.singlePost.images,
             })
@@ -34,8 +38,9 @@ const PostUpdate = () => {
 
     const {postid} = useParams();
 
-    useEffect(() => {
-        getSinglePost({variables: {postId: postid}});
+
+    useEffect(async () => {
+        await getSinglePost({variables: {postId: postid}});
     }, []);
 
     const handleSubmit = async (e) => {
@@ -51,19 +56,37 @@ const PostUpdate = () => {
         setValues({...values, [e.target.name]: e.target.value});
     }
 
+    const handleRichText = (value) => {
+        values.content = value;
+        // setValues({...values, ["content"]: value});
+        console.log("the content is ---jaffa", values);
+    }
+
     const updatePostForm = () => (
         <form onSubmit={handleSubmit}>
-            <textarea name="content"
-                      className="md-textarea form-control"
-                      id="content"
-                      value={values.content}
-                      onChange={handleChange}
-                      disabled={loading}
-                      rows="5"
-                      cols="30"
-                      maxLength="1000"
-                      placeholder="write something cool here to post"
-            />
+            {singlePost && <RichTextEditorDraft name="content"
+                                                id="content"
+                                                initialText={values.content}
+                                                stateChanger={handleRichText}>
+
+            </RichTextEditorDraft>}
+            {/*<textarea name="content"*/}
+            {/*          className="md-textarea form-control"*/}
+            {/*          id="content"*/}
+            {/*          value={values.content}*/}
+            {/*          onChange={handleChange}*/}
+            {/*          disabled={loading}*/}
+            {/*          rows="5"*/}
+            {/*          cols="30"*/}
+            {/*          maxLength="1000"*/}
+            {/*          placeholder="write something cool here to post"*/}
+            {/*/>*/}
+            <select id="category" name="category" value={values.category} onChange={handleChange} disabled={loading}>
+                <option value="watchlist">Watchlist</option>
+                <option value="buy-alert">Buy Alert</option>
+                <option value="market-update">Market Update</option>
+                <option value="general">General</option>
+            </select>
             <FileUpload values={values} loading={loading} setValues={setValues} setLoading={setLoading}/>
             <button className="btn btn-primary" type="submit" disabled={loading || !values.content}>Post</button>
         </form>
