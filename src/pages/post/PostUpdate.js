@@ -1,12 +1,13 @@
 import React, {useEffect, useMemo, useState} from "react";
 import {toast} from "react-toastify";
-import {SINGLE_POST} from "../../graphql/queries";
+import {GET_ALL_POSTS, GET_ALL_POSTS_BY_USER, SINGLE_POST} from "../../graphql/queries";
 import {useLazyQuery, useMutation} from "@apollo/client";
 import {useParams} from "react-router";
 import FileUpload from "../../components/FileUpload";
 import {POST_UPDATE} from "../../graphql/mutations";
 import RichTextEditorDraft from "../../components/RichTextEditorDraft";
 import {useQuery} from "@apollo/react-hooks";
+import RichTextEditorCustom from "../../components/RichTextEditorCustom";
 
 const PostUpdate = () => {
     const [values, setValues] = useState({
@@ -20,6 +21,25 @@ const PostUpdate = () => {
     });
     const [getSinglePost, {data: singlePost}] = useLazyQuery(SINGLE_POST);
     const [postUpdate] = useMutation(POST_UPDATE);
+    // const [postUpdate] = useMutation(POST_UPDATE, {
+    //     // update cache
+    //     update: (cache, {data: {postUpdate}}) => {
+    //         // readQuery from cache
+    //         const {posts} = cache.readQuery({
+    //             query: GET_ALL_POSTS
+    //         });
+    //
+    //         // write Query to cache
+    //         cache.writeQuery({
+    //             query: GET_ALL_POSTS,
+    //             data: {
+    //                 // update the post here instead of adding it ---jaffa
+    //                 posts: [...posts, postUpdate]
+    //             }
+    //         })
+    //     },
+    //     onError: (e) => console.log(e)
+    // });
     const [loading, setLoading] = useState(false);
     const {_id, images, content} = values;
 
@@ -39,8 +59,8 @@ const PostUpdate = () => {
     const {postid} = useParams();
 
 
-    useEffect(async () => {
-        await getSinglePost({variables: {postId: postid}});
+    useEffect(() => {
+        getSinglePost({variables: {postId: postid}});
     }, []);
 
     const handleSubmit = async (e) => {
@@ -57,8 +77,8 @@ const PostUpdate = () => {
     }
 
     const handleRichText = (value) => {
-        values.content = value;
-        // setValues({...values, ["content"]: value});
+        // values.content = value;
+        setValues({...values, content: value});
         console.log("the content is ---jaffa", values);
     }
 

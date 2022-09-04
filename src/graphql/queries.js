@@ -26,11 +26,20 @@ export const NUMBER_OF_POSTS = gql`
 `;
 
 export const GET_ALL_POSTS = gql`
-     query allPosts($page: Int) { 
-        allPosts(page: $page) {
+     query allPosts($page: Int, $week: Int) { 
+        allPosts(page: $page, week: $week) {
             ...postInfo
         }
      }
+     ${POST_INFO}
+`;
+
+export const GET_ALL_POSTS_THIS_WEEK = gql`
+     query {
+        allPostsThisWeek {
+            ...postInfo
+        }
+    }
      ${POST_INFO}
 `;
 

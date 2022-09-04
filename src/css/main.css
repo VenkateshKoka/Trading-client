@@ -63,7 +63,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -87,6 +88,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 #navbar {
@@ -306,7 +308,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -330,6 +333,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .buttonJ {
@@ -437,7 +441,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -461,6 +466,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .postCard {
@@ -491,11 +497,25 @@
       background: linear-gradient(147.14deg, #FF8800 6.95%, #E63535 93.05%); }
     .postCard__category__general {
       background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%); }
+  .postCard__postedTime {
+    margin-top: 20px;
+    display: flex;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--jaffa-font-color-secondary);
+    justify-content: end;
+    gap: 20px; }
+    @media screen and (max-width: 768px) {
+      .postCard__postedTime {
+        margin-top: 10px;
+        font-size: 9px;
+        gap: 10px; } }
   .postCard__images {
     display: flex;
     gap: 10px;
     column-count: 3;
-    column-width: 33%; }
+    column-width: 33%;
+    margin-top: 20px; }
     @media screen and (max-width: 900px) {
       .postCard__images {
         column-count: 2; } }
@@ -570,7 +590,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -594,6 +615,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .RichEditor-root {
@@ -729,7 +751,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -753,6 +776,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .circle-bg {
@@ -1014,7 +1038,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -1038,6 +1063,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .container {
@@ -1104,7 +1130,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -1128,6 +1155,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .selection {
@@ -1202,7 +1230,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -1226,6 +1255,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .timing p {
@@ -1296,7 +1326,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -1320,6 +1351,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .login {
@@ -1427,7 +1459,8 @@
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa; }
   @media screen and (max-width: 768px) {
     :root {
@@ -1451,6 +1484,7 @@
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28; }
 
 .livestream {

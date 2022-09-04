@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect, Fragment} from "react";
 import {Player} from '@lottiefiles/react-lottie-player';
 import {useLazyQuery, useQuery, useSubscription} from "@apollo/client";
-import {GET_ALL_POSTS, NUMBER_OF_POSTS} from "../../graphql/queries";
+import {GET_ALL_POSTS, GET_ALL_POSTS_THIS_WEEK, NUMBER_OF_POSTS} from "../../graphql/queries";
 import {POST_ADDED, POST_DELETED, POST_UPDATED} from "../../graphql/subscriptions";
 import {toast} from "react-toastify";
 import {AuthContext} from "../../context/authContext";
@@ -12,27 +12,27 @@ import {stringifyForDisplay} from "@apollo/client/utilities";
 const LiveStream = () => {
     // const [page, setPage] = useState(1);
     const [showTwitterTimeline, setShowTwitterTimeline] = useState(true);
-    const {data, loading, error} = useQuery(GET_ALL_POSTS, {
-        // variables: {page: page}
+    const {data, loading, error} = useQuery(GET_ALL_POSTS_THIS_WEEK, {
+        variables: {week: 1}
     });
-    const {data: postCount} = useQuery(NUMBER_OF_POSTS);
-    const [fetchPosts, {data: posts}] = useLazyQuery(GET_ALL_POSTS);
+    // const {data: postCount} = useQuery(NUMBER_OF_POSTS);
+    const [fetchPosts, {data: posts}] = useLazyQuery(GET_ALL_POSTS_THIS_WEEK);
 
     // subscription > post added
     const {data: newPost} = useSubscription(POST_ADDED, {
         onSubscriptionData: async ({client: {cache}, subscriptionData: {data}}) => {
             // readQuery from cache
-            const {allPosts} = cache.readQuery({
-                query: GET_ALL_POSTS,
+            const {allPostsThisWeek} = cache.readQuery({
+                query: GET_ALL_POSTS_THIS_WEEK,
                 // variables: {page}
             });
 
             // write back to cache
             cache.writeQuery({
-                query: GET_ALL_POSTS,
+                query: GET_ALL_POSTS_THIS_WEEK,
                 // variables: {page},
                 data: {
-                    allPosts: [data.postAdded, ...allPosts]
+                    allPostsThisWeek: [data.postAdded, ...allPostsThisWeek]
                 }
             });
 
@@ -40,7 +40,7 @@ const LiveStream = () => {
             await fetchPosts({
                 // variables: {page},
                 refetchQueries: [{
-                    query: GET_ALL_POSTS,
+                    query: GET_ALL_POSTS_THIS_WEEK,
                     // variables: {page}
                 }]
             });
@@ -57,22 +57,58 @@ const LiveStream = () => {
             toast.success(`Post Updated`)
         }
     });
+    //     onSubscriptionData: async ({client: {cache}, subscriptionData: {data}}) => {
+    //         // readQuery from cache
+    //         const {allPostsThisWeek} = cache.readQuery({
+    //             query: GET_ALL_POSTS_THIS_WEEK,
+    //             // variables: {page}
+    //         });
+    //
+    //         // let updatedPosts = allPostsThisWeek.map(x => (x._id === data.postUpdated._id) ? data.postUpdated : x);
+    //         // console.log("the updatedPosts are ----jaffa", updatedPosts);
+    //         let filteredPosts = allPostsThisWeek.filter((p) => p._id !== data.postUpdated._id);
+    //         console.log("the updatedPost is ----jaffa", data.postUpdated);
+    //         console.log("the filtered posts are ----jaffa", filteredPosts);
+    //         let newPosts = [data.postUpdated, ...filteredPosts];
+    //         console.log("the new all posts are ----jaffa", allPostsThisWeek);
+    //         // write back to cache
+    //         cache.writeQuery({
+    //             query: GET_ALL_POSTS_THIS_WEEK,
+    //             // variables: {page},
+    //             data: {
+    //                 allPostsThisWeek: newPosts
+    //             }
+    //         });
+    //
+    //         // refetch all posts to update UI
+    //         await fetchPosts({
+    //             // variables: {page},
+    //             refetchQueries: [{
+    //                 query: GET_ALL_POSTS_THIS_WEEK,
+    //                 // variables: {page}
+    //             }]
+    //         });
+    //         console.log("fetching all posts again after updating --jaffa");
+    //
+    //         toast.success('Post Updated!');
+    //     }
+    // });
 
     // subscription > post deleted
     const {data: postDeleted} = useSubscription(POST_DELETED, {
         onSubscriptionData: async ({client: {cache}, subscriptionData: {data}}) => {
             // readQuery from cache
-            const {allPosts} = cache.readQuery({
-                query: GET_ALL_POSTS,
+            const {allPostsThisWeek} = cache.readQuery({
+                query: GET_ALL_POSTS_THIS_WEEK,
                 // variables: {page}
             });
-            let filteredPosts = allPosts.filter((p) => p._id !== data.postDeleted._id);
+            let filteredPosts = allPostsThisWeek.filter((p) => p._id !== data.postDeleted._id);
             // write back to cache
             cache.writeQuery({
-                query: GET_ALL_POSTS,
+                query: GET_ALL_POSTS_THIS_WEEK,
                 // variables: {page},
                 data: {
-                    allPosts: filteredPosts
+                    allPostsThisWeek: filteredPosts
                 }
             });
 
@@ -80,7 +116,7 @@ const LiveStream = () => {
             fetchPosts({
                 // variables: {page},
                 refetchQueries: [{
-                    query: GET_ALL_POSTS,
+                    query: GET_ALL_POSTS_THIS_WEEK,
                     // variables: {page}
                 }]
             });
@@ -217,12 +253,12 @@ const LiveStream = () => {
     const livePosts = loading ? <p className="p-5">Loading.......</p> :
         <Fragment>
             <div className="livestream__posts__watchlist">
-                {data && data.allPosts.filter(p => p.category === 'watchlist').map(p => (
+                {data && data.allPostsThisWeek.filter(p => p.category === 'watchlist').map(p => (
                     <PostCard key={p._id} post={p}/>
                 ))}
             </div>
             <div className="livestream__posts__commentary">
-                {data && data.allPosts.filter(p => p.category !== 'watchlist').map(p => (
+                {data && data.allPostsThisWeek.filter(p => p.category !== 'watchlist').map(p => (
                     <PostCard key={p._id} post={p}/>
                 ))}
             </div>

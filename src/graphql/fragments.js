@@ -30,6 +30,8 @@ export const POST_INFO = gql`
         postedBy {
             _id,
             username
-        }
+        },
+        createdAt,
+        updatedAt
     }
 `;

@@ -202,7 +202,8 @@ $post-types: (
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(40, 41, 61);
+  --jaffa-font-color: rgb(28, 28, 40);
+  --jaffa-font-color-secondary: #555770;
   --jaffa-background-color: #f7f7fa;
   //font-color: $color-font-body;
   //background-color: $color-background;
@@ -241,6 +242,7 @@ $post-types: (
 /* 2 */
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
+  --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28;
 }
 

@@ -79,7 +79,6 @@ const Post = () => {
     const handleRichText = (value) => {
         values.content = value;
         // setValues({...values, ["content"]: value});
-        console.log("the content is ---jaffa", values);
     }
 
     const createPostForm = () => (

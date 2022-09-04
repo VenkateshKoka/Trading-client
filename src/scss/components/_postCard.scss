@@ -32,6 +32,22 @@
     }
   }
 
+  &__postedTime {
+    margin-top: 20px;
+    display: flex;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--jaffa-font-color-secondary);
+    justify-content: end;
+    gap: 20px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+      font-size: 9px;
+      gap: 10px;
+    }
+  }
+
 
   &__images {
     display: flex;
@@ -43,6 +59,7 @@
     //flex-wrap: wrap;
     column-count: 3;
     column-width: 33%;
+    margin-top: 20px;
 
     @media screen and (max-width: 900px) {
       column-count: 2;

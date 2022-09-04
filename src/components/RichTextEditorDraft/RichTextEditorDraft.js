@@ -17,7 +17,8 @@ class RichTextEditorDraft extends React.Component {
         // const editorState = EditorState.createWithContent(initialText);
         this.state = {editorState: editorState || EditorState.createEmpty()};
 
-        const stateChanger = this.props.stateChanger;
+        // const stateChanger = this.props.stateChanger;
+
         // this useNativeArt option reduces the loading time when you click the emoji button.
         this.emojiPlugin = createEmojiPlugin({
             useNativeArt: true
@@ -26,8 +27,9 @@ class RichTextEditorDraft extends React.Component {
 
         this.focus = () => this.refs.editor.focus();
         this.onChange = (editorState) => {
+
             this.setState({editorState});
-            stateChanger && stateChanger(JSON.stringify(convertToRaw(editorState.getCurrentContent())));
+            this.props.stateChanger && this.props.stateChanger(JSON.stringify(convertToRaw(editorState.getCurrentContent())));
             // console.log("the editor state is ---jaffa", JSON.stringify(convertToRaw(editorState.getCurrentContent())));
         };
 
@@ -81,13 +83,15 @@ class RichTextEditorDraft extends React.Component {
 
     render() {
         const {editorState} = this.state;
+        // console.log("the editor state content is ---jaffa, checking for render", JSON.stringify(convertToRaw(editorState.getCurrentContent())))
+        // console.log("the editor state prop content is ---jaffa, checking for render", this.props.initialText);
         // Creates an Instance. At this step, a configuration object can be passed in
         // as an argument.
         const {EmojiSuggestions, EmojiSelect} = this.emojiPlugin;
         // If the user changes block type before entering any text, we can
         // either style the placeholder or hide it. Let's just hide it now.
         let className = `RichEditor-editor ${this.props.readOnly ? "RichEditor-editor__readOnly" : ""}`;
-        var contentState = editorState.getCurrentContent();
+        let contentState = editorState.getCurrentContent();
         if (!contentState.hasText()) {
             if (contentState.getBlockMap().first().getType() !== 'unstyled') {
                 className += ' RichEditor-hidePlaceholder';

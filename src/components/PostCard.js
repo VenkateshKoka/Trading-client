@@ -3,6 +3,8 @@ import Image from "./Image";
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
 import RichTextEditorDraft from "./RichTextEditorDraft";
+import {convertFromRaw} from "draft-js";
+import RichTextEditorCustom from "./RichTextEditorCustom";
 
 const PostCard = ({
                       post,
@@ -16,8 +18,8 @@ const PostCard = ({
     const [isOpen, setIsOpen] = useState(false);
     const [isEmptyPushState, setIsEmptyPushState] = useState(false);
 
-    const {_id, images, content, category} = post;
-    console.log("the content type is ----jaffa", typeof (content));
+    const {_id, images, content, category, createdAt, updatedAt} = post;
+    console.log("the content is ----jaffa", content);
     const navigate = useNavigate();
 
     const getImg = (imgSrc, index) => {
@@ -57,21 +59,29 @@ const PostCard = ({
             <div
                 // onClick={() => navigate(`/post/${_id}`)} --uncomment this ---jaffa
                 className="postCard__content">
-                <RichTextEditorDraft initialText={content} readOnly={true}>
-                </RichTextEditorDraft>
-                {/*{content}*/}
+                <RichTextEditorCustom initialText={content} readOnly={true}>
+                </RichTextEditorCustom>
                 {/*{showPostedBy && (*/}
                 {/*    <small>@{postedBy.username}</small>*/}
                 {/*)}*/}
             </div>
-            <div className="postCard__images">
+            {images && images.length > 0 && <div className="postCard__images">
                 {images.map((i, index) => (<div className="postCard__images__image" key={index}>
                     <img src={i.url} key={i.public_id} alt={i.public_id}
                          style={{width: '100%'}}
                          onClick={() => getImg(i.url, index)}
                     />
                 </div>))}
+            </div>}
+            <div className="postCard__postedTime">
+                <div className="postCard__createdAt">
+                    Posted at: {new Date(createdAt).toLocaleString()}
+                </div>
+                {createdAt !== updatedAt && <div className="postCard__updatedAt">
+                    Last updated: {new Date(updatedAt).toLocaleString()}
+                </div>}
             </div>
+
             {isOpen && (
                 <Lightbox
                     mainSrc={images[photoIndex].url}
