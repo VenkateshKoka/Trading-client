@@ -75,4 +75,17 @@
       }
     }
   }
+
+  &__twitterShare {
+    margin-left: auto;
+    //margin-right: auto;
+    margin-top: 5px;
+    //margin-right: 0px;
+    gap: 10px;
+    padding: 4px 8px;
+
+    &__icon {
+      padding-right: 5px;
+    }
+  }
 }

@@ -14,12 +14,13 @@
   text-align: center;
   text-transform: none;
   text-decoration: none;
-  text-shadow: 1px 1px 10px var(--jaffa-font-color);
-  text-shadow: 1px 1px 5px rgb(40, 41, 61);
+  //text-shadow: 1px 1px 5px rgb(40, 41, 61);
+  // this make the text-shadow based on the theme selected by the user
+  text-shadow: 0px 0px 1px var(--jaffa-font-color);
   color: $color-text-highlight-dark;
   //background: linear-gradient(147.14deg, #00CFDE 6.95%, #05A660 93.05%);;
   background: linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%);
-  //padding: 8px 16px;
+  padding: 8px 16px;
   cursor: pointer;
 
   &__primary {
@@ -46,8 +47,16 @@
     border-radius: 24px;
   }
 
+  &__contentFit {
+    width: fit-content;
+  }
+
   &__transparent {
     background: transparent;
+  }
+
+  &__small {
+    font-size: 12px;
   }
 
   &__bounce {

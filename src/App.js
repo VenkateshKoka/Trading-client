@@ -41,6 +41,7 @@ import MarketHealth from "./pages/trading/MarketHealth";
 import Mindset from "./pages/trading/Mindset";
 import PositionSizing from "./pages/trading/PositionSizing";
 import PositionManagement from "./pages/trading/PositionManagement";
+import PostArchives from "./pages/post/PostArchives";
 
 
 const App = () => {
@@ -148,6 +149,9 @@ const App = () => {
                 <Route path="/trading/market-health" element={<MarketHealth/>}/>
                 <Route path="/trading/mindset" element={<Mindset/>}/>
                 <Route path="/livestream" element={<LiveStream/>}/>
+                <Route path="/livestream/history" element={
+                    <PostArchives/>
+                }/>
                 <Route path="/webhook" element={<Webhook/>}/>
             </Routes>
         </ApolloProvider>

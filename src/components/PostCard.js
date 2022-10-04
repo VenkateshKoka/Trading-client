@@ -3,7 +3,7 @@ import Image from "./Image";
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
 import RichTextEditorDraft from "./RichTextEditorDraft";
-import {convertFromRaw} from "draft-js";
+import {convertFromRaw, convertToRaw, EditorState} from "draft-js";
 import RichTextEditorCustom from "./RichTextEditorCustom";
 
 const PostCard = ({
@@ -19,16 +19,17 @@ const PostCard = ({
     const [isEmptyPushState, setIsEmptyPushState] = useState(false);
 
     const {_id, images, content, category, createdAt, updatedAt} = post;
-    console.log("the content is ----jaffa", content);
+
+    const blocks = content && JSON.parse(content).blocks;
+    const richTextPlain = blocks.map(block => (!block.text.trim() && '\n') || block.text).join('\n');
+
     const navigate = useNavigate();
 
     const getImg = (imgSrc, index) => {
         setPhotoIndex(index);
         setIsOpen(true);
-        console.log(`image clicked and the modal is ${isOpen}`);
         if (!isEmptyPushState) {
             setIsEmptyPushState(true);
-            console.log("the history pushstate is being called ----jaffa");
             window.history.pushState(null, '', window.location.href);
         }
     }
@@ -39,7 +40,6 @@ const PostCard = ({
     }
 
     const closeModalOnBack = useCallback(e => {
-        console.log("the back button is clicked --jaffa");
         closeModal();
     }, []);
 
@@ -81,6 +81,17 @@ const PostCard = ({
                     Last updated: {new Date(updatedAt).toLocaleString()}
                 </div>}
             </div>
+            <div className="postCard__twitterShare">
+                <a
+                    className="twitter-share-button buttonJ buttonJ__twitterGradient buttonJ__small buttonJ__rounded buttonJ__contentFit"
+                    // href="https://twitter.com/share?ref_src=twsrc%5Etfw/tweet?text=Hello%20world"
+                    href={`https://twitter.com/intent/tweet?text=${richTextPlain}`}
+                    data-show-count="true" data-size="large" dnt="true">
+                    <i className="postCard__twitterShare__icon fab fa-twitter"/>
+                    <span className="postCard__twitterShare__text">tweet</span>
+                </a>
+            </div>
+
 
             {isOpen && (
                 <Lightbox

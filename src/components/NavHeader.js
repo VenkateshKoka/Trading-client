@@ -43,8 +43,10 @@ const NavHeader = () => {
         <header id="navbar">
             <nav className="navbar-container container">
                 <Link to="/" className="home-link">
-                    <div className="navbar-logo"></div>
-                    Jaffa
+                    <div className="navbar-logo">
+                        <img src={require('../assets/squigly-globe.png')}/>
+                    </div>
+                    <span>Koka</span>
                 </Link>
 
                 <div

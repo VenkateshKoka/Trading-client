@@ -7,6 +7,8 @@ import {toast} from "react-toastify";
 import {AuthContext} from "../../context/authContext";
 import {useNavigate} from "react-router-dom";
 import PostCard from "../../components/PostCard";
+// this stringifyForDisplay solves the re-rendering part of Tradingview widget
+// instead of going to default theme
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 const LiveStream = () => {
@@ -131,10 +133,6 @@ const LiveStream = () => {
     let item;
     const checkDarkThemeData = () => {
         item = localStorage.getItem("theme");
-
-        if (item) {
-            console.log(`the theme is ${item}-----jaffa`);
-        }
     };
 
     const checkTwitterToggle = () => {
@@ -144,7 +142,8 @@ const LiveStream = () => {
         } else {
             setShowTwitterTimeline("false");
         }
-    }
+    };
+
     const td = (item) => {
         if (document.getElementById("tradingView")) {
             document.getElementById("tradingView").remove();
@@ -191,11 +190,11 @@ const LiveStream = () => {
 
     useEffect(() => {
         // import('../../componentScripts/twitterTimeline');
-        const twitterScript = document.createElement('script');
-        twitterScript.type = "text/javascript";
-        twitterScript.src = "https://platform.twitter.com/widgets.js";
-        twitterScript.async = true;
-        document.body.appendChild(twitterScript);
+        // const twitterScript = document.createElement('script');
+        // twitterScript.type = "text/javascript";
+        // twitterScript.src = "https://platform.twitter.com/widgets.js";
+        // twitterScript.async = true;
+        // document.body.appendChild(twitterScript);
 
         checkDarkThemeData();
         checkTwitterToggle();
@@ -225,7 +224,7 @@ const LiveStream = () => {
             // clean up the script when the component in unmounted
 
             try {
-                document.body.removeChild(twitterScript);
+                // document.body.removeChild(twitterScript);
                 observer.disconnect();
                 document.getElementById("tradingView").remove();
             } catch (e) {

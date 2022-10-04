@@ -115,7 +115,7 @@ const Home = () => {
                     />
                 </div>
                 <div className="home__hero__content">
-                    <h3>Unlock your Trading potential</h3>
+                    <h4>Prepare yourself to take a great leap forward</h4>
                     <p>Follow the stock market commentary and updates</p>
                     <div className="btn buttonJ buttonJ__tertiary buttonJ__rounded"
                          onClick={() => navigate(`/livestream`)}>Livestream
@@ -123,6 +123,10 @@ const Home = () => {
                 </div>
             </div>
             <div className="home__tradingSteps container">
+                <div className="home__tradingSteps__hero">
+                    <h4>Learn the what, when and why of trading and
+                        unlock your potential for super-performance</h4>
+                </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selection"
                      onClick={() => navigate(`/trading/selection`)}>
                     <BulbBlinking/>

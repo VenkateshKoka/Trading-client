@@ -8,6 +8,8 @@ const PublicRoute = ({children}) => {
 
     useEffect(() => {
         if (state.user) {
+            // look at this implications and side-effects ---jaffa, when you login it goes to profile
+            // and redirect sometimes. Something glitchy with this.
             navigate("/profile");
         }
     }, [state.user]);

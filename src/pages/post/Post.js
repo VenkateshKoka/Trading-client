@@ -7,6 +7,7 @@ import {POST_CREATE, POST_DELETE} from "../../graphql/mutations";
 import {GET_ALL_POSTS_BY_USER} from "../../graphql/queries";
 import PostCard from "../../components/PostCard";
 import RichTextEditorDraft from "../../components/RichTextEditorDraft";
+import {EditorState, RichUtils, getDefaultKeyBinding, convertToRaw, convertFromRaw} from 'draft-js';
 
 const initialState = {
     category: '',

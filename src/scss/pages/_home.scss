@@ -63,6 +63,11 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
     margin-top: 48px;
     justify-content: space-evenly;
 
+    &__hero {
+      width: 100%;
+      text-align: center;
+    }
+
     &__step {
       display: flex;
       flex-direction: column;
