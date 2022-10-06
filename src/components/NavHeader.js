@@ -46,7 +46,7 @@ const NavHeader = () => {
                     <div className="navbar-logo">
                         <img src={require('../assets/squigly-globe.png')}/>
                     </div>
-                    <span>Koka</span>
+                    <span>Jaffa</span>
                 </Link>
 
                 <div
