@@ -3,17 +3,17 @@
   "name": "Become a stock market wizard. Learn the what, when and why of stock trading",
   "icons": [
     {
-      "src": "../src/assets/squigly-globe.webp",
+      "src": "squigly-globe.webp",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "../src/assets/squigly-globe.webp",
+      "src": "squigly-globe.webp",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "../src/assets/squigly-globe.webp",
+      "src": "squigly-globe.webp",
       "type": "image/png",
       "sizes": "512x512"
     }
