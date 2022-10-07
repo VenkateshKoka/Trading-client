@@ -20,8 +20,8 @@ const PostCard = ({
 
     const {_id, images, content, category, createdAt, updatedAt} = post;
 
-    const blocks = content && JSON.parse(content).blocks;
-    const richTextPlain = blocks.map(block => (!block.text.trim() && '\n') || block.text).join('\n');
+    let blocks = content && JSON.parse(content).blocks;
+    let richTextPlain = blocks.map(block => (!block.text.trim() && '\n') || block.text).join('\n');
 
     const navigate = useNavigate();
 
@@ -44,8 +44,14 @@ const PostCard = ({
     }, []);
 
     useEffect(() => {
+        const twitterScript = document.createElement('script');
+        twitterScript.type = "text/javascript";
+        twitterScript.src = "https://platform.twitter.com/widgets.js";
+        twitterScript.async = true;
+        document.body.appendChild(twitterScript);
         window.addEventListener('popstate', closeModalOnBack);
         return () => {
+            document.body.removeChild(twitterScript);
             window.removeEventListener("popstate", closeModalOnBack);
         }
     }, [closeModalOnBack]);
