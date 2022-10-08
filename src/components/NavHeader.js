@@ -44,7 +44,7 @@ const NavHeader = () => {
             <nav className="navbar-container container">
                 <Link to="/" className="home-link">
                     <div className="navbar-logo">
-                        <img src={require('../assets/squigly-globe.webp')}/>
+                        <img src={require('../assets/squigly-globe.webp')} alt="Logo for venkateshkoka.com"/>
                     </div>
                     <span>Jaffa</span>
                 </Link>
