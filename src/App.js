@@ -2,7 +2,13 @@ import React, {useContext, useState, lazy, Suspense} from "react";
 import {Routes, Route} from "react-router";
 import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client";
 import {ToastContainer} from "react-toastify";
-import PrivateRoute from "./components/PrivateRoute";
+
+// to create subscription client
+import {split, HttpLink} from '@apollo/client';
+import {getMainDefinition} from '@apollo/client/utilities';
+import {GraphQLWsLink} from '@apollo/client/link/subscriptions';
+import {createClient} from 'graphql-ws';
+import {setContext} from "@apollo/client/link/context";
 
 import './App.css';
 import '../src/css/main.css';
@@ -26,14 +32,8 @@ const PostUpdate = lazy(() => import("./pages/post/PostUpdate"));
 const SinglePost = lazy(() => import("./pages/post/SinglePost"));
 const PostArchives = lazy(() => import("./pages/post/PostArchives"));
 const PublicRoute = lazy(() => import("./components/PublicRoute"));
+const PrivateRoute = lazy(() => import("./components/PrivateRoute"));
 const SearchResult = lazy(() => import("./components/SearchResult"));
-
-// to create subscription client
-import {split, HttpLink} from '@apollo/client';
-import {getMainDefinition} from '@apollo/client/utilities';
-import {GraphQLWsLink} from '@apollo/client/link/subscriptions';
-import {createClient} from 'graphql-ws';
-import {setContext} from "@apollo/client/link/context";
 
 const Webhook = lazy(() => import("./pages/Webhook"));
 const Selection = lazy(() => import("./pages/trading/Selection"));
