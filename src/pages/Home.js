@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext, useEffect, lazy} from "react";
 import {useQuery, useLazyQuery, useSubscription} from "@apollo/client";
 import {AuthContext} from "../context/authContext";
 import {useNavigate} from "react-router-dom";
@@ -7,17 +7,18 @@ import {POST_ADDED, POST_UPDATED, POST_DELETED} from "../graphql/subscriptions";
 import PostCard from "../components/PostCard";
 import {toast} from "react-toastify";
 import Lottie from "lottie-react";
-
-import ForwardTriangle from "../components/animations/ForwardTriangle";
-import SpinningHexagon from "../components/animations/SpinningHexagon";
-import BulbBlinking from "../components/animations/BulbBlinking";
-import SandTimer from "../components/animations/SandTimer";
-
-import mainAnimation from '../assets/homepage_main_lf20_xwrbzebb.json';
-import marketHealthAnimation from '../assets/91145-health-insurance.json';
-import mindsetAnimation from '../assets/98369-thinking-colors-adapted.json';
 import DarkMode from "../components/DarkMode";
 import {stringifyForDisplay} from "@apollo/client/utilities";
+
+
+const mainAnimation = lazy(() => import("../assets/homepage_main_lf20_xwrbzebb.json"));
+const marketHealthAnimation = lazy(() => import("../assets/91145-health-insurance.json"));
+const mindsetAnimation = lazy(() => import("../assets/98369-thinking-colors-adapted.json"));
+
+const ForwardTriangle = lazy(() => import("../components/animations/ForwardTriangle"));
+const SpinningHexagon = lazy(() => import("../components/animations/SpinningHexagon"));
+const BulbBlinking = lazy(() => import("../components/animations/BulbBlinking"));
+const SandTimer = lazy(() => import("../components/animations/SandTimer"));
 
 const Home = () => {
     const navigate = useNavigate();
