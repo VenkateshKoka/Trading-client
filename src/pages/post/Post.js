@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, {lazy, useState, Suspense} from "react";
 import {toast} from "react-toastify";
 import {AuthContext} from "../../context/authContext";
 import {useQuery, useMutation} from "@apollo/react-hooks";
 import FileUpload from "../../components/FileUpload";
 import {POST_CREATE, POST_DELETE} from "../../graphql/mutations";
 import {GET_ALL_POSTS_BY_USER} from "../../graphql/queries";
-import PostCard from "../../components/PostCard";
-import RichTextEditorDraft from "../../components/RichTextEditorDraft";
-import {EditorState, RichUtils, getDefaultKeyBinding, convertToRaw, convertFromRaw} from 'draft-js';
+
+const PostCard = lazy(() => import("../../components/PostCard"));
+const RichTextEditorDraft = lazy(() => import("../../components/RichTextEditorDraft"));
 
 const initialState = {
     category: '',
@@ -84,11 +84,13 @@ const Post = () => {
 
     const createPostForm = () => (
         <form onSubmit={handleSubmit}>
-            <RichTextEditorDraft name="content"
-                                 id="content"
-                                 initialText={""}
-                                 stateChanger={handleRichText}>
-            </RichTextEditorDraft>
+            <Suspense fallback={<div>Loading...</div>}>
+                <RichTextEditorDraft name="content"
+                                     id="content"
+                                     initialText={""}
+                                     stateChanger={handleRichText}>
+                </RichTextEditorDraft>
+            </Suspense>
             {/*<textarea name="content"*/}
             {/*          className="md-textarea form-control"*/}
             {/*          id="content"*/}
@@ -120,8 +122,10 @@ const Post = () => {
                 <hr/>
                 {posts && posts.postsByUser.map(p => (
                     <div className="col-md-4" key={p._id}>
-                        <PostCard post={p} showPostedBy={false} showUpdateButton={true} showDeleteButton={true}
-                                  handleDelete={handleDelete}/>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <PostCard post={p} showPostedBy={false} showUpdateButton={true} showDeleteButton={true}
+                                      handleDelete={handleDelete}/>
+                        </Suspense>
                     </div>
                 ))}
             </div>

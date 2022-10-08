@@ -1,5 +1,4 @@
 import React, {useState, useContext, useEffect, Fragment} from "react";
-import {Player} from '@lottiefiles/react-lottie-player';
 import {useLazyQuery, useQuery, useSubscription} from "@apollo/client";
 import {GET_ALL_POSTS, GET_ALL_POSTS_THIS_WEEK, NUMBER_OF_POSTS} from "../../graphql/queries";
 import {POST_ADDED, POST_DELETED, POST_UPDATED} from "../../graphql/subscriptions";

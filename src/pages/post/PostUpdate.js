@@ -1,13 +1,12 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState, lazy, Suspense} from "react";
 import {toast} from "react-toastify";
-import {GET_ALL_POSTS, GET_ALL_POSTS_BY_USER, SINGLE_POST} from "../../graphql/queries";
+import {SINGLE_POST} from "../../graphql/queries";
 import {useLazyQuery, useMutation} from "@apollo/client";
 import {useParams} from "react-router";
 import FileUpload from "../../components/FileUpload";
 import {POST_UPDATE} from "../../graphql/mutations";
-import RichTextEditorDraft from "../../components/RichTextEditorDraft";
-import {useQuery} from "@apollo/react-hooks";
-import RichTextEditorCustom from "../../components/RichTextEditorCustom";
+
+const RichTextEditorDraft = lazy(() => import("../../components/RichTextEditorDraft"));
 
 const PostUpdate = () => {
     const [values, setValues] = useState({
@@ -84,12 +83,16 @@ const PostUpdate = () => {
 
     const updatePostForm = () => (
         <form onSubmit={handleSubmit}>
-            {singlePost && <RichTextEditorDraft name="content"
-                                                id="content"
-                                                initialText={values.content}
-                                                stateChanger={handleRichText}>
+            {singlePost &&
+                <Suspense fallback={<div>Loading...</div>}>
+                    <RichTextEditorDraft name="content"
+                                         id="content"
+                                         initialText={values.content}
+                                         stateChanger={handleRichText}>
 
-            </RichTextEditorDraft>}
+                    </RichTextEditorDraft>
+                </Suspense>
+            }
             {/*<textarea name="content"*/}
             {/*          className="md-textarea form-control"*/}
             {/*          id="content"*/}
