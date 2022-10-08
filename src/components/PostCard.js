@@ -1,8 +1,9 @@
-import React, {lazy, useCallback, useEffect, useState, Suspense} from "react";
+import React, {useCallback, useEffect, useState} from "react";
+import loadable from '@loadable/component'
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
 
-const RichTextEditorCustom = lazy(() => import("./RichTextEditorCustom"));
+const RichTextEditorCustom = loadable(() => import("./RichTextEditorCustom"));
 
 const PostCard = ({
                       post,
@@ -63,10 +64,8 @@ const PostCard = ({
             <div
                 // onClick={() => navigate(`/post/${_id}`)} --uncomment this ---jaffa
                 className="postCard__content">
-                <Suspense fallback={<div>Loading...</div>}>
-                    <RichTextEditorCustom initialText={content} readOnly={true}>
-                    </RichTextEditorCustom>
-                </Suspense>
+                <RichTextEditorCustom initialText={content} readOnly={true}>
+                </RichTextEditorCustom>
                 {/*{showPostedBy && (*/}
                 {/*    <small>@{postedBy.username}</small>*/}
                 {/*)}*/}

@@ -1,4 +1,5 @@
-import React, {useState, useContext, useEffect, lazy, Suspense} from "react";
+import React, {useState, useContext, useEffect} from "react";
+import loadable from '@loadable/component';
 import {useQuery, useLazyQuery, useSubscription} from "@apollo/client";
 import {AuthContext} from "../context/authContext";
 import {useNavigate} from "react-router-dom";
@@ -11,14 +12,14 @@ import DarkMode from "../components/DarkMode";
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 
-const MainAnimationHome = lazy(() => import("../components/animations/MainAnimationHome"));
-const MarketHealth = lazy(() => import("../components/animations/MarketHealth"));
-const Mindset = lazy(() => import("../components/animations/Mindset"));
+const MainAnimationHome = loadable(() => import("../components/animations/MainAnimationHome"));
+const MarketHealth = loadable(() => import("../components/animations/MarketHealth"));
+const Mindset = loadable(() => import("../components/animations/Mindset"));
 
-const ForwardTriangle = lazy(() => import("../components/animations/ForwardTriangle"));
-const SpinningHexagon = lazy(() => import("../components/animations/SpinningHexagon"));
-const BulbBlinking = lazy(() => import("../components/animations/BulbBlinking"));
-const SandTimer = lazy(() => import("../components/animations/SandTimer"));
+const ForwardTriangle = loadable(() => import("../components/animations/ForwardTriangle"));
+const SpinningHexagon = loadable(() => import("../components/animations/SpinningHexagon"));
+const BulbBlinking = loadable(() => import("../components/animations/BulbBlinking"));
+const SandTimer = loadable(() => import("../components/animations/SandTimer"));
 
 const Home = () => {
     const navigate = useNavigate();
@@ -107,9 +108,7 @@ const Home = () => {
         <div className="home" id="home">
             <div className="home__hero container">
                 <div className="home__hero__animation">
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <MainAnimationHome/>
-                    </Suspense>
+                    <MainAnimationHome/>
                 </div>
                 <div className="home__hero__content">
                     <h4>Prepare yourself to take a great leap forward</h4>
@@ -126,23 +125,17 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selection"
                      onClick={() => navigate(`/trading/selection`)}>
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <BulbBlinking/>
-                    </Suspense>
+                    <BulbBlinking/>
                     <h6>What to Buy</h6>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__timing"
                      onClick={() => navigate(`/trading/timing`)}>
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <SandTimer/>
-                    </Suspense>
+                    <SandTimer/>
                     <h6>When to Buy</h6>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__positionManagement"
                      onClick={() => navigate(`/trading/position-sizing`)}>
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <SpinningHexagon/>
-                    </Suspense>
+                    <SpinningHexagon/>
                     {/*<ForwardTriangle/>*/}
                     <h6>How much to Buy</h6>
                     {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
@@ -151,9 +144,7 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__managing"
                      onClick={() => navigate(`/trading/position-management`)}>
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <ForwardTriangle/>
-                    </Suspense>
+                    <ForwardTriangle/>
                     <h6>Manage Position</h6>
                     {/*<h4>Manage position once bought.</h4>*/}
                     {/*what to do when the position goes wrong. Good place to introduce staggered stops. How to rotate your*/}
@@ -162,9 +153,7 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selling"
                      onClick={() => navigate(`/trading/selling`)}>
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <SpinningHexagon/>
-                    </Suspense>
+                    <SpinningHexagon/>
                     <h6>
                         When to Sell
                     </h6>
@@ -177,9 +166,7 @@ const Home = () => {
                     {/*        speed="1" style={{width: "80px", height: "80px"}} loop autoplay>*/}
                     {/*</Player>*/}
 
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <MarketHealth/>
-                    </Suspense>
+                    <MarketHealth/>
                     <h6>Market Health</h6>
                     {/*<h4>which depends on your own positions and some indicators like market*/}
                     {/*    breadth of advances and declines and percentage of stocks above their own 200d and 50 moving*/}
@@ -188,9 +175,7 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__mindset"
                      onClick={() => navigate(`/trading/mindset`)}>
-                    <Suspense fallback={<div>Loading..</div>}>
-                        <Mindset/>
-                    </Suspense>
+                    <Mindset/>
                     <h6>Mindset</h6>
                 </div>
             </div>

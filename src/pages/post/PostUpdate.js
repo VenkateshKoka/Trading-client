@@ -1,4 +1,5 @@
-import React, {useEffect, useMemo, useState, lazy, Suspense} from "react";
+import React, {useEffect, useMemo, useState} from "react";
+import loadable from '@loadable/component'
 import {toast} from "react-toastify";
 import {SINGLE_POST} from "../../graphql/queries";
 import {useLazyQuery, useMutation} from "@apollo/client";
@@ -6,7 +7,7 @@ import {useParams} from "react-router";
 import FileUpload from "../../components/FileUpload";
 import {POST_UPDATE} from "../../graphql/mutations";
 
-const RichTextEditorDraft = lazy(() => import("../../components/RichTextEditorDraft"));
+const RichTextEditorDraft = loadable(() => import("../../components/RichTextEditorDraft"));
 
 const PostUpdate = () => {
     const [values, setValues] = useState({
@@ -84,14 +85,12 @@ const PostUpdate = () => {
     const updatePostForm = () => (
         <form onSubmit={handleSubmit}>
             {singlePost &&
-                <Suspense fallback={<div>Loading...</div>}>
-                    <RichTextEditorDraft name="content"
-                                         id="content"
-                                         initialText={values.content}
-                                         stateChanger={handleRichText}>
+                <RichTextEditorDraft name="content"
+                                     id="content"
+                                     initialText={values.content}
+                                     stateChanger={handleRichText}>
 
-                    </RichTextEditorDraft>
-                </Suspense>
+                </RichTextEditorDraft>
             }
             {/*<textarea name="content"*/}
             {/*          className="md-textarea form-control"*/}

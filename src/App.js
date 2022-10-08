@@ -1,4 +1,5 @@
-import React, {useContext, useState, lazy, Suspense} from "react";
+import React, {useContext} from "react";
+import loadable from '@loadable/component';
 import {Routes, Route} from "react-router";
 import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client";
 import {ToastContainer} from "react-toastify";
@@ -18,32 +19,32 @@ import logo from './logo.svg';
 import {AuthContext} from "./context/authContext";
 import NavHeader from "./components/NavHeader";
 
-const Home = lazy(() => import("./pages/Home"));
-const Users = lazy(() => import("./pages/Users"));
-const SingleUser = lazy(() => import("./pages/SingleUser"));
-const Register = lazy(() => import("./pages/auth/Register"));
-const Login = lazy(() => import("./pages/auth/Login"));
-const CompleteRegistration = lazy(() => import("./pages/auth/CompleteRegistration"));
-const PasswordForgot = lazy(() => import("./pages/auth/PasswordForgot"));
-const PasswordUpdate = lazy(() => import("./pages/auth/PasswordUpdate"));
-const Profile = lazy(() => import("./pages/auth/Profile"));
-const Post = lazy(() => import("./pages/post/Post"));
-const PostUpdate = lazy(() => import("./pages/post/PostUpdate"));
-const SinglePost = lazy(() => import("./pages/post/SinglePost"));
-const PostArchives = lazy(() => import("./pages/post/PostArchives"));
-const PublicRoute = lazy(() => import("./components/PublicRoute"));
-const PrivateRoute = lazy(() => import("./components/PrivateRoute"));
-const SearchResult = lazy(() => import("./components/SearchResult"));
+const Home = loadable(() => import("./pages/Home"));
+const Users = loadable(() => import("./pages/Users"));
+const SingleUser = loadable(() => import("./pages/SingleUser"));
+const Register = loadable(() => import("./pages/auth/Register"));
+const Login = loadable(() => import("./pages/auth/Login"));
+const CompleteRegistration = loadable(() => import("./pages/auth/CompleteRegistration"));
+const PasswordForgot = loadable(() => import("./pages/auth/PasswordForgot"));
+const PasswordUpdate = loadable(() => import("./pages/auth/PasswordUpdate"));
+const Profile = loadable(() => import("./pages/auth/Profile"));
+const Post = loadable(() => import("./pages/post/Post"));
+const PostUpdate = loadable(() => import("./pages/post/PostUpdate"));
+const SinglePost = loadable(() => import("./pages/post/SinglePost"));
+const PostArchives = loadable(() => import("./pages/post/PostArchives"));
+const PublicRoute = loadable(() => import("./components/PublicRoute"));
+const PrivateRoute = loadable(() => import("./components/PrivateRoute"));
+const SearchResult = loadable(() => import("./components/SearchResult"));
 
-const Webhook = lazy(() => import("./pages/Webhook"));
-const Selection = lazy(() => import("./pages/trading/Selection"));
-const Timing = lazy(() => import("./pages/trading/Timing"));
-const LiveStream = lazy(() => import("./pages/trading/LiveStream"));
-const Selling = lazy(() => import("./pages/trading/Selling"));
-const MarketHealth = lazy(() => import("./pages/trading/MarketHealth"));
-const Mindset = lazy(() => import("./pages/trading/Mindset"));
-const PositionSizing = lazy(() => import("./pages/trading/PositionSizing"));
-const PositionManagement = lazy(() => import("./pages/trading/PositionManagement"));
+const Webhook = loadable(() => import("./pages/Webhook"));
+const Selection = loadable(() => import("./pages/trading/Selection"));
+const Timing = loadable(() => import("./pages/trading/Timing"));
+const LiveStream = loadable(() => import("./pages/trading/LiveStream"));
+const Selling = loadable(() => import("./pages/trading/Selling"));
+const MarketHealth = loadable(() => import("./pages/trading/MarketHealth"));
+const Mindset = loadable(() => import("./pages/trading/Mindset"));
+const PositionSizing = loadable(() => import("./pages/trading/PositionSizing"));
+const PositionManagement = loadable(() => import("./pages/trading/PositionManagement"));
 
 
 const App = () => {
@@ -105,59 +106,57 @@ const App = () => {
         <ApolloProvider client={client}>
             <NavHeader/>
             <ToastContainer/>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/users" element={<Users/>}/>
-                    <Route path="/register" element={
-                        <PublicRoute>
-                            <Register/>
-                        </PublicRoute>
-                    }/>
-                    <Route path="/login" element={
-                        <PublicRoute>
-                            <Login/>
-                        </PublicRoute>
-                    }/>
-                    <Route path="/complete-registration" element={<CompleteRegistration/>}/>
-                    <Route path="/password/forgot" element={<PasswordForgot/>}/>
-                    <Route path="/password/update" element={
-                        <PrivateRoute>
-                            <PasswordUpdate/>
-                        </PrivateRoute>
-                    }/>
-                    <Route path="/profile" element={
-                        <PrivateRoute>
-                            <Profile/>
-                        </PrivateRoute>
-                    }/>
-                    <Route path="/post/create" element={
-                        <PrivateRoute>
-                            <Post/>
-                        </PrivateRoute>
-                    }/>
-                    <Route path="/post/update/:postid" element={
-                        <PrivateRoute>
-                            <PostUpdate/>
-                        </PrivateRoute>
-                    }/>
-                    <Route path="/post/:postid" element={<SinglePost/>}/>
-                    <Route path="/search/:searchterm" element={<SearchResult/>}/>
-                    <Route path="/users/:username" element={<SingleUser/>}/>
-                    <Route path="/trading/selection" element={<Selection/>}/>
-                    <Route path="/trading/timing" element={<Timing/>}/>
-                    <Route path="/trading/position-sizing" element={<PositionSizing/>}/>
-                    <Route path="/trading/position-management" element={<PositionManagement/>}/>
-                    <Route path="/trading/selling" element={<Selling/>}/>
-                    <Route path="/trading/market-health" element={<MarketHealth/>}/>
-                    <Route path="/trading/mindset" element={<Mindset/>}/>
-                    <Route path="/livestream" element={<LiveStream/>}/>
-                    <Route path="/livestream/history" element={
-                        <PostArchives/>
-                    }/>
-                    <Route path="/webhook" element={<Webhook/>}/>
-                </Routes>
-            </Suspense>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/users" element={<Users/>}/>
+                <Route path="/register" element={
+                    <PublicRoute>
+                        <Register/>
+                    </PublicRoute>
+                }/>
+                <Route path="/login" element={
+                    <PublicRoute>
+                        <Login/>
+                    </PublicRoute>
+                }/>
+                <Route path="/complete-registration" element={<CompleteRegistration/>}/>
+                <Route path="/password/forgot" element={<PasswordForgot/>}/>
+                <Route path="/password/update" element={
+                    <PrivateRoute>
+                        <PasswordUpdate/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/profile" element={
+                    <PrivateRoute>
+                        <Profile/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/post/create" element={
+                    <PrivateRoute>
+                        <Post/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/post/update/:postid" element={
+                    <PrivateRoute>
+                        <PostUpdate/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/post/:postid" element={<SinglePost/>}/>
+                <Route path="/search/:searchterm" element={<SearchResult/>}/>
+                <Route path="/users/:username" element={<SingleUser/>}/>
+                <Route path="/trading/selection" element={<Selection/>}/>
+                <Route path="/trading/timing" element={<Timing/>}/>
+                <Route path="/trading/position-sizing" element={<PositionSizing/>}/>
+                <Route path="/trading/position-management" element={<PositionManagement/>}/>
+                <Route path="/trading/selling" element={<Selling/>}/>
+                <Route path="/trading/market-health" element={<MarketHealth/>}/>
+                <Route path="/trading/mindset" element={<Mindset/>}/>
+                <Route path="/livestream" element={<LiveStream/>}/>
+                <Route path="/livestream/history" element={
+                    <PostArchives/>
+                }/>
+                <Route path="/webhook" element={<Webhook/>}/>
+            </Routes>
         </ApolloProvider>
     );
 }
