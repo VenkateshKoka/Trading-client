@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect, lazy} from "react";
+import React, {useState, useContext, useEffect, lazy, Suspense} from "react";
 import {useQuery, useLazyQuery, useSubscription} from "@apollo/client";
 import {AuthContext} from "../context/authContext";
 import {useNavigate} from "react-router-dom";
@@ -11,9 +11,9 @@ import DarkMode from "../components/DarkMode";
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 
-const mainAnimation = lazy(() => import("../assets/homepage_main_lf20_xwrbzebb.json"));
-const marketHealthAnimation = lazy(() => import("../assets/91145-health-insurance.json"));
-const mindsetAnimation = lazy(() => import("../assets/98369-thinking-colors-adapted.json"));
+const MainAnimationHome = lazy(() => import("../components/animations/MainAnimationHome"));
+const MarketHealth = lazy(() => import("../components/animations/MarketHealth"));
+const Mindset = lazy(() => import("../components/animations/Mindset"));
 
 const ForwardTriangle = lazy(() => import("../components/animations/ForwardTriangle"));
 const SpinningHexagon = lazy(() => import("../components/animations/SpinningHexagon"));
@@ -107,13 +107,9 @@ const Home = () => {
         <div className="home" id="home">
             <div className="home__hero container">
                 <div className="home__hero__animation">
-                    <Lottie animationData={mainAnimation}
-                            style={{width: "100%", height: "100%", opacity: "0.9"}}
-                            background="transparent"
-                            speed={1}
-                            loop={true}
-                            autoplay={true}
-                    />
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <MainAnimationHome/>
+                    </Suspense>
                 </div>
                 <div className="home__hero__content">
                     <h4>Prepare yourself to take a great leap forward</h4>
@@ -130,17 +126,23 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selection"
                      onClick={() => navigate(`/trading/selection`)}>
-                    <BulbBlinking/>
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <BulbBlinking/>
+                    </Suspense>
                     <h6>What to Buy</h6>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__timing"
                      onClick={() => navigate(`/trading/timing`)}>
-                    <SandTimer/>
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <SandTimer/>
+                    </Suspense>
                     <h6>When to Buy</h6>
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__positionManagement"
                      onClick={() => navigate(`/trading/position-sizing`)}>
-                    <SpinningHexagon/>
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <SpinningHexagon/>
+                    </Suspense>
                     {/*<ForwardTriangle/>*/}
                     <h6>How much to Buy</h6>
                     {/*How many stocks to buy and how much of the portfolio percentage it should be. example of few 5%*/}
@@ -149,7 +151,9 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__managing"
                      onClick={() => navigate(`/trading/position-management`)}>
-                    <ForwardTriangle/>
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <ForwardTriangle/>
+                    </Suspense>
                     <h6>Manage Position</h6>
                     {/*<h4>Manage position once bought.</h4>*/}
                     {/*what to do when the position goes wrong. Good place to introduce staggered stops. How to rotate your*/}
@@ -158,7 +162,9 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__selling"
                      onClick={() => navigate(`/trading/selling`)}>
-                    <SpinningHexagon/>
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <SpinningHexagon/>
+                    </Suspense>
                     <h6>
                         When to Sell
                     </h6>
@@ -170,13 +176,10 @@ const Home = () => {
                     {/*<Player src="https://assets10.lottiefiles.com/packages/lf20_xgdvjjxc.json" background="transparent"*/}
                     {/*        speed="1" style={{width: "80px", height: "80px"}} loop autoplay>*/}
                     {/*</Player>*/}
-                    <Lottie animationData={marketHealthAnimation}
-                            style={{width: "70px", height: "70px"}}
-                            background="transparent"
-                            speed={1}
-                            loop={true}
-                            autoplay={true}
-                    />
+
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <MarketHealth/>
+                    </Suspense>
                     <h6>Market Health</h6>
                     {/*<h4>which depends on your own positions and some indicators like market*/}
                     {/*    breadth of advances and declines and percentage of stocks above their own 200d and 50 moving*/}
@@ -185,13 +188,9 @@ const Home = () => {
                 </div>
                 <div className="home__tradingSteps__step home__tradingSteps__mindset"
                      onClick={() => navigate(`/trading/mindset`)}>
-                    <Lottie animationData={mindsetAnimation}
-                            style={{marginTop: "-20px", width: "80px", height: "80px"}}
-                            background="transparent"
-                            speed={1}
-                            loop={true}
-                            autoplay={true}
-                    />
+                    <Suspense fallback={<div>Loading..</div>}>
+                        <Mindset/>
+                    </Suspense>
                     <h6>Mindset</h6>
                 </div>
             </div>
