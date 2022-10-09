@@ -14,37 +14,36 @@ import {setContext} from "@apollo/client/link/context";
 import './App.css';
 import '../src/css/main.css';
 
-import logo from './logo.svg';
-
 import {AuthContext} from "./context/authContext";
-import NavHeader from "./components/NavHeader";
 
-const Home = loadable(() => import("./pages/Home"));
-const Users = loadable(() => import("./pages/Users"));
-const SingleUser = loadable(() => import("./pages/SingleUser"));
-const Register = loadable(() => import("./pages/auth/Register"));
-const Login = loadable(() => import("./pages/auth/Login"));
-const CompleteRegistration = loadable(() => import("./pages/auth/CompleteRegistration"));
-const PasswordForgot = loadable(() => import("./pages/auth/PasswordForgot"));
-const PasswordUpdate = loadable(() => import("./pages/auth/PasswordUpdate"));
-const Profile = loadable(() => import("./pages/auth/Profile"));
-const Post = loadable(() => import("./pages/post/Post"));
-const PostUpdate = loadable(() => import("./pages/post/PostUpdate"));
-const SinglePost = loadable(() => import("./pages/post/SinglePost"));
-const PostArchives = loadable(() => import("./pages/post/PostArchives"));
-const PublicRoute = loadable(() => import("./components/PublicRoute"));
-const PrivateRoute = loadable(() => import("./components/PrivateRoute"));
-const SearchResult = loadable(() => import("./components/SearchResult"));
+const NavHeader = loadable(() => import("./components/NavHeader"/* webpackChunkName: "navHeader"*/));
 
-const Webhook = loadable(() => import("./pages/Webhook"));
-const Selection = loadable(() => import("./pages/trading/Selection"));
-const Timing = loadable(() => import("./pages/trading/Timing"));
-const LiveStream = loadable(() => import("./pages/trading/LiveStream"));
-const Selling = loadable(() => import("./pages/trading/Selling"));
-const MarketHealth = loadable(() => import("./pages/trading/MarketHealth"));
-const Mindset = loadable(() => import("./pages/trading/Mindset"));
-const PositionSizing = loadable(() => import("./pages/trading/PositionSizing"));
-const PositionManagement = loadable(() => import("./pages/trading/PositionManagement"));
+const Home = loadable(() => import("./pages/Home"/* webpackChunkName: "home"*/));
+const Users = loadable(() => import("./pages/Users"/* webpackChunkName: "page-users"*/));
+const SingleUser = loadable(() => import("./pages/SingleUser"/* webpackChunkName: "page-singleUser"*/));
+const Register = loadable(() => import("./pages/auth/Register"/* webpackChunkName: "register"*/));
+const Login = loadable(() => import("./pages/auth/Login"/* webpackChunkName: "login"*/));
+const CompleteRegistration = loadable(() => import("./pages/auth/CompleteRegistration"/* webpackChunkName: "complete-registration"*/));
+const PasswordForgot = loadable(() => import("./pages/auth/PasswordForgot"/* webpackChunkName: "passwordForgot"*/));
+const PasswordUpdate = loadable(() => import("./pages/auth/PasswordUpdate"/* webpackChunkName: "passwordUpdate"*/));
+const Profile = loadable(() => import("./pages/auth/Profile"/* webpackChunkName: "profile"*/));
+const Post = loadable(() => import("./pages/post/Post"/* webpackChunkName: "post"*/));
+const PostUpdate = loadable(() => import("./pages/post/PostUpdate"/* webpackChunkName: "postUpdate"*/));
+const SinglePost = loadable(() => import("./pages/post/SinglePost"/* webpackChunkName: "singlePost"*/));
+const PostArchives = loadable(() => import("./pages/post/PostArchives"/* webpackChunkName: "postArchives"*/));
+const PublicRoute = loadable(() => import("./components/PublicRoute"/* webpackChunkName: "publicRoute"*/));
+const PrivateRoute = loadable(() => import("./components/PrivateRoute"/* webpackChunkName: "privateRoute"*/));
+const SearchResult = loadable(() => import("./components/SearchResult"/* webpackChunkName: "searchResult"*/));
+
+const Webhook = loadable(() => import("./pages/Webhook"/* webpackChunkName: "webhook-tradingview"*/));
+const Selection = loadable(() => import("./pages/trading/Selection"/* webpackChunkName: "trading-selection"*/));
+const Timing = loadable(() => import("./pages/trading/Timing"/* webpackChunkName: "trading-timing"*/));
+const LiveStream = loadable(() => import("./pages/trading/LiveStream"/* webpackChunkName: "trading-livestream"*/));
+const Selling = loadable(() => import("./pages/trading/Selling"/* webpackChunkName: "trading-selling"*/));
+const MarketHealth = loadable(() => import("./pages/trading/MarketHealth"/* webpackChunkName: "trading-marketHealth"*/));
+const Mindset = loadable(() => import("./pages/trading/Mindset"/* webpackChunkName: "trading-mindset"*/));
+const PositionSizing = loadable(() => import("./pages/trading/PositionSizing"/* webpackChunkName: "trading-positionSizing"*/));
+const PositionManagement = loadable(() => import("./pages/trading/PositionManagement"/* webpackChunkName: "trading-positionManagement"*/));
 
 
 const App = () => {
