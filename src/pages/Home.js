@@ -1,14 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import loadable from '@loadable/component';
-import {useQuery, useLazyQuery, useSubscription} from "@apollo/client";
-import {AuthContext} from "../context/authContext";
 import {useNavigate} from "react-router-dom";
-import {GET_ALL_POSTS, NUMBER_OF_POSTS} from "../graphql/queries";
-import {POST_ADDED, POST_UPDATED, POST_DELETED} from "../graphql/subscriptions";
-import PostCard from "../components/PostCard";
-import {toast} from "react-toastify";
-import Lottie from "lottie-react";
-import DarkMode from "../components/DarkMode";
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 
