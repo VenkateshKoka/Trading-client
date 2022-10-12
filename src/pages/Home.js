@@ -101,7 +101,7 @@ const Home = () => {
         <div className="home" id="home">
             <div className="home__topSection container">
                 <div className="home__topSection__title">
-                    Prepare yourself to take a great leap <span>forward</span>
+                    Prepare yourself to take a giant leap <span>forward</span>
                 </div>
                 <div className="home__topSection__subtitle">
                     This is a stock trading educational platform that error-proofs your trading process.
