@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from "react";
 import loadable from '@loadable/component';
 import {useNavigate} from "react-router-dom";
+import {TypeAnimation} from 'react-type-animation';
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 
@@ -98,17 +99,48 @@ const Home = () => {
 
     return (
         <div className="home" id="home">
+            <div className="home__topSection container">
+                <div className="home__topSection__title">
+                    Prepare yourself to take a great leap <span>forward</span>
+                </div>
+                <div className="home__topSection__subtitle">
+                    This is a stock trading educational platform that error-proofs your trading process.
+                </div>
+
+            </div>
             <div className="home__hero container">
                 <div className="home__hero__animation">
                     <MainAnimationHome/>
                 </div>
                 <div className="home__hero__content">
-                    <h4>Prepare yourself to take a great leap forward</h4>
                     <p>Follow the stock market commentary and updates</p>
                     <div className="btn buttonJ buttonJ__tertiary buttonJ__rounded"
-                         onClick={() => navigate(`/livestream`)}>Livestream
+                         onClick={() => navigate(`/livestream`)}
+                         style={{marginLeft: "auto", marginRight: "auto"}}>Livestream
                     </div>
                 </div>
+            </div>
+            <div className="home__improveSection" style={{width: "100%"}}>
+                <span className="home__improveSection__title">We can help you with</span>
+                <div>Taking your</div>
+                <TypeAnimation
+                    sequence={[
+                        'knowledge', // Types 'One'
+                        3000, // Waits 1s
+                        'mindset', // Deletes 'One' and types 'Two'
+                        3000, // Waits 2s
+                        'process', // Types 'Three' without deleting 'Two'
+                        3000, // Waits 2s
+                    ]}
+                    wrapper="div"
+                    speed={40}
+                    cursor={true}
+                    repeat={Infinity}
+                    style={{
+                        fontSize: '48px', color: "#FF3B3B"
+                    }}
+                />
+                <div>to the next level</div>
             </div>
             <div className="home__tradingSteps container">
                 <div className="home__tradingSteps__hero">
@@ -227,6 +259,9 @@ const Home = () => {
                         </div>
                         <div className="home__footer__resources__section__link">
                             Trading Steps
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            Post Archives
                         </div>
                     </div>
                     <div className="home__footer__resources__section home__footer__resources__company">
