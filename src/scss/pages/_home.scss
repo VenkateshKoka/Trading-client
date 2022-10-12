@@ -21,7 +21,7 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
 
   &__topSection {
     display: flex;
-    padding: 50px 0px;
+    padding: 60px 0px 0px 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,10 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
     }
 
     span {
-      color: #FF3B3B;
+      //color: #FF3B3B;
+      background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     &__title {
@@ -96,6 +99,7 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
     justify-content: center;
     align-items: center;
     padding: 80px 5px 50px 5px;
+    background-color: var(--jaffa-background-color-2);
 
     div {
       font-size: 48px;

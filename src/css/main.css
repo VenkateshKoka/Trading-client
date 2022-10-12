@@ -953,7 +953,7 @@
       margin-top: 92px; } }
   .home__topSection {
     display: flex;
-    padding: 50px 0px;
+    padding: 60px 0px 0px 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -963,7 +963,9 @@
       .home__topSection {
         padding: 30px 0px; } }
     .home__topSection span {
-      color: #FF3B3B; }
+      background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
     .home__topSection__title {
       font-size: 64px;
       font-weight: 900; }
@@ -1005,7 +1007,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 5px 50px 5px; }
+    padding: 80px 5px 50px 5px;
+    background-color: var(--jaffa-background-color-2); }
     .home__improveSection div {
       font-size: 48px;
       font-weight: 700; }
