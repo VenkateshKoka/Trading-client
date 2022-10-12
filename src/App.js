@@ -99,6 +99,7 @@ const App = () => {
     const client = new ApolloClient({
         link: splitLink,
         cache: new InMemoryCache()
+        // cache: new InMemoryCache().restore(JSON.parse(window.__APOLLO_STATE__))
     });
 
     return (

@@ -171,6 +171,116 @@ const Home = () => {
                     <h6>Mindset</h6>
                 </div>
             </div>
+            <div className="home__footer">
+                <div className="home__footer__title container">
+                    <div className="home__footer__title__logo">
+                        <img src={require('../assets/squigly-globe.webp')} height="30px" width="30px" alt="Logo"/>
+                        <span>Venkatesh Koka</span>
+                    </div>
+                    <div className="home__footer__title__purpose">
+                        Make your trading journey simpler. Achieve the winning mindset and techniques of
+                        trading.
+                    </div>
+                    <div className="home__footer__title__social">
+                        <div className="home__footer__title__social__twitter">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://twitter.com/venkatesh_koka/">
+                                <i className="fab fa-twitter"/>
+                            </a>
+                        </div>
+                        <div className="home__footer__title__social__linkedin">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.linkedin.com/in/venkateshkoka45/">
+                                <i className="fab fa-linkedin"/>
+                            </a>
+                        </div>
+                        <div className="home__footer__title__social__github">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://github.com/VenkateshKoka/">
+                                <i className="fab fa-github"/>
+                            </a>
+                        </div>
+                        <div className="home__footer__title__social__instagram">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.instagram.com/venkatesh_koka/">
+                                <i className="fab fa-instagram"/>
+                            </a>
+                        </div>
+                        <div className="home__footer__title__social__youtube">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.youtube.com/channel/UCD6MPlsv0kg0DtFsKlMufoQ">
+                                <i className="fab fa-youtube"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div className="home__footer__resources container">
+                    <div className="home__footer__resources__section home__footer__resources__features">
+                        <div className="home__footer__resources__section__title">
+                            VenkateshKoka
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            About Me
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            Market Updates
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            Trading Steps
+                        </div>
+                    </div>
+                    <div className="home__footer__resources__section home__footer__resources__company">
+                        <div className="home__footer__resources__section__title">Support</div>
+                        <div className="home__footer__resources__section__link">
+                            Privacy Policy
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            Terms of Service
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            VenkateshKoka
+                        </div>
+                    </div>
+                    <div className="home__footer__resources__section home__footer__resources__references">
+                        <div className="home__footer__resources__section__title">Contact Us</div>
+                        <div className="home__footer__resources__section__link__twitter">
+                            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/venkatesh_koka/">
+                                <i className="fab fa-twitter"/> Twitter
+                            </a>
+                        </div>
+                        <div className="home__footer__resources__section__link__linkedin">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.linkedin.com/in/venkateshkoka45/">
+                                <i className="fab fa-linkedin"/> LinkedIn
+                            </a>
+                        </div>
+                        <div className="home__footer__resources__section__link__instagram">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.instagram.com/venkatesh_koka/">
+                                <i className="fab fa-instagram"/> Instagram
+                            </a>
+                        </div>
+                        <div className="home__footer__resources__section__link__youtube">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.youtube.com/channel/UCD6MPlsv0kg0DtFsKlMufoQ">
+                                <i className="fab fa-youtube"/> Youtube
+                            </a>
+                        </div>
+                    </div>
+                    <div className="home__footer__resources__section home__footer__resources__attributions">
+                        <div className="home__footer__resources__section__title">Attributions</div>
+                        <div className="home__footer__resources__section__link">
+                            Books
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            Asset resources
+                        </div>
+                        <div className="home__footer__resources__section__link">
+                            Twitter users
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

@@ -166,4 +166,94 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
       background-color: #004D4D;
     }
   }
+
+  &__footer {
+    margin-top: 30px;
+    background-color: var(--jaffa-background-color-2);
+    width: 100%;
+    padding: 50px 0px;
+
+    &__title {
+      gap: 4px;
+
+      &__logo {
+        display: flex;
+        align-items: flex-end;
+        color: #773dbc;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      &__purpose {
+        padding: 5px 0px;
+        //font-style: italic;
+        //font-weight: 600;
+        max-width: 500px;
+      }
+
+      &__social {
+        padding: 5px 0px;
+        display: flex;
+        gap: 24px;
+
+        @each $type, $gradient in $social-icons {
+          &__#{$type} {
+            a {
+              color: $gradient;
+
+              i {
+                font-size: 28px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__resources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: 20px;
+      margin-top: 20px;
+      padding-top: 20px;
+      padding-bottom: 50px;
+
+      @media screen and (max-width: 360px) {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      //background-color: #03dac6;
+      //flex-wrap: wrap;
+
+      &__section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 150px;
+        max-width: 200px;
+
+        &__title {
+          font-weight: 300;
+          //font-size: 20px;
+        }
+
+        &__link {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          @each $type, $gradient in $social-icons {
+            &__#{$type} {
+              a {
+                color: #ffffff;
+
+                &:hover {
+                  color: $gradient;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -11,7 +11,6 @@ import PostCard from "../../components/PostCard";
 import {stringifyForDisplay} from "@apollo/client/utilities";
 
 const LiveStream = () => {
-    // const [page, setPage] = useState(1);
     const [showTwitterTimeline, setShowTwitterTimeline] = useState(true);
     const {data, loading, error} = useQuery(GET_ALL_POSTS_THIS_WEEK, {
         variables: {week: 1}
@@ -114,7 +113,7 @@ const LiveStream = () => {
             });
 
             // refetch all posts to update UI
-            fetchPosts({
+            await fetchPosts({
                 // variables: {page},
                 refetchQueries: [{
                     query: GET_ALL_POSTS_THIS_WEEK,

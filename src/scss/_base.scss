@@ -39,6 +39,14 @@ $post-types: (
         "general": linear-gradient(147.14deg, #3E7BFA 6.95%, #6600CC 93.05%)
 );
 
+$social-icons: (
+        "twitter": #1da1f2,
+        "linkedin": #0077b5,
+        "instagram": #fb3958,
+        "youtube": #ff0000,
+        "github": #FF8800
+);
+
 
 .container {
   padding-right: 24px;
@@ -204,9 +212,9 @@ $post-types: (
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa;
-  //font-color: $color-font-body;
-  //background-color: $color-background;
+  //--jaffa-background-color: #f7f7fa;
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea;
   @media screen and (max-width: 768px) {
     font-size: 16px;
   }
@@ -244,5 +252,6 @@ $post-types: (
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
   --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D;
 }
 

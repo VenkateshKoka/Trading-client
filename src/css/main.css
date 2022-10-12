@@ -65,7 +65,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -89,7 +90,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 #navbar {
   position: sticky;
@@ -173,6 +175,10 @@
   padding: 8px 16px;
   border-radius: 8px;
   backdrop-filter: blur(25px); }
+
+.navbar-logo {
+  width: 30px;
+  height: 30px; }
 
 #navbar-toggle {
   cursor: pointer;
@@ -329,7 +335,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -353,7 +360,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .buttonJ {
   display: flex;
@@ -466,7 +474,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -490,7 +499,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .postCard {
   display: flex;
@@ -622,7 +632,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -646,7 +657,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .RichEditor-root {
   border: 1px solid #999; }
@@ -783,7 +795,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -807,7 +820,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .circle-bg {
   display: flex;
@@ -1006,6 +1020,88 @@
       background-color: #5a1d98; }
     .home__tradingSteps__mindset {
       background-color: #004D4D; }
+  .home__footer {
+    margin-top: 30px;
+    background-color: var(--jaffa-background-color-2);
+    width: 100%;
+    padding: 50px 0px; }
+    .home__footer__title {
+      gap: 4px; }
+      .home__footer__title__logo {
+        display: flex;
+        align-items: flex-end;
+        color: #773dbc;
+        font-size: 20px;
+        font-weight: 500; }
+      .home__footer__title__purpose {
+        padding: 5px 0px;
+        max-width: 500px; }
+      .home__footer__title__social {
+        padding: 5px 0px;
+        display: flex;
+        gap: 24px; }
+        .home__footer__title__social__twitter a {
+          color: #1da1f2; }
+          .home__footer__title__social__twitter a i {
+            font-size: 28px; }
+        .home__footer__title__social__linkedin a {
+          color: #0077b5; }
+          .home__footer__title__social__linkedin a i {
+            font-size: 28px; }
+        .home__footer__title__social__instagram a {
+          color: #fb3958; }
+          .home__footer__title__social__instagram a i {
+            font-size: 28px; }
+        .home__footer__title__social__youtube a {
+          color: #ff0000; }
+          .home__footer__title__social__youtube a i {
+            font-size: 28px; }
+        .home__footer__title__social__github a {
+          color: #FF8800; }
+          .home__footer__title__social__github a i {
+            font-size: 28px; }
+    .home__footer__resources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: 20px;
+      margin-top: 20px;
+      padding-top: 20px;
+      padding-bottom: 50px; }
+      @media screen and (max-width: 360px) {
+        .home__footer__resources {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); } }
+      .home__footer__resources__section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 150px;
+        max-width: 200px; }
+        .home__footer__resources__section__title {
+          font-weight: 300; }
+        .home__footer__resources__section__link {
+          display: flex;
+          align-items: center;
+          gap: 5px; }
+          .home__footer__resources__section__link__twitter a {
+            color: #ffffff; }
+            .home__footer__resources__section__link__twitter a:hover {
+              color: #1da1f2; }
+          .home__footer__resources__section__link__linkedin a {
+            color: #ffffff; }
+            .home__footer__resources__section__link__linkedin a:hover {
+              color: #0077b5; }
+          .home__footer__resources__section__link__instagram a {
+            color: #ffffff; }
+            .home__footer__resources__section__link__instagram a:hover {
+              color: #fb3958; }
+          .home__footer__resources__section__link__youtube a {
+            color: #ffffff; }
+            .home__footer__resources__section__link__youtube a:hover {
+              color: #ff0000; }
+          .home__footer__resources__section__link__github a {
+            color: #ffffff; }
+            .home__footer__resources__section__link__github a:hover {
+              color: #FF8800; }
 
 .container {
   padding-right: 24px;
@@ -1073,7 +1169,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -1097,7 +1194,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .container {
   padding-right: 24px;
@@ -1165,7 +1263,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -1189,7 +1288,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .selection {
   display: flex;
@@ -1265,7 +1365,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -1289,7 +1390,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .timing p {
   margin-top: 20px;
@@ -1361,7 +1463,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -1385,7 +1488,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .login {
   display: flex;
@@ -1494,7 +1598,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -1518,7 +1623,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .livestream {
   display: flex;
@@ -1689,7 +1795,8 @@
   -webkit-font-smoothing: antialiased;
   --jaffa-font-color: rgb(28, 28, 40);
   --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f7f7fa; }
+  --jaffa-background-color: #f4f4f5;
+  --jaffa-background-color-2: #eeeeea; }
   @media screen and (max-width: 768px) {
     :root {
       font-size: 16px; } }
@@ -1713,7 +1820,8 @@
 [data-theme="dark"] {
   --jaffa-font-color: #eee;
   --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28; }
+  --jaffa-background-color: #1c1c28;
+  --jaffa-background-color-2: #28293D; }
 
 .postArchives {
   display: flex;
