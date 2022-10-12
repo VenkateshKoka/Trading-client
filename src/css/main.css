@@ -1083,23 +1083,23 @@
           align-items: center;
           gap: 5px; }
           .home__footer__resources__section__link__twitter a {
-            color: #ffffff; }
+            color: var(--jaffa-font-color); }
             .home__footer__resources__section__link__twitter a:hover {
               color: #1da1f2; }
           .home__footer__resources__section__link__linkedin a {
-            color: #ffffff; }
+            color: var(--jaffa-font-color); }
             .home__footer__resources__section__link__linkedin a:hover {
               color: #0077b5; }
           .home__footer__resources__section__link__instagram a {
-            color: #ffffff; }
+            color: var(--jaffa-font-color); }
             .home__footer__resources__section__link__instagram a:hover {
               color: #fb3958; }
           .home__footer__resources__section__link__youtube a {
-            color: #ffffff; }
+            color: var(--jaffa-font-color); }
             .home__footer__resources__section__link__youtube a:hover {
               color: #ff0000; }
           .home__footer__resources__section__link__github a {
-            color: #ffffff; }
+            color: var(--jaffa-font-color); }
             .home__footer__resources__section__link__github a:hover {
               color: #FF8800; }
 

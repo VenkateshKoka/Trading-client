@@ -244,7 +244,7 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
           @each $type, $gradient in $social-icons {
             &__#{$type} {
               a {
-                color: #ffffff;
+                color: var(--jaffa-font-color);
 
                 &:hover {
                   color: $gradient;
