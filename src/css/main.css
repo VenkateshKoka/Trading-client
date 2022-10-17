@@ -110,7 +110,8 @@
     margin-top: 6px;
     background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    -webkit-text-fill-color: transparent;
+    text-shadow: -1px -1px 0 rgba(102, 0, 204, 0.8); }
     @media screen and (max-width: 888px) {
       .home-link span {
         font-size: 32px; }
