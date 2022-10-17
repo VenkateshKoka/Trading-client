@@ -1,14 +1,4 @@
-@import "../../base";
 
 .selection {
-  display: flex;
-  flex-direction: column;
-  //background-color: $color-background-dark-glass;
-  backdrop-filter: blur(32px);
-
-  &__content {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    //text-align: justify;
-  }
+  position: relative;
 }

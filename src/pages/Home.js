@@ -114,7 +114,7 @@ const Home = () => {
                 </div>
                 <div className="home__hero__content">
                     <p>Follow the stock market commentary and updates</p>
-                    <div className="btn buttonJ buttonJ__tertiary buttonJ__rounded"
+                    <div className="buttonJ buttonJ__tertiary buttonJ__rounded"
                          onClick={() => navigate(`/livestream`)}
                          style={{marginLeft: "auto", marginRight: "auto"}}>Livestream
                     </div>

@@ -3,14 +3,14 @@ import SandTimer from "../../components/animations/SandTimer";
 
 const Timing = () => {
     return (
-        <div className="timing container">
+        <div className="tradingPage container">
 
-            <h1>How to time your buys(entries) and learn the chart bases.</h1>
-            <div className="information information__highlight">
+            <div className="tradingPage__title">How to time your buys(entries) and learn the chart bases.</div>
+            <div className="tradingPage__highlight">
                 <SandTimer width="40px"/>
                 Every stock you buy has to be in an uptrend, but you do not purchase every stock in an uptrend.
             </div>
-            <p>
+            <div className="tradingPage__content">
                 Buying demand for a stock causes its price to rise, and selling causes its price to fall. The higher
                 this demand, the better chance to continue its upward move. But how to know if there is high demand or
                 not? - trading volume determines that. A big move up in price accompanied by higher than average
@@ -19,21 +19,21 @@ const Timing = () => {
                 higher volume during price advance and lower volume during decline, is what we are looking for.
                 The goal is to ride this price momentum as these institutions take many days to buy the stock.
                 <h2> Add pics of great volume breakout pics and rebounding and duds ---jaffa </h2>
-            </p>
-            <p>
+            </div>
+            <div className="tradingPage__content">
                 Explain the buying and selling and VCP through a ABCDEFG diagram. like A-b price advance, b-c is the
                 pull back.
                 Explain the volume and price action through buying and selling dynamic and the volatility contraction
                 pattern. When to buy is mainly about pivots and the different structures. detailed explanation on bases
                 and structures are their own page
-            </p>
-            <p>
+            </div>
+            <div className="tradingPage__content">
                 You have to execute a trade when there is a high probability of the stock price moving up, and in
                 addition to moving up, doing it rapidly. Often referred to as a pivot point. Sometimes the stock may go
                 lower rapidly, called a pivot failure, but you get to know the result quickly instead of tying up your
                 capital for a long time without much progress.
-            </p>
-            <p>
+            </div>
+            <div className="tradingPage__content">
                 When a stock is in a stage 2 uptrend, there will be pullbacks and basing periods. When the stocks are in
                 a stage 2 uptrend, there will be pullbacks and basing periods(caused by profit taking or market
                 corrections). When stocks break out from these bases, this is the time to buy the breakouts. These
@@ -54,19 +54,20 @@ const Timing = () => {
                 and even more than a year). Generally a stock tops after 3-5 bases in the stage 2 uptrend. The later
                 basing periods become obvious with more volatility and eventually institutional demand dries up.
                 Bases 1 and 2 generally comes off market correction, which is the best time to buy.
-            </p>
+            </div>
 
-            <div className="information information__highlight">
+            <div className="tradingPage__highlight">
                 <SandTimer width="40px"/>
                 The goal is to sell your stock higher than you paid for, in the shortest period.
             </div>
 
-            <p>There are different types of bases: cup with a handle, Saucer with a handle, double bottom, flat-base,
+            <div className="tradingPage__content">There are different types of bases: cup with a handle, Saucer with a
+                handle, double bottom, flat-base,
                 square box, high tight flags.
-            </p>
+            </div>
 
             <h3>Powerplays / High tight flags</h3>
-            <p>Characteristics of a high tight flag:
+            <div className="tradingPage__content">Characteristics of a high tight flag:
                 <br/>
                 1. A rare pattern usually seen during a bull market year.
                 <br/>
@@ -76,14 +77,15 @@ const Timing = () => {
                 3. Company has a new product that turns the not so well known stock into one that runs up rapidly, 100
                 to 120% or more in only 4 to 8 weeks and holds most of the huge gain while it moves sideways 3 to 5
                 weeks and corrects between just 10 to 25%
-            </p>
+            </div>
 
-            <p>A “high, tight flag” price pattern is rare, occurring in no more than a few stocks during a bull market.
+            <div className="tradingPage__content">A “high, tight flag” price pattern is rare, occurring in no more than
+                a few stocks during a bull market.
                 It begins with the stock moving generally 100% to 120% in a very short period of time (four to eight
                 weeks). It then corrects sideways no more than 10% to 25%, usually in three, four, or five weeks. This
                 is the strongest of patterns, but it’s also risky and difficult to interpret correctly.
-            </p>
-            <p>
+            </div>
+            <div className="tradingPage__content">
                 cup with handles:
 
                 Cup patterns can last from 7 weeks to as long as 65 (sometimes even more than that) weeks, but most of
@@ -122,8 +124,8 @@ const Timing = () => {
                 market
                 leaders to show volume spikes 200%, 500%, or 1,000% greater than the average daily volume.
 
-            </p>
-            <p>
+            </div>
+            <div className="tradingPage__content">
                 Pivot buy points in correct chart base patterns are not typically based on a stock’s old high price.
                 Most of
                 them occur at 5% to 10% below the prior peak. The peak price in the handle area is what determines most
@@ -137,8 +139,7 @@ const Timing = () => {
                 the stock begins building the handle. Then begin your purchase when the trend line is broken on the
                 upside a
                 few weeks later. However, you have to be right in your chart and stock analysis to get away with this.
-            </p>
-
+            </div>
         </div>
     )
 };

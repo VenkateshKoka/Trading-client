@@ -68,34 +68,6 @@ $social-icons: (
   }
 }
 
-.information {
-  padding: 16px 0px;
-  border-radius: 16px;
-  align-self: center;
-  font-style: italic;
-  //color: $color-text-body-dark;
-  gap: 12px;
-  font-size: 18px;
-  width: 100%;
-  margin: 20px 0px;
-  @media screen and (max-width: 768px) {
-    padding: 12px 0px;
-    margin: 10px 0;
-    gap: 12px;
-    font-size: 15px;
-  }
-
-  &__important {
-    background-color: rgba(lightgray, 0.2);
-  }
-
-  &__highlight {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-}
 
 .externalWebsiteLink {
   text-decoration: none;

@@ -1,0 +1,67 @@
+.tradingPage {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 100px;
+
+  &__title {
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
+  &__content {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 15px 5px;
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 16px;
+    align-self: center;
+    background-color: var(--jaffa-background-color-2);
+    gap: 12px;
+    font-size: 20px;
+    width: fit-content;
+    padding: 16px 32px;
+    margin: 20px 0px;
+    @media screen and (max-width: 768px) {
+      padding: 8px 16px;
+      margin: 10px 0;
+      gap: 12px;
+      font-size: 18px;
+    }
+  }
+
+  &__nextPage {
+    //position: fixed;
+    //bottom: 50px;
+    //right: 50px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+
+    //background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
+    //-webkit-background-clip: text;
+    //-webkit-text-fill-color: transparent;
+  }
+}
