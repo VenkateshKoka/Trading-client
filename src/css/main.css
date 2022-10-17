@@ -95,12 +95,27 @@
   margin: 8px; }
 
 .home-link {
+  display: flex;
+  gap: 5px;
+  align-items: center;
   cursor: pointer;
   -webkit-transition: none;
   transition: none; }
   .home-link span {
-    color: #773dbc;
-    font-size: 24px; }
+    display: flex;
+    gap: 4px;
+    font-size: 24px;
+    font-family: "Copperplate", serif;
+    font-weight: 600;
+    margin-top: 6px;
+    background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+    @media screen and (max-width: 888px) {
+      .home-link span {
+        font-size: 32px; }
+        .home-link span div:nth-of-type(1) {
+          display: none; } }
   .home-link img {
     max-height: 32px; }
     .home-link img:hover {
@@ -121,7 +136,6 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-.home-link,
 .navbar-link {
   color: var(--jaffa-font-color);
   /* unvisited link */
@@ -132,17 +146,13 @@
   display: flex;
   align-items: center;
   transition: background 0.5s ease-in-out; }
-  .home-link:link,
   .navbar-link:link {
     color: var(--jaffa-font-color); }
-  .home-link:visited,
   .navbar-link:visited {
     color: var(--jaffa-font-color); }
-  .home-link:hover,
   .navbar-link:hover {
     text-shadow: 0px 0px 1px var(--jaffa-font-color);
     border-radius: 24px; }
-  .home-link:active,
   .navbar-link:active {
     color: var(--jaffa-font-color); }
 
@@ -966,8 +976,9 @@
         display: flex;
         align-items: flex-end;
         color: #773dbc;
-        font-size: 20px;
-        font-weight: 500; }
+        font-family: "Copperplate", serif;
+        font-size: 24px;
+        font-weight: 600; }
       .home__footer__title__purpose {
         padding: 5px 0px;
         max-width: 500px; }
@@ -1014,6 +1025,7 @@
         .home__footer__resources__section__title {
           font-weight: 300; }
         .home__footer__resources__section__link {
+          cursor: pointer;
           display: flex;
           align-items: center;
           gap: 5px; }
@@ -1111,81 +1123,6 @@
 
 .selection {
   position: relative; }
-
-.container {
-  padding-right: 24px;
-  padding-left: 24px;
-  margin-right: auto;
-  margin-left: auto; }
-  @media screen and (max-width: 576px) {
-    .container {
-      width: 95%;
-      padding-right: 16px;
-      padding-left: 16px; } }
-  @media screen and (min-width: 576px) {
-    .container {
-      width: calc(94%);
-      max-width: 1380px;
-      padding-right: 24px;
-      padding-left: 24px; } }
-
-.externalWebsiteLink {
-  text-decoration: none;
-  color: #bb86fc;
-  font-style: italic; }
-  .externalWebsiteLink:visited {
-    color: #CF6679; }
-  .externalWebsiteLink:hover {
-    text-decoration: underline; }
-  .externalWebsiteLink:active {
-    color: red; }
-  .externalWebsiteLink:focus {
-    outline: 2px dashed gray; }
-
-:root {
-  position: absolute;
-  left: 0;
-  right: 0;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  text-rendering: optimizeLegibility;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-  line-height: 1.2;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  --jaffa-font-color: rgb(28, 28, 40);
-  --jaffa-font-color-secondary: #555770;
-  --jaffa-background-color: #f4f4f5;
-  --jaffa-background-color-2: #eeeeea; }
-  @media screen and (max-width: 768px) {
-    :root {
-      font-size: 16px; } }
-  :root h1 {
-    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 34px;
-    font-weight: 700; }
-    @media screen and (max-width: 768px) {
-      :root h1 {
-        font-size: 24px;
-        font-weight: 500; } }
-  :root p {
-    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400; }
-    @media screen and (max-width: 768px) {
-      :root p {
-        font-size: 16px; } }
-
-/* 2 */
-[data-theme="dark"] {
-  --jaffa-font-color: #eee;
-  --jaffa-font-color-secondary: #C7C9D9;
-  --jaffa-background-color: #1c1c28;
-  --jaffa-background-color-2: #28293D; }
-
-.timing p {
-  margin-top: 20px;
-  margin-bottom: 10px; }
 
 .container {
   padding-right: 24px;
@@ -1567,6 +1504,7 @@
   margin-top: 50px;
   margin-bottom: 100px; }
   .tradingPage__title {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -1593,11 +1531,11 @@
     gap: 12px;
     font-size: 20px;
     width: fit-content;
-    padding: 16px 32px;
+    padding: 24px 16px;
     margin: 20px 0px; }
     @media screen and (max-width: 768px) {
       .tradingPage__highlight {
-        padding: 8px 16px;
+        padding: 16px 8px;
         margin: 10px 0;
         gap: 12px;
         font-size: 18px; } }

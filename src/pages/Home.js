@@ -210,7 +210,7 @@ const Home = () => {
                         <span>Venkatesh Koka</span>
                     </div>
                     <div className="home__footer__title__purpose">
-                        Make your trading journey simpler. Achieve the winning mindset and techniques of
+                        Accelerate your trading career. Achieve the winning mindset and techniques of
                         trading.
                     </div>
                     <div className="home__footer__title__social">
@@ -254,10 +254,12 @@ const Home = () => {
                         <div className="home__footer__resources__section__link">
                             About Me
                         </div>
-                        <div className="home__footer__resources__section__link">
+                        <div className="home__footer__resources__section__link"
+                             onClick={() => navigate(`/livestream`)}>
                             Market Updates
                         </div>
-                        <div className="home__footer__resources__section__link">
+                        <div className="home__footer__resources__section__link"
+                             onClick={() => navigate(`/trading/selection`)}>
                             Trading Steps
                         </div>
                         <div className="home__footer__resources__section__link">

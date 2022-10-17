@@ -6,10 +6,6 @@ const Timing = () => {
         <div className="tradingPage container">
 
             <div className="tradingPage__title">How to time your buys(entries) and learn the chart bases.</div>
-            <div className="tradingPage__highlight">
-                <SandTimer width="40px"/>
-                Every stock you buy has to be in an uptrend, but you do not purchase every stock in an uptrend.
-            </div>
             <div className="tradingPage__content">
                 Buying demand for a stock causes its price to rise, and selling causes its price to fall. The higher
                 this demand, the better chance to continue its upward move. But how to know if there is high demand or
@@ -19,6 +15,10 @@ const Timing = () => {
                 higher volume during price advance and lower volume during decline, is what we are looking for.
                 The goal is to ride this price momentum as these institutions take many days to buy the stock.
                 <h2> Add pics of great volume breakout pics and rebounding and duds ---jaffa </h2>
+            </div>
+            <div className="tradingPage__highlight">
+                <SandTimer/>
+                Every stock you buy has to be in an uptrend, but you do not purchase every stock in an uptrend.
             </div>
             <div className="tradingPage__content">
                 Explain the buying and selling and VCP through a ABCDEFG diagram. like A-b price advance, b-c is the

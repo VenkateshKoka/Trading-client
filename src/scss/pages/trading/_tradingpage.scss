@@ -6,6 +6,7 @@
   margin-bottom: 100px;
 
   &__title {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -36,10 +37,10 @@
     gap: 12px;
     font-size: 20px;
     width: fit-content;
-    padding: 16px 32px;
+    padding: 24px 16px;
     margin: 20px 0px;
     @media screen and (max-width: 768px) {
-      padding: 8px 16px;
+      padding: 16px 8px;
       margin: 10px 0;
       gap: 12px;
       font-size: 18px;

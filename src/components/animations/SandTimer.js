@@ -2,7 +2,7 @@ import React from "react";
 import Lottie, {useLottie, useLottieInteractivity} from "lottie-react";
 import sandTimerAnimation from "../../assets/61848-hour-glass-loading.json"
 
-const SandTimer = ({width = "60px"}) => {
+const SandTimer = ({width = "60px", minWidth = "40px"}) => {
 
     const options = {
         animationData: sandTimerAnimation,
@@ -12,6 +12,7 @@ const SandTimer = ({width = "60px"}) => {
 
     const style = {
         width: width,
+        minWidth: minWidth
     }
 
     const timer = useLottie(options, style);

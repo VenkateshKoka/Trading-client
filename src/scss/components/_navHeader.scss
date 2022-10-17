@@ -33,13 +33,29 @@
 }
 
 .home-link {
+  display: flex;
+  gap: 5px;
+  align-items: center;
   cursor: pointer;
   -webkit-transition: none;
   transition: none;
 
   span {
-    color: #773dbc;
+    display: flex;
+    gap: 4px;
     font-size: 24px;
+    font-family: "Copperplate", serif;
+    font-weight: 600;
+    margin-top: 6px;
+    background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @media screen and (max-width: 888px) {
+      font-size: 32px;
+      div:nth-of-type(1) {
+        display: none;
+      }
+    }
   }
 
   img {
@@ -70,7 +86,7 @@
   }
 }
 
-.home-link,
+
 .navbar-link {
   color: var(--jaffa-font-color);
   /* unvisited link */

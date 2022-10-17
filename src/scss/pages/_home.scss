@@ -246,8 +246,9 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
         display: flex;
         align-items: flex-end;
         color: #773dbc;
-        font-size: 20px;
-        font-weight: 500;
+        font-family: "Copperplate", serif;
+        font-size: 24px;
+        font-weight: 600;
       }
 
       &__purpose {
@@ -303,6 +304,7 @@ $background-image-gradient-purple: linear-gradient(to bottom right, rgba(106, 6,
         }
 
         &__link {
+          cursor: pointer;
           display: flex;
           align-items: center;
           gap: 5px;
