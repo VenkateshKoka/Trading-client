@@ -193,11 +193,20 @@ const Selection = () => {
                 price, not on the way down. And when you buy more, you do it only after the stock has risen from your
                 purchase price, not after it has fallen below it.
             </div>
-            <div className="tradingPage__nextPage">
-                <div className="buttonJ buttonJ__tertiary buttonJ__rounded"
-                     onClick={() => navigate(`/trading/timing`)}>
-                    <div>Next: When to Buy</div>
-                    <div><i className="fas fa-forward"></i></div>
+            <div className="tradingPage__navigation">
+                <div className="tradingPage__navigation__prevPage">
+                    <div className="buttonJ buttonJ__tertiary buttonJ__rounded buttonJ__small"
+                         onClick={() => navigate(`/trading/mindset`)}>
+                        <div><i className="fas fa-backward"></i></div>
+                        <div>Mindset</div>
+                    </div>
+                </div>
+                <div className="tradingPage__navigation__nextPage">
+                    <div className="buttonJ buttonJ__tertiary buttonJ__rounded buttonJ__small"
+                         onClick={() => navigate(`/trading/timing`)}>
+                        <div>When to Buy</div>
+                        <div><i className="fas fa-forward"></i></div>
+                    </div>
                 </div>
             </div>
         </div>

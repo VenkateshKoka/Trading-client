@@ -1,7 +1,9 @@
 import React from "react";
 import SandTimer from "../../components/animations/SandTimer";
+import {useNavigate} from "react-router-dom";
 
 const Timing = () => {
+    const navigate = useNavigate();
     return (
         <div className="tradingPage container">
 
@@ -139,6 +141,22 @@ const Timing = () => {
                 the stock begins building the handle. Then begin your purchase when the trend line is broken on the
                 upside a
                 few weeks later. However, you have to be right in your chart and stock analysis to get away with this.
+            </div>
+            <div className="tradingPage__navigation">
+                <div className="tradingPage__navigation__prevPage">
+                    <div className="buttonJ buttonJ__tertiary buttonJ__rounded buttonJ__small"
+                         onClick={() => navigate(`/trading/selection`)}>
+                        <div><i className="fas fa-backward"></i></div>
+                        <div>What to Buy</div>
+                    </div>
+                </div>
+                <div className="tradingPage__navigation__nextPage">
+                    <div className="buttonJ buttonJ__tertiary buttonJ__rounded buttonJ__small"
+                         onClick={() => navigate(`/trading/position-sizing`)}>
+                        <div>How much to Buy</div>
+                        <div><i className="fas fa-forward"></i></div>
+                    </div>
+                </div>
             </div>
         </div>
     )

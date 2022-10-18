@@ -47,22 +47,31 @@
     }
   }
 
-  &__nextPage {
-    //position: fixed;
-    //bottom: 50px;
-    //right: 50px;
+  &__navigation {
     display: flex;
-    justify-content: flex-end;
-    padding: 15px;
-    font-size: 24px;
-    font-weight: 600;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 150px;
 
+    &__prevPage {
+      display: flex;
+      padding: 15px 0px;
+      align-items: center;
+      gap: 10px;
+    }
 
-    //background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
-    //-webkit-background-clip: text;
-    //-webkit-text-fill-color: transparent;
+    &__nextPage {
+      //position: fixed;
+      //bottom: 50px;
+      //right: 50px;
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 0px;
+      align-items: center;
+      gap: 10px;
+      //background: linear-gradient(147.14deg, #6600CC 6.95%, #FF3B3B 93.05%);
+      //-webkit-background-clip: text;
+      //-webkit-text-fill-color: transparent;
+    }
   }
 }
