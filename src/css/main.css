@@ -1513,6 +1513,8 @@
     @media screen and (max-width: 768px) {
       .tradingPage__title {
         font-size: 28px; } }
+  .tradingPage__image img {
+    width: 100%; }
   .tradingPage__content {
     font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 20px;

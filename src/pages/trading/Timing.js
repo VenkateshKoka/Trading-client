@@ -8,60 +8,103 @@ const Timing = () => {
         <div className="tradingPage container">
 
             <div className="tradingPage__title">How to time your buys(entries) and learn the chart bases.</div>
-            <div className="tradingPage__content">
-                Buying demand for a stock causes its price to rise, and selling causes its price to fall. The higher
-                this demand, the better chance to continue its upward move. But how to know if there is high demand or
-                not? - trading volume determines that. A big move up in price accompanied by higher than average
-                volume(sometimes multiple times) suggest institutional investors are interested. Similarly, when a stock
-                pullbacks on lower volume than average indicates the selling pressure is low. These two properties -
-                higher volume during price advance and lower volume during decline, is what we are looking for.
-                The goal is to ride this price momentum as these institutions take many days to buy the stock.
-                <h2> Add pics of great volume breakout pics and rebounding and duds ---jaffa </h2>
-            </div>
             <div className="tradingPage__highlight">
                 <SandTimer/>
                 Every stock you buy has to be in an uptrend, but you do not purchase every stock in an uptrend.
             </div>
             <div className="tradingPage__content">
-                Explain the buying and selling and VCP through a ABCDEFG diagram. like A-b price advance, b-c is the
-                pull back.
-                Explain the volume and price action through buying and selling dynamic and the volatility contraction
-                pattern. When to buy is mainly about pivots and the different structures. detailed explanation on bases
-                and structures are their own page
-            </div>
-            <div className="tradingPage__content">
+                So which stocks to consider and which stocks to ignore in an uptrend?
                 You have to execute a trade when there is a high probability of the stock price moving up, and in
-                addition to moving up, doing it rapidly. Often referred to as a pivot point. Sometimes the stock may go
-                lower rapidly, called a pivot failure, but you get to know the result quickly instead of tying up your
-                capital for a long time without much progress.
+                addition to moving up, doing it in a short amount of time. Often referred to as a pivot point.
+                Sometimes the stock may go lower rapidly, called a pivot failure, but you get to know the result quickly
+                instead of tying up your capital for a long time without much progress. To understand a Pivot, first let
+                us understand the price action.
             </div>
             <div className="tradingPage__content">
-                When a stock is in a stage 2 uptrend, there will be pullbacks and basing periods. When the stocks are in
-                a stage 2 uptrend, there will be pullbacks and basing periods(caused by profit taking or market
-                corrections). When stocks break out from these bases, this is the time to buy the breakouts. These
-                basing periods usually last from 5 to 26 weeks (in some cases, it may take more months and even more
-                than a year). Generally, a stock tops(stage 3/ distribution phase) after 3-5 bases in the stage 2
-                uptrend. The later basing periods coincide with becoming obvious with more volatility, and institutional
-                demand dries up. Bases 1 and 2 generally come off a market correction, which is the best time to buy.
+                Buying demand for a stock
+                causes its price to rise, and selling pressure causes its price to fall. The
+                higher this demand, the higher the rise, and persistent demand mean a better chance to continue its
+                upward move. But how to know if there is high demand or not? - trading volume determines that. A big
+                move up in price accompanied by higher than average volume(sometimes multiple times) suggest
+                institutional investors are interested. Similarly, when stock pullbacks on lower volume than average
+                indicate the selling pressure is low. These two properties - higher volume during a price advance and
+                lower volume during a pullback, are needed for a price advance to settle and prepare for the next
+                move-up.
+            </div>
+            <div className="tradingPage__content">
+                When a stock is in a stage 2 uptrend, there will be pullbacks and basing periods (caused by profit
+                taking or market corrections)
                 <br/>
                 <b>Pullback</b> - Once a stock price moves up, inevitably, there would be some sellers to take profits
                 causing the price to pull back. Pullbacks are part and parcel of the game, but the extent of the
                 pullback is significant. Imagine a stock moved from 100 to 150. Now, if the stock pulls back to 110,
                 most of the buying is negated by selling. In another scenario, the same stock only comes back to 140,
-                meaning the stock is acting well and there are fewer sellers and when the stock completes the base and
-                breaks out on higher volume, this is the time to buy.
-                <br/>
-                <b>Base / basing period</b> - bases are formed when the sellers in the stock dry up over a period of
-                time. These basing periods most commonly last from 5 to 26 weeks (but some cases it may take more months
-                and even more than a year). Generally a stock tops after 3-5 bases in the stage 2 uptrend. The later
-                basing periods become obvious with more volatility and eventually institutional demand dries up.
-                Bases 1 and 2 generally comes off market correction, which is the best time to buy.
+                meaning the stock is acting well and there are fewer sellers. This process of selling and price bouncing
+                back-up usually happens multiple times and over a period of time. This period is called basing period or
+                simply referred as base.
             </div>
-
+            <div className="tradingPage__content">
+                <b>Base / basing period</b> - bases are formed when the sellers in the stock dry up over a period of
+                time. Instead of one pullback, a stock usually goes through multiple pullbacks until all the sellers are
+                exhausted. These most commonly last from 5 to 26 weeks (but some cases it
+                may take more months and even more than a year - the more the basing period, the more powerful the
+                breakout).
+            </div>
             <div className="tradingPage__highlight">
                 <SandTimer width="40px"/>
                 The goal is to sell your stock higher than you paid for, in the shortest period.
             </div>
+            <div className="tradingPage__content">
+                Once the sellers are exhausted and only the buyers remain(we conclude there are buyers because the stock
+                is already in an uptrend), then even a small amount of buying can result in
+                a rapid appreciation of price. This is called a pivot point, where there are no sellers(trading volume
+                will be very low and low volatility in price movement). The goal is to find this pivot point and buy
+                when a stock breaks out from this pivot.
+            </div>
+            <div className="tradingPage__content">
+                <h2> Add pics of great volume breakout pics and rebounding and duds ---jaffa </h2>
+            </div>
+            <div className="tradingPage__image">
+                <img src={require('../../assets/trading/TSLA_VCP_EXPLANATION.png')}/>
+            </div>
+            <div className="tradingPage__content">
+                <ul>
+                    <li>A-B is the first pullback(around 35%) and bounce. If a stock has strong demand, the pullback
+                        percent will be even lower and ideally it's less than 15%. But during Feb-Mar 2021, all tech
+                        stocks pulled-back even more, some even greater than 60%. When the market conditions are bad,
+                        relative strength of the pullbacks are to be considered. Note that the price do not have to
+                        reach the prior high i.e A. It's better if the price level of B is nearer to A.
+                    </li>
+                    <li>B-C is the second pullback and bounce. Note that this pullback is lesser in percentage compared
+                        to A-B. This is because of reduced selling pressure and some selling is absorbed during A-B.
+                    </li>
+                    <li>C-D with even less price correction compared to B-C. C-D also made a higher low compared to the
+                        low of B-C. This is a sign that buyers are persistent and gaining control. Usually after 3
+                        pullbacks and bounces the stock may breakout. Most of the times it will be between 3-5 bounces.
+                        Studying breakouts from history will certainly help you understand this more.
+                    </li>
+                    <li>D-E price action is very tight. The pullback is lower and also the daily trading volatility of
+                        the stock is considerably lower.
+                    </li>
+                    <li>E-F and F-G areas are explained in the image below. Price volatility is negligible and breakout
+                        pivots are identified. The lack of volume on days of price pullbacks and volume surging on
+                        breakout days. Here the volume is above average, but in many cases volume can be 1.5 times or
+                        even higher. <b>Higher the volume on breakout days, the better.</b>
+                    </li>
+                </ul>
+            </div>
+            <div className="tradingPage__image">
+                <img src={require('../../assets/trading/TSLA_VCP_BREAKOUT.png')}/>
+            </div>
+
+            <h1> Everything from Base counting and different base structures need their own pages and detailed
+                explanations.
+            </h1>
+            <div>Generally a stock tops after 3-5 bases in the stage 2 uptrend. The later basing periods
+                become obvious with more volatility and eventually institutional demand dries up. Bases 1 and 2
+                generally comes off market correction, which is the best time to buy.
+            </div>
+
 
             <div className="tradingPage__content">There are different types of bases: cup with a handle, Saucer with a
                 handle, double bottom, flat-base,

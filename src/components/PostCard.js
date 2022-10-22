@@ -3,7 +3,7 @@ import loadable from '@loadable/component'
 import {useNavigate} from "react-router";
 import Lightbox from 'react-image-lightbox';
 
-const RichTextEditorCustom = loadable(() => import("./RichTextEditorCustom"));
+import RichTextEditorCustom from "./RichTextEditorCustom";
 
 const PostCard = ({
                       post,
