@@ -56,7 +56,7 @@ const PositionSizing = () => {
                 other thinking or justification for the stock behavior is necessary at that point. It just means
                 something is wrong, whether it be the stock selection, the timing of the buy, or maybe the overall
                 market is
-                correcting. It doesn't matter, get out and analyze later on what went wrong.
+                correcting. It doesn't matter, get out first and analyze later on what went wrong.
             </div>
             <div className="tradingPage__highlight">
                 Not getting out with a minor loss incurs huge losses and enables blowing up the trading confidence and
